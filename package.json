@@ -1,5 +1,10 @@
 {
   "name": "netflix-clone",
+  "private": true,
+  "workspaces": [
+    "app",
+    "api"
+  ],
   "version": "0.0.1",
   "description": "A Netflix Clone for educational purposes.",
   "main": "index.js",
@@ -11,8 +16,10 @@
     "Next.js",
     "Typescript",
     "Styled Components",
-    "Css",
+    "Monorepo",
     "NPM",
+    "NPM Workspaces",
+    "Css",
     "Redux",
     "React Hooks",
     "Keystone.js",
