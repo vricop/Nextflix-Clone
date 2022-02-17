@@ -1,0 +1,27 @@
+{
+  "name": "netflix-clone",
+  "version": "0.0.1",
+  "description": "A Netflix Clone for educational purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "Next.js",
+    "Typescript",
+    "Styled Components",
+    "Css",
+    "NPM",
+    "Redux",
+    "React",
+    "Hooks",
+    "Keystone.js",
+    "Apollo",
+    "GraphQL",
+    "Compound Components",
+    "Jest"
+  ],
+  "author": "Víctor Rico",
+  "license": "CC0-1.0"
+}
