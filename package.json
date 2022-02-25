@@ -12,7 +12,8 @@
     "dev": "npm run dev -w app",
     "build": "npm run build -w app",
     "start": "npm run start -w app",
-    "lint": "npm run lint -w app"
+    "lint": "npm run lint -w app",
+    "test": "npm run test -w app"
   },
   "keywords": [
     "React",
