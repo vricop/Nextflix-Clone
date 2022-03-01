@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  line-height: 1.5;
+  font: 100%/1.5 var(--font-sans);
 }
 
 img, picture, video, canvas {
