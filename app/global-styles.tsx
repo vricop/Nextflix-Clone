@@ -54,40 +54,40 @@ p, h1, h2, h3, h4, h5, h6 {
   --color-brand-alt: #b9090b;
   --color-tomato: #ff091b; // Age rating
   /* Spacing (from tailwind) */
-  --spacing-px: 1px;
-  --spacing-0-5: 0.125rem; // 2px 
-  --spacing-1: 0.25rem; // 4px 
-  --spacing-1-5: 0.375rem; // 6px 
-  --spacing-2: 0.5rem; // 8px
-  --spacing-2-5: 0.625rem; // 10px 
-  --spacing-3: 0.75rem; // 12px 
-  --spacing-3-5: 0.875rem; // 14px 
-  --spacing-4: 1rem; // 16px 
-  --spacing-5: 1.25rem; // 20px 
-  --spacing-6: 1.5rem; // 24px 
-  --spacing-7: 1.75rem; // 28px 
-  --spacing-8: 2rem; // 32px 
-  --spacing-9: 2.25rem; // 36px 
-  --spacing-10: 2.5rem; // 40px 
-  --spacing-11: 2.75rem; // 44px 
-  --spacing-12: 3rem; // 48px 
-  --spacing-14: 3.5rem; // 56px 
-  --spacing-16: 4rem; // 64px 
-  --spacing-20: 5rem; // 80px 
-  --spacing-24: 6rem; // 96px 
-  --spacing-28: 7rem; // 112px 
-  --spacing-32: 8rem; // 128px 
-  --spacing-36: 9rem; // 144px 
-  --spacing-40: 10rem; // 160px 
-  --spacing-44: 11rem; // 176px 
-  --spacing-48: 12rem; // 192px 
-  --spacing-52: 13rem; // 208px 
-  --spacing-56: 14rem; // 224px 
-  --spacing-60: 15rem; // 240px 
-  --spacing-64: 16rem; // 256px 
-  --spacing-72: 18rem; // 288px 
-  --spacing-80: 20rem; // 320px 
-  --spacing-96: 24rem; // 384px
+  --size-px: 1px;
+  --size-0-5: 0.125rem; // 2px 
+  --size-1: 0.25rem; // 4px 
+  --size-1-5: 0.375rem; // 6px 
+  --size-2: 0.5rem; // 8px
+  --size-2-5: 0.625rem; // 10px 
+  --size-3: 0.75rem; // 12px 
+  --size-3-5: 0.875rem; // 14px 
+  --size-4: 1rem; // 16px 
+  --size-5: 1.25rem; // 20px 
+  --size-6: 1.5rem; // 24px 
+  --size-7: 1.75rem; // 28px 
+  --size-8: 2rem; // 32px 
+  --size-9: 2.25rem; // 36px 
+  --size-10: 2.5rem; // 40px 
+  --size-11: 2.75rem; // 44px 
+  --size-12: 3rem; // 48px 
+  --size-14: 3.5rem; // 56px 
+  --size-16: 4rem; // 64px 
+  --size-20: 5rem; // 80px 
+  --size-24: 6rem; // 96px 
+  --size-28: 7rem; // 112px 
+  --size-32: 8rem; // 128px 
+  --size-36: 9rem; // 144px 
+  --size-40: 10rem; // 160px 
+  --size-44: 11rem; // 176px 
+  --size-48: 12rem; // 192px 
+  --size-52: 13rem; // 208px 
+  --size-56: 14rem; // 224px 
+  --size-60: 15rem; // 240px 
+  --size-64: 16rem; // 256px 
+  --size-72: 18rem; // 288px 
+  --size-80: 20rem; // 320px 
+  --size-96: 24rem; // 384px
   /* Font stack (from open props) */
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif: ui-serif, serif;
