@@ -33,5 +33,8 @@
     "Jest"
   ],
   "author": "Víctor Rico",
-  "license": "CC0-1.0"
+  "license": "CC0-1.0",
+  "dependencies": {
+    "iconoir-react": "^2.1.0"
+  }
 }
