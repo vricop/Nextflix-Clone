@@ -1,9 +1,10 @@
 # Netflix Clone
 
-Building a Nextflix clone is a good practice for applying all the knowledge that
-I've been learning this last year (2021-2022) as a React Front-end Developer.
-
-_clone app_
+A Nextflix clone for education purposes. This is a side project for building a
+Netflix clone where I can apply all the knowledge that I've been learning
+throughtout this last year (2021-2022) as a React Front-end Developer. **It's
+still a work in progress and it's not finished yet, it's in the early development
+at this time**.
 
 ## Stack
 
@@ -19,6 +20,7 @@ _clone app_
 - [Jest](https://jestjs.io/)
 - [React Testing Library]()
 - [`i18n` (internationalization)](react.i18next.com/)
+- NPM monorepo with workspaces
 
 ### Back-end
 
