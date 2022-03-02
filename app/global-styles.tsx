@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  font: 100%/1.5 var(--font-sans);
+  font: 100%/1.5 var(--font-netflix-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -94,6 +94,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --size-12: 3rem; // 48px 
   --size-14: 3.5rem; // 56px 
   --size-16: 4rem; // 64px 
+  --size-18: 4.5rem; // 72px
   --size-20: 5rem; // 80px 
   --size-24: 6rem; // 96px 
   --size-28: 7rem; // 112px 

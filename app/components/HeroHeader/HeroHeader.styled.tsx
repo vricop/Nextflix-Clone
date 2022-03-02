@@ -20,7 +20,6 @@ export const Header = styled.header`
   background-size: cover;
   background-position: center;
   color: var(--color-white);
-  font-family: var(--font-netflix-sans);
   height: 750px;
   border-bottom: var(--size-2) solid var(--color-gray-600);
 `
@@ -113,14 +112,12 @@ export const Text = styled.div`
 
 export const Title = styled.h1`
   font-size: var(--text-6xl);
-  font-family: var(--font-netflix-sans);
   line-height: var(--leading-tight);
   max-width: 800px;
 `
 
 export const TagLine = styled.h2`
   font-size: var(--text-6xl);
-  font-family: var(--font-netflix-sans);
   font-size: var(--text-2xl);
   font-weight: var(--font-normal);
 `
