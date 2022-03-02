@@ -14,6 +14,8 @@ html, body {
 
 body {
   font: 100%/1.5 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img, picture, video, canvas {
@@ -35,6 +37,23 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('/fonts/NetflixSans_W_Rg.woff2') format('woff2'),
+    url('/fonts/NetflixSans_W_Rg.woff') format('woff');
+  font-weight: 400;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('/fonts/NetflixSans_W_Md.woff2') format('woff2'),
+    url('/fonts/NetflixSans_W_Md.woff') format('woff');
+  font-weight: 700;
+  font-display: optional;
+}
+
+
 :root {
   /* Colors */
   --color-white: #fff;
@@ -51,8 +70,10 @@ p, h1, h2, h3, h4, h5, h6 {
   --color-gray-800:#262626;
   --color-gray-900:#171717;
   --color-brand: #e50914;
-  --color-brand-alt: #b9090b;
+  --color-brand-alt-dark: #b9090b;
+  --color-brand-alt-light: #f40612;
   --color-tomato: #ff091b; // Age rating
+  --color-orange: #ffa00a;
   /* Spacing (from tailwind) */
   --size-px: 1px;
   --size-0-5: 0.125rem; // 2px 
@@ -108,6 +129,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --text-8xl: 6rem; /* 96px */
   --text-9xl: 8rem; /* 128px */
   /* Leading (from tailwind) */
+  --leading-2: 0.5rem; /* 8px */
   --leading-3: 0.75rem; /* 12px */
   --leading-4: 1rem; /* 16px */
   --leading-5: 1.25rem; /* 20px */
@@ -116,6 +138,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --leading-8: 2rem; /* 32px */
   --leading-9: 2.25rem; /* 36px */
   --leading-10: 2.5rem; /* 40px */
+  --leading-17: 4.25rem; /* 68px */
   --leading-none: 1;
   --leading-tight: 1.25;
   --leading-snug: 1.375;
@@ -129,5 +152,14 @@ p, h1, h2, h3, h4, h5, h6 {
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
 }
 `
