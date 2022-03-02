@@ -1,22 +1,25 @@
+import { Language, NavArrowDown } from 'iconoir-react'
 import { useRouter } from 'next/router'
 import { ChangeEvent, useState } from 'react'
 import { Logo } from '../common/Logo'
 import {
   ButtonGroup,
   Content,
+  Cta,
   EmailBox,
-  EmailButton,
   EmailField,
   EmailLabel,
   Error,
+  GetStartedButton,
   Header,
   LanguageSelector,
+  LanguageSelectorWrapper,
   SignInButton,
   TagLine,
   Text,
   Title,
   TopBar,
-} from './HeroHeader.styles'
+} from './HeroHeader.styled'
 
 export function HeroHeader() {
   const router = useRouter()
@@ -33,16 +36,28 @@ export function HeroHeader() {
       <TopBar>
         <Logo />
         <ButtonGroup>
-          <LanguageSelector
-            onChange={event => router.push(event.target.value)}
-            value="English">
-            <option value="/en/" data-language="en" data-country="EN" lang="en">
-              English
-            </option>
-            <option value="/es/" data-language="es" data-country="ES" lang="es">
-              Español
-            </option>
-          </LanguageSelector>
+          <LanguageSelectorWrapper>
+            <Language width="1em" />
+            <LanguageSelector
+              onChange={event => router.push(event.target.value)}
+              value="English">
+              <option
+                value="/es/en/"
+                data-language="en"
+                data-country="ES"
+                lang="en">
+                English
+              </option>
+              <option
+                value="/es/"
+                data-language="es"
+                data-country="ES"
+                lang="es">
+                Español
+              </option>
+            </LanguageSelector>
+            <NavArrowDown />
+          </LanguageSelectorWrapper>
           <SignInButton href="/signin">Sign in</SignInButton>
         </ButtonGroup>
       </TopBar>
@@ -50,10 +65,10 @@ export function HeroHeader() {
         <Text>
           <Title>Unlimited movies, TV shows, and more.</Title>
           <TagLine>Watch anywhere. Cancel anytime.</TagLine>
-          <p>
+          <Cta>
             Ready to watch? Enter your email to create or restart your
             membership.
-          </p>
+          </Cta>
         </Text>
         <EmailBox>
           <EmailField
@@ -69,7 +84,7 @@ export function HeroHeader() {
             minLength={5}
           />
           <EmailLabel htmlFor="email">Email address</EmailLabel>
-          <EmailButton type="button">Get Started</EmailButton>
+          <GetStartedButton>Get Started</GetStartedButton>
           {errorMessage && <Error>{errorMessage}</Error>}
         </EmailBox>
       </Content>

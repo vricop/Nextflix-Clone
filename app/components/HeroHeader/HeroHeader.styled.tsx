@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Link, { LinkProps } from 'next/link'
+import { PropsWithChildren, ReactNode } from 'react'
 import styled from 'styled-components'
 import { Icon } from '../common/Icon'
 
@@ -21,7 +22,7 @@ export const Header = styled.header`
   color: var(--color-white);
   font-family: var(--font-netflix-sans);
   height: 750px;
-  border-bottom: var(--size-3) solid var(--color-gray-600);
+  border-bottom: var(--size-2) solid var(--color-gray-600);
 `
 
 export const TopBar = styled.div`
@@ -39,28 +40,59 @@ export const ButtonGroup = styled.div`
   column-gap: var(--size-8);
 `
 
-export const SignInButton = styled(({ children, className, ...rest }) => (
+const StyledLink = ({
+  children,
+  className,
+  ...rest
+}: {
+  children: ReactNode
+  className?: string
+} & PropsWithChildren<LinkProps>) => (
   <Link {...rest}>
     <a {...{ className }}>{children}</a>
   </Link>
-))`
+)
+
+export const SignInButton = styled(StyledLink)`
   background-color: var(--color-brand);
   border-radius: var(--size-0-5);
   color: var(--color-white);
-  padding: var(--size-2) var(--size-5);
+  padding: var(--size-2) var(--size-4);
   line-height: var(--leading-snug);
   text-decoration: none;
   border: var(--size-px) solid transparent;
 `
 
-export const LanguageSelector = styled.select`
+export const LanguageSelectorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
   border: var(--size-px) solid var(--color-gray-400);
+  border-radius: var(--size-0-5);
+
+  svg {
+    pointer-events: none;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  svg:first-child {
+    left: var(--size-2);
+  }
+
+  svg:last-child {
+    right: var(--size-2);
+  }
+`
+
+export const LanguageSelector = styled.select`
+  padding: var(--size-2) var(--size-7);
+  border: none;
   background-color: rgba(0, 0, 0, 0.4);
   color: var(--color-white);
   font-size: var(--text-sm);
-  padding: var(--size-2) var(--size-3);
   line-height: var(--leading-snug);
-  border-radius: var(--size-0-5);
   appearance: none;
 `
 
@@ -91,6 +123,10 @@ export const TagLine = styled.h2`
   font-family: var(--font-netflix-sans);
   font-size: var(--text-2xl);
   font-weight: var(--font-normal);
+`
+
+export const Cta = styled.p`
+  font-size: var(--text-xl);
 `
 
 export const EmailBox = styled.div`
@@ -136,12 +172,14 @@ export const EmailField = styled.input`
   border-bottom: ${({ error }: { error?: boolean }) => error && borderStyles};
 `
 
-export const EmailButton = styled(({ children, ...rest }) => (
-  <button {...rest}>
+const Button = ({ children, ...rest }: { children: ReactNode }) => (
+  <button type="button" {...rest}>
     {children}
     <Icon name="chevron-right" />
   </button>
-))`
+)
+
+export const GetStartedButton = styled(Button)`
   align-items: center;
   background-color: var(--color-brand-alt-light);
   border-radius: 0 var(--size-0-5) var(--size-0-5) 0;
