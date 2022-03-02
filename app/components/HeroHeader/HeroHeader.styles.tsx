@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { Icon } from '../commons/Icon'
+import { Icon } from '../common/Icon'
 
 export const Header = styled.header`
   display: grid;

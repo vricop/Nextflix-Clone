@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useState } from 'react'
-import { Logo } from '../commons/Logo'
+import { Logo } from '../common/Logo'
 import {
   ButtonGroup,
   Content,
