@@ -6,6 +6,8 @@ throughtout this last year (2021-2022) as a React Front-end Developer. **It's
 still a work in progress and it's not finished yet, it's in the early development
 stage at this time**.
 
+![Netflix Screenshot](/app/public/images/screenshot.png)
+
 ## Stack
 
 ### Front-end
