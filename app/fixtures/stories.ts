@@ -1,3 +1,4 @@
+import { DevicePile, Mac } from '@/components/DevicePile'
 import { Mobile } from '@/components/Mobile'
 import { Tv } from '@/components/Tv'
 
@@ -30,7 +31,7 @@ export const stories = [
     title: 'Watch everywhere.',
     tagline:
       'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.',
-    Media: Tv,
+    Media: DevicePile,
     flipped: false,
   },
   {
