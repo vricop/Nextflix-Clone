@@ -74,6 +74,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --color-brand-alt-light: #f40612;
   --color-tomato: #ff091b; // Age rating
   --color-orange: #ffa00a;
+  --color-blue: #0071eb;
   /* Spacing (from tailwind) */
   --size-px: 1px;
   --size-0-5: 0.125rem; // 2px 
@@ -141,6 +142,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --leading-10: 2.5rem; /* 40px */
   --leading-17: 4.25rem; /* 68px */
   --leading-none: 1;
+  --leading-tighter: 1.1;
   --leading-tight: 1.25;
   --leading-snug: 1.375;
   --leading-normal: 1.5;
