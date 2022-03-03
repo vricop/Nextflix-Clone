@@ -7,28 +7,26 @@ import {
   TitleGroup,
 } from './StoryCard.styled'
 
-export function StoryCard({ children }: { children: ReactNode }) {
+export function StoryCard({
+  reverse,
+  children,
+  title,
+  tagline,
+}: {
+  reverse: boolean
+  children: ReactNode
+  title: string
+  tagline: string
+}) {
   return (
     <Section>
-      <Container>{children}</Container>
+      <Container>
+        <TitleGroup {...{ reverse }}>
+          <Title>{title}</Title>
+          <SubTitle>{tagline}</SubTitle>
+        </TitleGroup>
+        {children}
+      </Container>
     </Section>
   )
 }
-
-const Media = ({ children }: { children: ReactNode }) => <div>{children}</div>
-
-const Content = ({
-  title,
-  children,
-}: {
-  title: string
-  children: ReactNode
-}) => (
-  <TitleGroup>
-    <Title>{title}</Title>
-    <SubTitle>{children}</SubTitle>
-  </TitleGroup>
-)
-
-StoryCard.Media = Media
-StoryCard.Content = Content

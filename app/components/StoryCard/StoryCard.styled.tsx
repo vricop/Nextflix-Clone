@@ -4,6 +4,7 @@ export const Section = styled.section`
   background-color: black;
   padding: var(--size-18) var(--size-11);
   color: var(--color-white);
+  border-bottom: var(--size-2) solid var(--color-gray-600);
 `
 
 export const Container = styled.div`
@@ -25,8 +26,9 @@ export const SubTitle = styled.h3`
   font-weight: var(--font-normal);
 `
 
-export const TitleGroup = styled.hgroup`
+export const TitleGroup = styled.hgroup<{ reverse: boolean }>`
   display: grid;
   grid-auto-flow: row;
   row-gap: var(--size-5);
+  order: ${({ reverse }) => reverse && '2'};
 `
