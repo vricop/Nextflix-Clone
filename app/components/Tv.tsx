@@ -1,11 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  display: grid;
-  place-items: center;
-`
-
-const Frame = styled.img`
+const Mask = styled.img`
   z-index: 1;
   grid-area: 1/1;
 `
@@ -22,10 +17,10 @@ const Video = styled.video`
 `
 
 export const Tv = () => (
-  <Wrapper>
-    <Frame src="/images/tv.png" alt="TV" />
+  <>
+    <Mask src="/images/tv.png" alt="TV" />
     <Video autoPlay muted loop playsInline>
       <source src="/videos/video-tv-0819.m4v.mp4" type="video/mp4" />
     </Video>
-  </Wrapper>
+  </>
 )

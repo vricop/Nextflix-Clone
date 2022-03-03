@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Section = styled.section`
+export const Card = styled.section`
   background-color: black;
   padding: var(--size-18) var(--size-11);
   color: var(--color-white);
@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   font-size: var(--text-5xl);
-  line-height: var(--leading-tight);
+  line-height: var(--leading-tighter);
 `
 
 export const SubTitle = styled.h3`
@@ -26,9 +26,14 @@ export const SubTitle = styled.h3`
   font-weight: var(--font-normal);
 `
 
-export const TitleGroup = styled.hgroup<{ reverse: boolean }>`
+export const Text = styled.hgroup<{ flipped: boolean }>`
   display: grid;
   grid-auto-flow: row;
   row-gap: var(--size-5);
-  order: ${({ reverse }) => reverse && '2'};
+  order: ${({ flipped }) => flipped && '2'};
+`
+
+export const Media = styled.div`
+  display: grid;
+  place-items: center;
 `

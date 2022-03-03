@@ -1,32 +1,33 @@
 import { ReactNode } from 'react'
 import {
   Container,
-  Section,
+  Card,
   SubTitle,
   Title,
-  TitleGroup,
+  Text,
+  Media,
 } from './StoryCard.styled'
 
 export function StoryCard({
-  reverse,
+  flipped,
   children,
   title,
   tagline,
 }: {
-  reverse: boolean
+  flipped: boolean
   children: ReactNode
   title: string
   tagline: string
 }) {
   return (
-    <Section>
+    <Card>
       <Container>
-        <TitleGroup {...{ reverse }}>
+        <Text {...{ flipped }}>
           <Title>{title}</Title>
           <SubTitle>{tagline}</SubTitle>
-        </TitleGroup>
-        {children}
+        </Text>
+        <Media>{children}</Media>
       </Container>
-    </Section>
+    </Card>
   )
 }
