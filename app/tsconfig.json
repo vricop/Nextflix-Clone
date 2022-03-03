@@ -19,7 +19,8 @@
       "@/api/*": ["api/*"],
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/api/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/fixtures/*": ["fixtures/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
