@@ -1,14 +1,11 @@
-import { Language, NavArrowDown } from 'iconoir-react'
-import { useRouter } from 'next/router'
 import { EmailBox } from '../common/EmailBox'
+import { LanguageSelector } from '../common/LanguageSelector'
 import { Logo } from '../common/Logo'
 import {
   ButtonGroup,
   Content,
   Cta,
   Header,
-  LanguageSelector,
-  LanguageSelectorWrapper,
   SignInButton,
   TagLine,
   Text,
@@ -17,35 +14,12 @@ import {
 } from './HeroHeader.styled'
 
 export function HeroHeader() {
-  const router = useRouter()
-
   return (
     <Header>
       <TopBar>
         <Logo />
         <ButtonGroup>
-          <LanguageSelectorWrapper>
-            <Language width="1em" />
-            <LanguageSelector
-              onChange={event => router.push(event.target.value)}
-              value="English">
-              <option
-                value="/es/en/"
-                data-language="en"
-                data-country="ES"
-                lang="en">
-                English
-              </option>
-              <option
-                value="/es/"
-                data-language="es"
-                data-country="ES"
-                lang="es">
-                Español
-              </option>
-            </LanguageSelector>
-            <NavArrowDown />
-          </LanguageSelectorWrapper>
+          <LanguageSelector />
           <SignInButton href="/signin">Sign in</SignInButton>
         </ButtonGroup>
       </TopBar>

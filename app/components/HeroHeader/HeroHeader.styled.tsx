@@ -61,39 +61,6 @@ export const SignInButton = styled(StyledLink)`
   border: var(--size-px) solid transparent;
 `
 
-export const LanguageSelectorWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-  border: var(--size-px) solid var(--color-gray-400);
-  border-radius: var(--size-0-5);
-
-  svg {
-    pointer-events: none;
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
-  }
-
-  svg:first-child {
-    left: var(--size-2);
-  }
-
-  svg:last-child {
-    right: var(--size-2);
-  }
-`
-
-export const LanguageSelector = styled.select`
-  padding: var(--size-2) var(--size-7);
-  border: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: var(--color-white);
-  font-size: var(--text-sm);
-  line-height: var(--leading-snug);
-  appearance: none;
-`
-
 export const Content = styled.div`
   display: grid;
   grid-auto-flow: row;
