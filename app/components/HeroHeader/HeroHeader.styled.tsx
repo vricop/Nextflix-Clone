@@ -1,7 +1,6 @@
 import Link, { LinkProps } from 'next/link'
 import { PropsWithChildren, ReactNode } from 'react'
 import styled from 'styled-components'
-import { Icon } from '../common/Icon'
 
 export const Header = styled.header`
   display: grid;
@@ -124,91 +123,4 @@ export const TagLine = styled.h2`
 
 export const Cta = styled.p`
   font-size: var(--text-xl);
-`
-
-export const EmailBox = styled.div`
-  display: grid;
-  grid-template: 'input button' auto / min-content max-content;
-  justify-items: start;
-  row-gap: var(--size-1);
-  position: relative;
-`
-
-export const EmailLabel = styled.label`
-  grid-area: input;
-  position: absolute;
-  top: 50%;
-  left: var(--size-3);
-  transform: translateY(-50%);
-  color: var(--color-gray-400);
-  pointer-events: none;
-`
-
-export const borderStyles = 'var(--size-0-5) solid var(--color-orange)'
-
-export const EmailField = styled.input`
-  grid-area: input;
-  line-height: var(--leading-17);
-  padding-inline: var(--size-3);
-  width: 500px;
-  border: none;
-  border-radius: var(--size-0-5) 0 0 var(--size-0-5);
-
-  & + label {
-    transition: all 200ms ease-in-out;
-  }
-
-  &.has-text + label,
-  &:focus + label {
-    top: var(--size-1);
-    transform: translateY(0);
-    font-size: var(--text-xs);
-    font-weight: var(--font-bold);
-  }
-
-  border-bottom: ${({ error }: { error?: boolean }) => error && borderStyles};
-`
-
-const Button = ({ children, ...rest }: { children: ReactNode }) => (
-  <button type="button" {...rest}>
-    {children}
-    <Icon name="chevron-right" />
-  </button>
-)
-
-export const GetStartedButton = styled(Button)`
-  align-items: center;
-  background-color: var(--color-brand-alt-light);
-  border-radius: 0 var(--size-0-5) var(--size-0-5) 0;
-  border: none;
-  color: var(--color-wite);
-  column-gap: 0.75ch;
-  display: grid;
-  font-size: var(--text-3xl);
-  grid-area: button;
-  grid-auto-columns: min-content min-content;
-  grid-auto-flow: column;
-  justify-content: center;
-  line-height: var(--leading-17);
-  padding-inline: var(--size-8);
-  white-space: nowrap;
-  width: 100%;
-  transition: 200ms ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    background-color: var(--color-brand);
-  }
-
-  & > svg {
-    font-size: var(--text-2xl);
-  }
-`
-
-export const Error = styled.span`
-  position: absolute;
-  left: 0;
-  bottom: calc(var(--size-1) * -1);
-  color: var(--color-orange);
-  transform: translateY(100%);
 `

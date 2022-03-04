@@ -1,16 +1,11 @@
 import { Language, NavArrowDown } from 'iconoir-react'
 import { useRouter } from 'next/router'
-import { ChangeEvent, useState } from 'react'
+import { EmailBox } from '../common/EmailBox'
 import { Logo } from '../common/Logo'
 import {
   ButtonGroup,
   Content,
   Cta,
-  EmailBox,
-  EmailField,
-  EmailLabel,
-  Error,
-  GetStartedButton,
   Header,
   LanguageSelector,
   LanguageSelectorWrapper,
@@ -23,13 +18,6 @@ import {
 
 export function HeroHeader() {
   const router = useRouter()
-  const [email, setEmail] = useState('')
-  const [errorMessage, setErrorMessage] = useState<null | string>(null)
-
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setErrorMessage(event.target.validationMessage)
-    setEmail(event.target.value)
-  }
 
   return (
     <Header>
@@ -70,23 +58,7 @@ export function HeroHeader() {
             membership.
           </Cta>
         </Text>
-        <EmailBox>
-          <EmailField
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            value={email}
-            className={email && 'has-text'}
-            onChange={handleChange}
-            name="email"
-            id="email"
-            type="email"
-            autoComplete="email"
-            maxLength={50}
-            minLength={5}
-          />
-          <EmailLabel htmlFor="email">Email address</EmailLabel>
-          <GetStartedButton>Get Started</GetStartedButton>
-          {errorMessage && <Error>{errorMessage}</Error>}
-        </EmailBox>
+        <EmailBox />
       </Content>
     </Header>
   )
