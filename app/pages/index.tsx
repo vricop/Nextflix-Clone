@@ -1,3 +1,4 @@
+import { Faq } from '@/components/Faq'
 import { HeroHeader } from '@/components/HeroHeader'
 import { StoryCard } from '@/components/StoryCard'
 import { stories } from '@/fixtures/stories'
@@ -9,6 +10,7 @@ const Home: NextPage = () => (
     {stories.map(({ Media, ...story }) => (
       <StoryCard {...story} children={<Media />} />
     ))}
+    <Faq />
   </>
 )
 
