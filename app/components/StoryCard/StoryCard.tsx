@@ -1,12 +1,6 @@
 import { ReactNode } from 'react'
-import {
-  Container,
-  Card,
-  SubTitle,
-  Title,
-  Text,
-  Media,
-} from './StoryCard.styled'
+import { HomeContainer } from '../common/HomeContainer'
+import { Container, SubTitle, Title, Text, Media } from './StoryCard.styled'
 
 export function StoryCard({
   flipped,
@@ -20,7 +14,7 @@ export function StoryCard({
   tagline: string
 }) {
   return (
-    <Card>
+    <HomeContainer>
       <Container>
         <Text {...{ flipped }}>
           <Title>{title}</Title>
@@ -28,6 +22,6 @@ export function StoryCard({
         </Text>
         <Media>{children}</Media>
       </Container>
-    </Card>
+    </HomeContainer>
   )
 }
