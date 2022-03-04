@@ -1,5 +1,5 @@
-import { HeroHeader } from '@/components/HeroHeader/HeroHeader'
-import { StoryCard } from '@/components/StoryCard/StoryCard'
+import { HeroHeader } from '@/components/HeroHeader'
+import { StoryCard } from '@/components/StoryCard'
 import { stories } from '@/fixtures/stories'
 import type { NextPage } from 'next'
 
