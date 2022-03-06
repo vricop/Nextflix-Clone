@@ -75,7 +75,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --color-tomato: #ff091b; // Age rating
   --color-orange: #ffa00a;
   --color-blue: #0071eb;
-  /* Spacing (from tailwind) */
+  /* Sizes (from tailwind) */
   --size-px: 1px;
   --size-0-5: 0.125rem; // 2px 
   --size-1: 0.25rem; // 4px 
@@ -111,6 +111,21 @@ p, h1, h2, h3, h4, h5, h6 {
   --size-72: 18rem; // 288px 
   --size-80: 20rem; // 320px 
   --size-96: 24rem; // 384px
+  /* Sizes in ems */
+  --size-0-5em: 0.125em; // 2px 
+  --size-1em: 0.25em; // 4px 
+  --size-1-5em: 0.375em; // 6px 
+  --size-2em: 0.5em; // 8px
+  --size-2-5em: 0.625em; // 10px 
+  --size-3em: 0.75em; // 12px 
+  --size-3-5em: 0.875em; // 14px 
+  --size-4em: 1em; // 16px 
+  --size-5em: 1.25em; // 20px 
+  --size-6em: 1.5em; // 24px 
+  --size-7em: 1.75em; // 28px 
+  --size-8em: 2em; // 32px 
+  --size-9em: 2.25em; // 36px 
+  --size-10em: 2.5em; // 40px 
   /* Font stack (from open props) */
   --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif: ui-serif, serif;
@@ -140,6 +155,8 @@ p, h1, h2, h3, h4, h5, h6 {
   --leading-8: 2rem; /* 32px */
   --leading-9: 2.25rem; /* 36px */
   --leading-10: 2.5rem; /* 40px */
+  --leading-12: 3rem; /* 48px */
+  --leading-15: 3.75rem; /* 60px */
   --leading-17: 4.25rem; /* 68px */
   --leading-none: 1;
   --leading-tighter: 1.1;
