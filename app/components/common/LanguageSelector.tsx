@@ -8,6 +8,11 @@ const LanguageSelectorWrapper = styled.div`
   position: relative;
   border: var(--size-px) solid var(--color-gray-400);
   border-radius: var(--size-0-5);
+  font-size: var(--text-xs);
+
+  @media (min-width: 34.375rem) {
+    font-size: var(--text-sm);
+  }
 
   svg {
     pointer-events: none;
@@ -28,11 +33,10 @@ const LanguageSelectorWrapper = styled.div`
 const Select = styled.select`
   display: block;
   width: 100%;
-  padding: var(--size-2) var(--size-7);
+  padding: var(--size-2em) var(--size-7em);
   border: none;
   background-color: rgba(0, 0, 0, 0.4);
   color: inherit;
-  font-size: var(--text-sm);
   line-height: var(--leading-snug);
   appearance: none;
 `
