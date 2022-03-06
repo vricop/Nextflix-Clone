@@ -9,9 +9,9 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   max-width: 73%;
-  aspect-ratio: 1.333;
-  top: -1.8%;
+  max-height: 54%;
   position: relative;
+  top: -1.8%;
   left: -0.3%;
   grid-area: 1/1;
 `
