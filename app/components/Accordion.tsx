@@ -39,7 +39,7 @@ const Summary = styled.summary`
   cursor: pointer;
 
   & > svg {
-    transition: transform 200ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    transition: transform 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
     transform: rotate(0);
   }
 
