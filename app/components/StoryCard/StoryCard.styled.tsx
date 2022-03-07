@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   align-items: center;
-  column-gap: ${({ theme }) => theme.size['12']};
+  column-gap: ${({ theme }) => theme.size._12};
   display: grid;
   margin-inline: auto;
   max-width: 68.75rem;
@@ -13,11 +13,11 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
-  font-size: ${props => props.theme.text['2xl']};
+  font-size: ${props => props.theme.text._2xl};
   line-height: ${({ theme }) => theme.leading.tighter};
 
   @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text['5xl']};
+    font-size: ${({ theme }) => theme.text._5xl};
   }
 `
 
@@ -26,21 +26,21 @@ export const SubTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 
   @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text['2xl']};
+    font-size: ${({ theme }) => theme.text._2xl};
   }
 `
 
 export const Text = styled.hgroup<{ flipped: boolean }>`
   display: grid;
   grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size[3]};
+  row-gap: ${({ theme }) => theme.size._3};
 
   @media (min-width: 34.375rem) {
-    row-gap: ${({ theme }) => theme.size[5]};
+    row-gap: ${({ theme }) => theme.size._5};
   }
 
   @media (min-width: 59.375rem) {
-    row-gap: ${({ theme }) => theme.size[5]};
+    row-gap: ${({ theme }) => theme.size._5};
     order: ${({ flipped }) => flipped && '2'};
   }
 

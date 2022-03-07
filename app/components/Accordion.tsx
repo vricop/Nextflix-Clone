@@ -9,19 +9,19 @@ const Container = styled.div`
   margin-inline: auto;
   display: grid;
   grid-auto-flow: row;
-  row-gap: var(--size-2);
-  font-size: var(--text-2xl);
+  row-gap: ${({ theme }) => theme.size._2};
+  font-size: ${({ theme }) => theme.text._2xl};
 `
 
 const Details = styled.details`
   display: grid;
   grid-auto-flow: row;
-  row-gap: var(--size-2);
+  row-gap: ${({ theme }) => theme.size._2};
 
   &[open]:not(.js) > summary + *,
   &.open > summary + * {
-    max-height: calc(100vh - var(--size-4) * 2);
-    padding-block: var(--size-4);
+    max-height: ${({ theme }) => `calc(100vh - ${theme.size._4} * 2)`};
+    padding-block: ${({ theme }) => theme.size._4};
   }
 
   &[open] > summary > svg {
@@ -30,12 +30,12 @@ const Details = styled.details`
 `
 
 const Summary = styled.summary`
-  background-color: var(--color-gray-800);
-  padding: var(--size-5);
+  background-color: ${({ theme }) => theme.color.gray_800};
+  padding: ${({ theme }) => theme.size._5};
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  column-gap: var(--size-4);
+  column-gap: ${({ theme }) => theme.size._4};
   cursor: pointer;
 
   & > svg {
@@ -44,12 +44,12 @@ const Summary = styled.summary`
   }
 
   & + * {
-    background-color: var(--color-gray-800);
+    background-color: ${({ theme }) => theme.color.gray_800};
     transition: 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
     overflow: hidden;
     max-height: 0vh;
-    padding-inline: var(--size-4);
-    margin-top: var(--size-px);
+    padding-inline: ${({ theme }) => theme.size._4};
+    margin-top: ${({ theme }) => theme.size.px};
   }
 `
 

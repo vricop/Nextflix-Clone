@@ -12,37 +12,37 @@ const Phone = styled.img`
 const DownloadItemCard = styled.div`
   align-items: center;
   align-self: end;
-  background-color: var(--color-black);
-  border-radius: var(--size-3);
-  border: var(--size-0-5) solid var(--color-gray-700);
-  column-gap: var(--size-4);
+  background-color: ${({ theme }) => theme.color.black};
+  border-radius: ${({ theme }) => theme.size._3};
+  border: ${({ theme }) => `${theme.size._0_5} solid ${theme.color.gray_700}`};
+  column-gap: ${({ theme }) => theme.size._4};
   display: grid;
   grid-area: 1/1;
   grid-template-columns: auto 1fr auto;
-  padding: var(--size-2) var(--size-3);
+  padding: ${({ theme }) => `${theme.size._2} ${theme.size._3}`};
   transform: translateY(-22%);
   width: 60%;
 `
 
 const Poster = styled.img`
   width: auto;
-  height: var(--size-20);
+  height: ${({ theme }) => theme.size._20};
   aspect-ratio: 150/210;
 `
 
 const Title = styled.h3`
-  font-size: var(--font-base);
-  line-height: var(--leading-tight);
+  font-size: ${({ theme }) => theme.text.base};
+  line-height: ${({ theme }) => theme.leading.tight};
 `
 
 const Description = styled.p`
-  font-size: var(--text-sm);
-  color: var(--color-blue);
-  line-height: var(--leading-tight);
+  font-size: ${({ theme }) => theme.text.sm};
+  color: ${({ theme }) => theme.color.blue};
+  line-height: ${({ theme }) => theme.leading.tight};
 `
 
 const Gif = styled.img`
-  height: var(--size-12);
+  height: ${({ theme }) => theme.size._12};
 `
 
 export function Mobile() {

@@ -1,0 +1,15 @@
+export const text = {
+  xs: '0.75rem' /* 12px */,
+  sm: '0.875rem' /* 14px */,
+  base: '1rem' /* 16px */,
+  lg: '1.125rem' /* 18px */,
+  xl: '1.25rem' /* 20px */,
+  _2xl: '1.5rem' /* 24px */,
+  _3xl: '1.875rem' /* 30px */,
+  _4xl: '2.25rem' /* 36px */,
+  _5xl: '3rem' /* 48px */,
+  _6xl: '3.75rem' /* 60px */,
+  _7xl: '4.5rem' /* 72px */,
+  _8xl: '6rem' /* 96px */,
+  _9xl: '8rem' /* 128px */,
+}

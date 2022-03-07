@@ -9,20 +9,20 @@ const FaqContainer = styled(HomeContainer)`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
-  row-gap: var(--size-14);
+  row-gap: ${({ theme }) => theme.size._14};
 `
 
 const Title = styled.h2`
   text-align: center;
-  font-size: var(--text-5xl);
-  line-height: var(--leading-tighter);
+  font-size: ${({ theme }) => theme.text._5xl};
+  line-height: ${({ theme }) => theme.leading.tighter};
 `
 
 const CTAWrapper = styled.div`
   text-align: center;
   display: grid;
   justify-content: center;
-  row-gap: var(--size-5);
+  row-gap: ${({ theme }) => theme.size._5};
 `
 
 export function Faq() {

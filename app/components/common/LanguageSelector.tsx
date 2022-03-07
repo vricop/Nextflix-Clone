@@ -6,12 +6,12 @@ const LanguageSelectorWrapper = styled.div`
   display: inlnie-flex;
   align-items: center;
   position: relative;
-  border: var(--size-px) solid var(--color-gray-400);
-  border-radius: var(--size-0-5);
-  font-size: var(--text-xs);
+  border: ${({ theme }) => `${theme.size.px} solid ${theme.color.gray_400}`};
+  border-radius: ${({ theme }) => theme.size._0_5};
+  font-size: ${({ theme }) => theme.text.xs};
 
   @media (min-width: 34.375rem) {
-    font-size: var(--text-sm);
+    font-size: ${({ theme }) => theme.text.sm};
   }
 
   svg {
@@ -22,22 +22,22 @@ const LanguageSelectorWrapper = styled.div`
   }
 
   svg:first-child {
-    left: var(--size-2);
+    left: ${({ theme }) => theme.size._2};
   }
 
   svg:last-child {
-    right: var(--size-2);
+    right: ${({ theme }) => theme.size._2};
   }
 `
 
 const Select = styled.select`
   display: block;
   width: 100%;
-  padding: var(--size-2em) var(--size-7em);
+  padding: ${({ theme }) => `${theme.size._2em} ${theme.size._7em}`};
   border: none;
   background-color: rgba(0, 0, 0, 0.4);
   color: inherit;
-  line-height: var(--leading-snug);
+  line-height: ${({ theme }) => theme.leading.snug};
   appearance: none;
 `
 

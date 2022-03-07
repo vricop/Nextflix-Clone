@@ -10,7 +10,7 @@ export const Form = styled.form`
     'error' auto
     'button' auto / auto;
   display: grid;
-  row-gap: var(--size-3);
+  row-gap: ${({ theme }) => theme.size._3};
   justify-items: center;
   position: relative;
 
@@ -29,7 +29,7 @@ export const Form = styled.form`
     grid-template:
       'input button' var(--height)
       'error  error' auto / min-content max-content;
-    row-gap: var(--size-1);
+    row-gap: ${({ theme }) => theme.size._1};
   }
 `
 
@@ -37,17 +37,16 @@ export const EmailLabel = styled.label`
   grid-area: input;
   position: absolute;
   top: 50%;
-  left: var(--size-3);
+  left: ${({ theme }) => theme.size._3};
   transform: translateY(-50%);
-  color: var(--color-gray-400);
+  color: ${({ theme }) => theme.color.gray_400};
   pointer-events: none;
 `
-export const borderStyles = 'var(--size-0-5) solid var(--color-orange)'
 
-export const EmailField = styled.input`
-  border-radius: var(--size-0-5);
+export const EmailField = styled.input<{ error?: boolean }>`
+  border-radius: ${({ theme }) => theme.size._0_5};
   grid-area: input;
-  padding: var(--offset) var(--size-3) 0;
+  padding: var(--offset) ${({ theme }) => theme.size._3} 0;
   width: 100%;
   height: var(--height);
   border: none;
@@ -69,17 +68,21 @@ export const EmailField = styled.input`
 
   &.has-text + label,
   &:focus + label {
-    top: var(--size-1);
+    top: ${({ theme }) => theme.size._1};
     transform: translateY(0);
-    font-size: var(--text-sm);
-    font-weight: var(--font-bold);
+    font-size: ${({ theme }) => theme.text.sm};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
 
     @media (max-width: 34.375rem) {
-      font-size: var(--text-xs);
+      font-size: ${({ theme }) => theme.text.xs};
     }
   }
 
-  border-bottom: ${({ error }: { error?: boolean }) => error && borderStyles};
+  border-bottom: ${({ error, theme }) =>
+    error &&
+    `
+    ${theme.size._0_5} solid ${theme.color.orange}
+  `};
 `
 
 const Button = ({ children, ...rest }: { children: ReactNode }) => (
@@ -90,18 +93,18 @@ const Button = ({ children, ...rest }: { children: ReactNode }) => (
 )
 export const GetStartedButton = styled(Button)`
   align-items: center;
-  background-color: var(--color-brand-alt-light);
-  border-radius: var(--size-0-5);
+  background-color: ${({ theme }) => theme.color.brand_alt_light};
+  border-radius: ${({ theme }) => theme.size._0_5};
   border: none;
-  color: var(--color-wite);
-  column-gap: var(--size-1);
+  color: ${({ theme }) => theme.color.white};
+  column-gap: ${({ theme }) => theme.size._1};
   display: grid;
   grid-area: button;
   grid-auto-columns: min-content min-content;
   grid-auto-flow: column;
   justify-content: center;
-  line-height: var(--leading-10);
-  padding-inline: var(--size-3);
+  line-height: ${({ theme }) => theme.leading._10};
+  padding-inline: ${({ theme }) => theme.size._3};
   white-space: nowrap;
   width: auto;
   transition: 200ms ease-in-out;
@@ -110,30 +113,30 @@ export const GetStartedButton = styled(Button)`
     border-top-left-radius: 0;
     leading: var(--height);
     border-bottom-left-radius: 0;
-    font-size: var(--text-2xl);
-    padding-inline: var(--size-8);
+    font-size: ${({ theme }) => theme.text._2xl};
+    padding-inline: ${({ theme }) => theme.size._8};
   }
 
   @media (min-width: 90.625rem) {
-    font-size: var(--text-3xl);
+    font-size: ${({ theme }) => theme.text._3xl};
 
     & > svg {
-      font-size: var(--text-2xl);
+      font-size: ${({ theme }) => theme.text._2xl};
     }
   }
 
   &:hover {
     cursor: pointer;
-    background-color: var(--color-brand);
+    background-color: ${({ theme }) => theme.color.brand};
   }
 `
 
 export const Error = styled.span`
-  color: var(--color-orange);
+  color: ${({ theme }) => theme.color.orange};
   grid-area: error;
   justify-self: start;
   text-align: left;
-  line-height: var(--leading-snug);
+  line-height: ${({ theme }) => theme.leading.snug};
 
   @media (min-width: 59.375rem) {
     position: absolute;

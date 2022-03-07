@@ -5,7 +5,7 @@ import { LanguageSelector } from './LanguageSelector'
 
 const FooterContainer = styled(HomeContainer)`
   border-bottom: none;
-  color: var(--color-gray-500);
+  color: ${({ theme }) => theme.color.gray_500};
 `
 
 const Content = styled.div`
@@ -13,7 +13,7 @@ const Content = styled.div`
   margin-inline: auto;
   display: grid;
   justify-items: start;
-  row-gap: var(--size-8);
+  row-gap: ${({ theme }) => theme.size._8};
 `
 
 const PhoneNumber = styled.a`
@@ -28,13 +28,13 @@ const PhoneNumber = styled.a`
 
 const List = styled.ul`
   width: 100%;
-  font-size: var(--text-sm);
+  font-size: ${({ theme }) => theme.text.sm};
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
   list-style: none;
   padding: 0;
-  column-gap: var(--size-3);
-  row-gap: var(--size-4);
+  column-gap: ${({ theme }) => theme.size._3};
+  row-gap: ${({ theme }) => theme.size._4};
 `
 
 const ListItem = styled.li`
@@ -48,7 +48,7 @@ const ListItem = styled.li`
 `
 
 const FooterCountry = styled.p`
-  font-size: var(--text-sm);
+  font-size: ${({ theme }) => theme.text.sm};
 `
 
 export function Footer() {

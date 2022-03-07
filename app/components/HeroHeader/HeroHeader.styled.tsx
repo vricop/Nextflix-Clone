@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const Header = styled.header`
   display: grid;
   grid-template-rows: auto 1fr;
-  row-gap: var(--size-12);
+  row-gap: ${({ theme }) => theme.size._12};
   background-color: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(
       to top,
@@ -18,38 +18,39 @@ export const Header = styled.header`
     url('/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg');
   background-size: cover;
   background-position: center;
-  color: var(--color-white);
+  color: ${({ theme }) => theme.color.white};
   height: 750px;
-  border-bottom: var(--size-2) solid var(--color-gray-600);
+  border-bottom: ${({ theme }) =>
+    `${theme.size._2} solid ${theme.color.gray_600}`};
 `
 
 export const TopBar = styled.div`
   display: grid;
   grid-auto-flow: column;
-  column-gap: var(--size-4);
+  column-gap: ${({ theme }) => theme.size._4};
   align-items: center;
   justify-content: space-between;
-  padding: var(--size-6) 5% 0;
+  padding: ${({ theme }) => theme.size._6} 5% 0;
 
   @media (min-width: 34.375rem) {
-    padding-inline: var(--size-6);
+    padding-inline: ${({ theme }) => theme.size._6};
   }
 
   /* Netflix logo */
   & > svg {
     width: auto;
-    height: var(--size-6);
+    height: ${({ theme }) => theme.size._6};
 
     @media (min-width: 34.375rem) {
-      height: var(--size-8);
+      height: ${({ theme }) => theme.size._8};
     }
 
     @media (min-width: 59.375rem) {
-      height: var(--size-9);
+      height: ${({ theme }) => theme.size._9};
     }
 
     @media (min-width: 90.625rem) {
-      height: var(--size-11);
+      height: ${({ theme }) => theme.size._11};
     }
   }
 `
@@ -57,11 +58,11 @@ export const TopBar = styled.div`
 export const ButtonGroup = styled.div`
   display: grid;
   grid-auto-flow: column;
-  column-gap: var(--size-3);
+  column-gap: ${({ theme }) => theme.size._3};
   align-items: center;
 
   @media (min-width: 34.375rem) {
-    column-gap: var(--size-8);
+    column-gap: ${({ theme }) => theme.size._8};
   }
 `
 
@@ -79,17 +80,17 @@ const StyledLink = ({
 )
 
 export const SignInButton = styled(StyledLink)`
-  background-color: var(--color-brand);
-  border-radius: var(--size-0-5em);
-  color: var(--color-white);
-  padding: var(--size-2em) var(--size-4em);
-  line-height: var(--leading-snug);
+  background-color: ${({ theme }) => theme.color.brand};
+  border-radius: ${({ theme }) => theme.size._0_5em};
+  color: ${({ theme }) => theme.color.white};
+  padding: ${({ theme }) => `${theme.size._2em} ${theme.size._4em}`};
+  line-height: ${({ theme }) => theme.leading.snug};
   text-decoration: none;
-  border: var(--size-px) solid transparent;
-  font-size: var(--text-xs);
+  border: ${({ theme }) => theme.size.px} solid transparent;
+  font-size: ${({ theme }) => theme.text.xs};
 
   @media (min-width: 34.375rem) {
-    font-size: var(--text-sm);
+    font-size: ${({ theme }) => theme.text.sm};
   }
 `
 
@@ -99,11 +100,11 @@ export const Content = styled.div`
   padding-inline: 5%;
   justify-items: center;
   align-content: center;
-  row-gap: var(--size-6);
+  row-gap: ${({ theme }) => theme.size._6};
   text-align: center;
 
   @media (min-width: 34.375rem) {
-    padding-inline: var(--size-12);
+    padding-inline: ${({ theme }) => theme.size._12};
   }
 `
 
@@ -111,41 +112,41 @@ export const Text = styled.div`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
-  row-gap: var(--size-2);
+  row-gap: ${({ theme }) => theme.size._2};
 
   @media (min-width: 34.375rem) {
-    row-gap: var(--size-5);
+    row-gap: ${({ theme }) => theme.size._5};
   }
 `
 
 export const Title = styled.h1`
-  font-size: var(--text-3xl);
-  line-height: var(--leading-tight);
+  font-size: ${({ theme }) => theme.text._3xl};
+  line-height: ${({ theme }) => theme.leading.tight};
   max-width: 40rem;
 
   @media (min-width: 34.375rem) {
-    font-size: var(--text-5xl);
+    font-size: ${({ theme }) => theme.text._5xl};
   }
 
   @media (min-width: 90.625rem) {
-    font-size: var(--text-6xl);
+    font-size: ${({ theme }) => theme.text._6xl};
   }
 `
 
 export const TagLine = styled.h2`
-  font-size: var(--text-lg);
-  font-weight: var(--font-normal);
+  font-size: ${({ theme }) => theme.text.lg};
+  font-weight: ${({ theme }) => theme.fontWeight.normal};
   max-width: 40rem;
 
   @media (min-width: 34.375rem) {
-    font-size: var(--text-2xl);
+    font-size: ${({ theme }) => theme.text._2xl};
   }
 `
 
 export const Cta = styled.p`
-  font-size: var(--text-lg);
+  font-size: ${({ theme }) => theme.text.lg};
 
   @media (min-width: 34.375rem) {
-    font-size: var(--text-xl);
+    font-size: ${({ theme }) => theme.text.xl};
   }
 `

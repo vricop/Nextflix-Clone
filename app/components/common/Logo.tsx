@@ -2,7 +2,7 @@ import { ReactElement, SVGAttributes } from 'react'
 import styled from 'styled-components'
 
 const Svg = styled.svg`
-  color: var(--color-brand);
+  color: ${({ theme }) => theme.color.brand};
 `
 
 export function Logo(attrs: SVGAttributes<SVGElement>): ReactElement {
