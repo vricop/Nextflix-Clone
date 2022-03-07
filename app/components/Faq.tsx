@@ -12,6 +12,13 @@ const FaqContainer = styled(HomeContainer)`
   row-gap: ${({ theme }) => theme.size._14};
 `
 
+const FaqAccordion = styled(Accordion)`
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 75%;
+    max-width: 815px;
+  }
+`
+
 const Title = styled.h2`
   text-align: center;
   font-size: ${({ theme }) => theme.text._5xl};
@@ -29,11 +36,11 @@ export function Faq() {
   return (
     <FaqContainer role="">
       <Title>Frequently Asked Questions</Title>
-      <Accordion>
+      <FaqAccordion>
         {faq.map(faqProps => (
-          <Accordion.Item {...faqProps} />
+          <FaqAccordion.Item {...faqProps} />
         ))}
-      </Accordion>
+      </FaqAccordion>
       <CTAWrapper>
         <Cta>
           Ready to watch? Enter your email to create or restart your membership.

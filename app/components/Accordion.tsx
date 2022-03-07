@@ -4,8 +4,6 @@ import { MouseEvent, ReactNode } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 75%;
-  max-width: 815px;
   margin-inline: auto;
   display: grid;
   grid-auto-flow: row;
@@ -53,8 +51,8 @@ const Summary = styled.summary`
   }
 `
 
-export function Accordion({ children }: { children: ReactNode }) {
-  return <Container>{children}</Container>
+export function Accordion({ children, ...props }: { children: ReactNode }) {
+  return <Container {...props}>{children}</Container>
 }
 
 function collapseDetails(openDetails: HTMLDetailsElement) {
