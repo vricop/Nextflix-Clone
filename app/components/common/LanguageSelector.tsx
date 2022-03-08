@@ -48,13 +48,23 @@ export function LanguageSelector() {
     <LanguageSelectorWrapper>
       <Language width="1em" />
       <Select
-        onChange={event => router.push(event.target.value)}
-        value="English">
-        <option value="/es/en/" data-language="en" data-country="ES" lang="en">
+        onChange={event =>
+          router.replace(router.pathname, router.pathname, {
+            locale: event.target.value,
+          })
+        }
+        value={router?.locale || 'en'}>
+        <option value="en" lang="en">
           English
         </option>
-        <option value="/es/" data-language="es" data-country="ES" lang="es">
+        <option value="es" lang="es">
           Español
+        </option>
+        <option value="it" lang="it">
+          Italiano
+        </option>
+        <option value="ca-ES" lang="ca">
+          Català
         </option>
       </Select>
       <NavArrowDown />

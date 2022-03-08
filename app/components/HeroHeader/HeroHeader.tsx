@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { EmailBox } from '../common/EmailBox'
 import { LanguageSelector } from '../common/LanguageSelector'
 import { Logo } from '../common/Logo'
@@ -14,23 +15,24 @@ import {
 } from './HeroHeader.styled'
 
 export function HeroHeader() {
+  const { t } = useTranslation(['home', 'common'])
+
   return (
     <Header>
       <TopBar>
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/signin">Sign in</SignInButton>
+          <SignInButton href="/signin">
+            {t('signInButton', { ns: 'common' })}
+          </SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>
         <Text>
-          <Title>Unlimited movies, TV shows, and more.</Title>
-          <TagLine>Watch anywhere. Cancel anytime.</TagLine>
-          <Cta>
-            Ready to watch? Enter your email to create or restart your
-            membership.
-          </Cta>
+          <Title>{t('title')}</Title>
+          <TagLine>{t('tagline')}</TagLine>
+          <Cta>{t('cta')}</Cta>
         </Text>
         <EmailBox />
       </Content>
