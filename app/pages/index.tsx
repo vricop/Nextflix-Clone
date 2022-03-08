@@ -17,8 +17,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
 const Home: NextPage = () => (
   <>
     <HeroHeader />
-    {stories.map(({ Media, ...story }) => (
-      <StoryCard {...story} children={<Media />} />
+    {stories.map(({ id, Media, ...story }) => (
+      <StoryCard key={id} {...story}>
+        <Media />
+      </StoryCard>
     ))}
     <Faq />
     <Footer />

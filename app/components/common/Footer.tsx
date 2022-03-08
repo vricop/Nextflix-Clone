@@ -60,8 +60,8 @@ export function Footer() {
           <PhoneNumber href="tel:+34900822377">900 822 377</PhoneNumber>
         </p>
         <List>
-          {footerLinks.map(props => (
-            <ListItem {...props} />
+          {footerLinks.map(({ id, ...props }) => (
+            <ListItem key={id} {...props} />
           ))}
         </List>
         <LanguageSelector />

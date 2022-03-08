@@ -40,8 +40,8 @@ export function Faq() {
     <FaqContainer role="">
       <Title>{t('faqTitle')}</Title>
       <FaqAccordion>
-        {faq.map(faqProps => (
-          <FaqAccordion.Item {...faqProps} />
+        {faq.map(({ id, ...props }) => (
+          <FaqAccordion.Item key={id} {...props} />
         ))}
       </FaqAccordion>
       <CTAWrapper>
