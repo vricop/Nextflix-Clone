@@ -3,5 +3,23 @@
   "tagline": "Disfruta donde quieras. Cancela cuando quieras.",
   "cta": "¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.",
   "getStartedButton": "Empezar",
-  "faqTitle": "Preguntas frecuentes"
+  "faqTitle": "Preguntas frecuentes",
+  "storyCards": [
+    {
+      "title": "Disfruta en tu TV.",
+      "tagline": "Smart TV, Playstation, Xbox, Chromecast, Apple TV, reproductores Blu-ray y muchos más."
+    },
+    {
+      "title": "Descárgate tus series favoritas para verlas sin conexión.",
+      "tagline": "Guarda tus títulos favoritos fácilmente para que siempre tengas algo para ver."
+    },
+    {
+      "title": "Disfruta en todas partes.",
+      "tagline": "Reproduce en streaming todas las películas y series en tu móvil, tableta, ordenador y TV sin pagar más."
+    },
+    {
+      "title": "Crea perfiles infantiles.",
+      "tagline": "Deja que los niños vivan aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos, gratis con tu suscripción."
+    }
+  ]
 }

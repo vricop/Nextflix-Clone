@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import { DevicePile } from '@/components/DevicePile'
 import { Mobile } from '@/components/Mobile'
-import { WishDragon } from '@/components/StoryImage'
+import { StoryImage } from '@/components/StoryImage'
 import { Tv } from '@/components/Tv'
 
 export const stories = [
@@ -33,7 +33,7 @@ export const stories = [
     title: 'Create profiles for kids.',
     tagline:
       'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
-    Media: WishDragon,
+    Media: StoryImage,
     flipped: true,
   },
 ]

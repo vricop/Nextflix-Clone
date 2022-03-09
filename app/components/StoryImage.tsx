@@ -4,7 +4,7 @@ const Image = styled.img`
   height: auto;
 `
 
-export const WishDragon = () => (
+export const StoryImage = () => (
   <Image
     width={640}
     height={480}

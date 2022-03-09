@@ -15,7 +15,7 @@ import {
 } from './HeroHeader.styled'
 
 export function HeroHeader() {
-  const { t } = useTranslation(['home', 'common'])
+  const { t } = useTranslation()
 
   return (
     <Header>
@@ -23,16 +23,14 @@ export function HeroHeader() {
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/signin">
-            {t('signInButton', { ns: 'common' })}
-          </SignInButton>
+          <SignInButton href="/signin">{t('signInButton')}</SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>
         <Text>
-          <Title>{t('title')}</Title>
-          <TagLine>{t('tagline')}</TagLine>
-          <Cta>{t('cta')}</Cta>
+          <Title>{t('title', { ns: 'home' })}</Title>
+          <TagLine>{t('tagline', { ns: 'home' })}</TagLine>
+          <Cta>{t('cta', { ns: 'home' })}</Cta>
         </Text>
         <EmailBox />
       </Content>

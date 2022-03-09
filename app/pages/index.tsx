@@ -1,10 +1,9 @@
 import { Footer } from '@/components/common/Footer'
 import { Faq } from '@/components/Faq'
 import { HeroHeader } from '@/components/HeroHeader'
-import { StoryCard } from '@/components/StoryCard'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { stories } from '@/fixtures/stories'
+import StoryCards from '@/components/StoryCards'
 import type { NextPage } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -17,11 +16,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
 const Home: NextPage = () => (
   <>
     <HeroHeader />
-    {stories.map(({ id, Media, ...story }) => (
-      <StoryCard key={id} {...story}>
-        <Media />
-      </StoryCard>
-    ))}
+    <StoryCards />
     <Faq />
     <Footer />
   </>

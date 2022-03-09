@@ -8,7 +8,7 @@ export function StoryCard({
   title,
   tagline,
 }: {
-  flipped: boolean
+  flipped?: boolean
   children: ReactNode
   title: string
   tagline: string

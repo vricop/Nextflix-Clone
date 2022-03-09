@@ -30,7 +30,7 @@ export const SubTitle = styled.h3`
   }
 `
 
-export const Text = styled.hgroup<{ flipped: boolean }>`
+export const Text = styled.hgroup<{ flipped?: boolean }>`
   display: grid;
   grid-auto-flow: row;
   row-gap: ${({ theme }) => theme.size._3};
