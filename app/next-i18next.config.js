@@ -5,4 +5,5 @@ module.exports = {
     defaultNs: 'common',
   },
   reloadOnPrerender: true,
+  returnObjects: true,
 }
