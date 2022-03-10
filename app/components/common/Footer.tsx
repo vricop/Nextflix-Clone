@@ -65,7 +65,7 @@ export function Footer() {
           ))}
         </List>
         <LanguageSelector />
-        <FooterCountry>Netflix Spain</FooterCountry>
+        <FooterCountry>Netflix {t('country')}</FooterCountry>
       </Content>
     </FooterContainer>
   )

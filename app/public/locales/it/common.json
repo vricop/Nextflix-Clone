@@ -1,4 +1,5 @@
 {
   "signInButton": "Accedi",
-  "emailAddressFieldLabel": "Indirizzo email"
+  "emailAddressFieldLabel": "Indirizzo email",
+  "country": "Italia"
 }

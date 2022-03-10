@@ -1,4 +1,5 @@
 {
   "signInButton": "Iniciar sesión",
-  "emailAddressFieldLabel": "Correo electrónico"
+  "emailAddressFieldLabel": "Correo electrónico",
+  "country": "España"
 }
