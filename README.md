@@ -28,4 +28,4 @@ stage at this time**.
 - [Graph QL](https://graphql.org/)
 - [Apollo Client](https://www.apollographql.com/)
 
-![Netflix Screenshot](/app/public/images/screenshot.png)
+![Netflix Screenshot](/app/public/images/showcase.gif)
