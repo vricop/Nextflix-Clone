@@ -1,13 +1,13 @@
 import { Language, NavArrowDown } from 'iconoir-react'
 import { useRouter } from 'next/router'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const LanguageSelectorWrapper = styled.div`
   display: inlnie-flex;
   align-items: center;
   position: relative;
-  border: ${({ theme }) => `${theme.size.px} solid ${theme.color.gray_400}`};
+  border: ${({ theme }) => `${theme.size.px} solid currentColor`};
   border-radius: ${({ theme }) => theme.size._0_5};
   font-size: ${({ theme }) => theme.text.xs};
 
@@ -43,19 +43,29 @@ const Select = styled.select`
 `
 
 export function LanguageSelector() {
+  const [language, setLanguage] = useState('en')
   const router = useRouter()
   const { pathname } = router
 
   const changeUrlLocale = (event: ChangeEvent<HTMLSelectElement>) => {
-    router.replace(pathname, pathname, { locale: event.target.value })
+    router.replace(pathname, pathname, {
+      locale: event.target.value,
+      scroll: false,
+    })
     document.cookie = `NEXT_LOCALE=${event.target.value}; expires=${new Date(
       '9999-01-01'
-    ).toUTCString()}`
+    ).toUTCString()} samesite=strict; secure=true`
   }
+
+  useEffect(() => {
+    if (!router?.locale) return
+    setLanguage(router?.locale)
+  }, [router.locale])
+
   return (
     <LanguageSelectorWrapper>
       <Language width="1em" />
-      <Select onChange={changeUrlLocale} defaultValue={router.locale || 'en'}>
+      <Select onChange={changeUrlLocale} value={language}>
         <option value="en" lang="en">
           English
         </option>
@@ -64,9 +74,6 @@ export function LanguageSelector() {
         </option>
         <option value="it" lang="it">
           Italiano
-        </option>
-        <option value="ca-ES" lang="ca">
-          Català
         </option>
       </Select>
       <NavArrowDown />
