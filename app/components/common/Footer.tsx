@@ -1,5 +1,6 @@
-import { footerLinks } from '@/fixtures/footerLinks'
+import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
+import { v4 as uuid } from 'uuid'
 import { HomeContainer } from './HomeContainer'
 import { LanguageSelector } from './LanguageSelector'
 
@@ -37,12 +38,10 @@ const List = styled.ul`
   row-gap: ${({ theme }) => theme.size._4};
 `
 
-const ListItem = styled.li`
-  & > a {
-    color: inherit;
-    transition: color 200ms ease-in-out;
-  }
-  & > a:not(:hover) {
+const ListLink = styled.a`
+  color: inherit;
+  transition: color 200ms ease-in-out;
+  &:not(:hover) {
     text-decoration: none;
   }
 `
@@ -52,16 +51,22 @@ const FooterCountry = styled.p`
 `
 
 export function Footer() {
+  const { t } = useTranslation()
+
   return (
     <FooterContainer as="footer">
       <Content>
         <p>
-          Questions? Call{' '}
-          <PhoneNumber href="tel:+34900822377">900 822 377</PhoneNumber>
+          {t('footer:title')}{' '}
+          <PhoneNumber href={`tel:${t('footer:phoneNumber')}`}>
+            {t('footer:phoneNumberLink')}
+          </PhoneNumber>
         </p>
         <List>
-          {footerLinks.map(({ id, ...props }) => (
-            <ListItem key={id} {...props} />
+          {t('footer:links').map((text, index) => (
+            <li key={uuid()}>
+              <ListLink href={`#${index}`}>{text}</ListLink>
+            </li>
           ))}
         </List>
         <LanguageSelector />
