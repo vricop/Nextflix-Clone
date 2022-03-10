@@ -11,15 +11,23 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.text._2xl};
 `
 
+const Content = styled.div`
+  background-color: ${({ theme }) => theme.color.gray_800};
+  transition: 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  overflow: hidden;
+  max-height: 0vh;
+  padding-inline: ${({ theme }) => theme.size._7};
+  margin-top: ${({ theme }) => theme.size.px};
+`
+
 const Details = styled.details`
   display: grid;
   grid-auto-flow: row;
   row-gap: ${({ theme }) => theme.size._2};
 
-  &[open]:not(.js) > summary + *,
-  &.open > summary + * {
+  &[open]:not(.js) > summary + ${Content}, &.open > summary + ${Content} {
     max-height: ${({ theme }) => `calc(100vh - ${theme.size._4} * 2)`};
-    padding-block: ${({ theme }) => theme.size._4};
+    padding-block: ${({ theme }) => theme.size._7};
   }
 
   &[open] > summary > svg {
@@ -29,8 +37,9 @@ const Details = styled.details`
 
 const Summary = styled.summary`
   background-color: ${({ theme }) => theme.color.gray_800};
-  padding: ${({ theme }) => theme.size._5};
+  padding: ${({ theme }) => `${theme.size._2_5}  ${theme.size._7}`};
   display: grid;
+  align-items: center;
   grid-auto-flow: column;
   justify-content: space-between;
   column-gap: ${({ theme }) => theme.size._4};
@@ -39,15 +48,6 @@ const Summary = styled.summary`
   & > svg {
     transition: transform 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
     transform: rotate(0);
-  }
-
-  & + * {
-    background-color: ${({ theme }) => theme.color.gray_800};
-    transition: 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    overflow: hidden;
-    max-height: 0vh;
-    padding-inline: ${({ theme }) => theme.size._4};
-    margin-top: ${({ theme }) => theme.size.px};
   }
 `
 
@@ -104,9 +104,9 @@ const AccordionItem = ({
   <Details onClick={handleClick}>
     <Summary>
       {summary}
-      <Plus />
+      <Plus strokeWidth={'1'} fontSize={'1.5em'} />
     </Summary>
-    <div>{HTMLReactParser(details)}</div>
+    <Content>{HTMLReactParser(details)}</Content>
   </Details>
 )
 
