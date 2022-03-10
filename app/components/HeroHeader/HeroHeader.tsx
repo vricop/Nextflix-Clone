@@ -28,9 +28,9 @@ export function HeroHeader() {
       </TopBar>
       <Content>
         <Text>
-          <Title>{t('title', { ns: 'home' })}</Title>
-          <TagLine>{t('tagline', { ns: 'home' })}</TagLine>
-          <Cta>{t('cta', { ns: 'home' })}</Cta>
+          <Title>{t('home:title')}</Title>
+          <TagLine>{t('home:tagline')}</TagLine>
+          <Cta>{t('home:cta')}</Cta>
         </Text>
         <EmailBox />
       </Content>
