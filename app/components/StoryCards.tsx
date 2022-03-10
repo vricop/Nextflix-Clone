@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import { v4 as uuid } from 'uuid'
 import { DevicePile } from './DevicePile'
@@ -6,7 +7,12 @@ import { StoryCard } from './StoryCard'
 import { StoryImage } from './StoryImage'
 import { Tv } from './Tv'
 
-const media = [<Tv />, <Mobile />, <DevicePile />, <StoryImage />]
+const media: { [index: number]: ReactElement } = {
+  0: <Tv />,
+  1: <Mobile />,
+  2: <DevicePile />,
+  3: <StoryImage />,
+}
 
 export default function StoryCards() {
   const { t } = useTranslation('home')
