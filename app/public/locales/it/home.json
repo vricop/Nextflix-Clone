@@ -4,6 +4,24 @@
   "cta": "Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.",
   "getStartedButton": "Inizia",
   "faqTitle": "Domande frequenti",
+  "storyCards": [
+    {
+      "title": "Goditi Netflix sulla tua TV.",
+      "tagline": "Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi."
+    },
+    {
+      "title": "Scarica le tue serie da guardare offline.",
+      "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
+    },
+    {
+      "title": "Guarda Netflix ovunque.",
+      "tagline": "Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più."
+    },
+    {
+      "title": "Crea profili per i bambini.",
+      "tagline": "I bambini scoprono nuove avventure in compagnia dei loro personaggi preferiti in uno spazio tutto loro già incluso nel tuo abbonamento."
+    }
+  ],
   "faq": [
     {
       "summary": "Cos'è Netflix?",
