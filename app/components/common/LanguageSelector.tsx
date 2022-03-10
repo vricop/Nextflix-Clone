@@ -1,5 +1,6 @@
 import { Language, NavArrowDown } from 'iconoir-react'
 import { useRouter } from 'next/router'
+import { ChangeEvent } from 'react'
 import styled from 'styled-components'
 
 const LanguageSelectorWrapper = styled.div`
@@ -43,17 +44,18 @@ const Select = styled.select`
 
 export function LanguageSelector() {
   const router = useRouter()
+  const { pathname } = router
 
+  const changeUrlLocale = (event: ChangeEvent<HTMLSelectElement>) => {
+    router.replace(pathname, pathname, { locale: event.target.value })
+    document.cookie = `NEXT_LOCALE=${event.target.value}; expires=${new Date(
+      '9999-01-01'
+    ).toUTCString()}`
+  }
   return (
     <LanguageSelectorWrapper>
       <Language width="1em" />
-      <Select
-        onChange={event =>
-          router.replace(router.pathname, router.pathname, {
-            locale: event.target.value,
-          })
-        }
-        value={router?.locale || 'en'}>
+      <Select onChange={changeUrlLocale} defaultValue={router.locale || 'en'}>
         <option value="en" lang="en">
           English
         </option>
