@@ -1,6 +1,6 @@
-import { faq } from '@/fixtures/faq'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+import { v4 as uuid } from 'uuid'
 import { Accordion } from './Accordion'
 import { EmailBox } from './common/EmailBox'
 import { HomeContainer } from './common/HomeContainer'
@@ -35,13 +35,14 @@ const CTAWrapper = styled.div`
 
 export function Faq() {
   const { t } = useTranslation('home')
+  const faq = t('faq')
 
   return (
     <FaqContainer role="">
       <Title>{t('faqTitle')}</Title>
       <FaqAccordion>
-        {faq.map(({ id, ...props }) => (
-          <FaqAccordion.Item key={id} {...props} />
+        {t('faq').map(details => (
+          <FaqAccordion.Item key={uuid()} {...details} />
         ))}
       </FaqAccordion>
       <CTAWrapper>
