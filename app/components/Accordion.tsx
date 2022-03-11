@@ -8,7 +8,15 @@ const Container = styled.div`
   display: grid;
   grid-auto-flow: row;
   row-gap: ${({ theme }) => theme.size._2};
-  font-size: ${({ theme }) => theme.text._2xl};
+  font-size: ${({ theme }) => theme.text.lg};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: ${({ theme }) => theme.text.xl};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    font-size: ${({ theme }) => theme.text._2xl};
+  }
 `
 
 const Content = styled.div`
@@ -37,7 +45,7 @@ const Details = styled.details`
 
 const Summary = styled.summary`
   background-color: ${({ theme }) => theme.color.gray_800};
-  padding: ${({ theme }) => `${theme.size._2_5}  ${theme.size._7}`};
+  padding: ${({ theme }) => `${theme.size._3_5}  ${theme.size._7}`};
   display: grid;
   align-items: center;
   grid-auto-flow: column;
@@ -48,6 +56,14 @@ const Summary = styled.summary`
   & > svg {
     transition: transform 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
     transform: rotate(0);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding-block: ${({ theme }) => theme.size._5};
+
+    & > svg {
+      font-size: ${({ theme }) => theme.text._2xl};
+    }
   }
 `
 
@@ -104,7 +120,7 @@ const AccordionItem = ({
   <Details onClick={handleClick}>
     <Summary>
       {summary}
-      <Plus strokeWidth={'1'} fontSize={'1.5em'} />
+      <Plus strokeWidth={'1'} />
     </Summary>
     <Content>{HTMLReactParser(details)}</Content>
   </Details>
