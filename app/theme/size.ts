@@ -16,6 +16,7 @@ export const size = {
   _10: '2.5rem', // 40px
   _11: '2.75rem', // 44px
   _12: '3rem', // 48px
+  _13: '3.25rem', // 52px
   _14: '3.5rem', // 56px
   _16: '4rem', // 64px
   _18: '4.5rem', // 72px

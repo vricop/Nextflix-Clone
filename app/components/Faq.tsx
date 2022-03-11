@@ -4,16 +4,31 @@ import { v4 as uuid } from 'uuid'
 import { Accordion } from './Accordion'
 import { EmailBox } from './common/EmailBox'
 import { HomeContainer } from './common/HomeContainer'
+import { HomeSectionTitle } from './common/HomeSectionTitle'
 import { Cta } from './HeroHeader/HeroHeader.styled'
 
 const FaqContainer = styled(HomeContainer)`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
-  row-gap: ${({ theme }) => theme.size._14};
+  row-gap: ${({ theme }) => theme.size._6};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    row-gap: ${({ theme }) => theme.size._8};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    row-gap: ${({ theme }) => theme.size._13};
+  }
 `
 
 const FaqAccordion = styled(Accordion)`
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 90%;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 75%;
     max-width: 815px;
@@ -29,7 +44,6 @@ const CTAWrapper = styled.div`
 
 export function Faq() {
   const { t } = useTranslation('home')
-  const faq = t('faq')
 
   return (
     <FaqContainer role="">
