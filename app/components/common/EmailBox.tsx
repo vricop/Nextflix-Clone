@@ -166,7 +166,7 @@ export function EmailBox() {
         name="email"
         id="email"
         type="email"
-        autoComplete="email"
+        autoComplete="off"
         maxLength={50}
         minLength={5}
       />
