@@ -28,6 +28,10 @@ stage at this time**.
 - [GraphQL](https://graphql.org/)
 - [Apollo client](https://www.apollographql.com/)
 
+### APIs Used:
+
+- [The Movies Database](https://www.themoviedb.org/documentation/api)
+
 ## Showcase
 
 ### Landing page
