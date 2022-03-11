@@ -42,7 +42,7 @@ const FaqAccordion = styled(Accordion)`
 const CTAWrapper = styled.div`
   text-align: center;
   display: grid;
-  justify-content: center;
+  justify-items: center;
   row-gap: ${({ theme }) => theme.size._5};
 `
 
