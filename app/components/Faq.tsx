@@ -7,6 +7,10 @@ import { HomeContainer } from './common/HomeContainer'
 import { HomeSectionTitle } from './common/HomeSectionTitle'
 import { Cta } from './HeroHeader/HeroHeader.styled'
 
+const Title = styled(HomeSectionTitle)`
+  text-align: center;
+`
+
 const FaqContainer = styled(HomeContainer)`
   display: grid;
   grid-auto-flow: row;
@@ -47,7 +51,7 @@ export function Faq() {
 
   return (
     <FaqContainer role="">
-      <HomeSectionTitle>{t('faqTitle')}</HomeSectionTitle>
+      <Title>{t('faqTitle')}</Title>
       <FaqAccordion>
         {t('faq').map(details => (
           <FaqAccordion.Item key={uuid()} {...details} />
