@@ -12,15 +12,6 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.h2`
-  font-size: ${props => props.theme.text._2xl};
-  line-height: ${({ theme }) => theme.leading.tighter};
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text._5xl};
-  }
-`
-
 export const SubTitle = styled.h3`
   font-size: ${({ theme }) => theme.text.lg};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
@@ -33,7 +24,7 @@ export const SubTitle = styled.h3`
 export const Text = styled.hgroup<{ flipped?: boolean }>`
   display: grid;
   grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size._3};
+  row-gap: ${({ theme }) => theme.size._4};
 
   @media (min-width: 34.375rem) {
     row-gap: ${({ theme }) => theme.size._5};

@@ -20,12 +20,6 @@ const FaqAccordion = styled(Accordion)`
   }
 `
 
-const Title = styled.h2`
-  text-align: center;
-  font-size: ${({ theme }) => theme.text._5xl};
-  line-height: ${({ theme }) => theme.leading.tighter};
-`
-
 const CTAWrapper = styled.div`
   text-align: center;
   display: grid;
@@ -39,7 +33,7 @@ export function Faq() {
 
   return (
     <FaqContainer role="">
-      <Title>{t('faqTitle')}</Title>
+      <HomeSectionTitle>{t('faqTitle')}</HomeSectionTitle>
       <FaqAccordion>
         {t('faq').map(details => (
           <FaqAccordion.Item key={uuid()} {...details} />
