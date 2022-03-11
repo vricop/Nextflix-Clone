@@ -19,13 +19,17 @@ stage at this time**.
 - [React hooks](https://reactjs.org/docs/hooks-reference.html#gatsby-focus-wrapper)
 - [Jest](https://jestjs.io/)
 - [React Testing Library]()
-- [`i18n` (internationalization)](react.i18next.com/)
+- [`next-i18next` (internationalization)](https://www.npmjs.com/package/next-i18next)
 - NPM monorepo with workspaces
 
-### Back-end
+### Back-end (not implemented yet)
 
 - [Keystone.js](https://keystonejs.com/)
-- [Graph QL](https://graphql.org/)
-- [Apollo Client](https://www.apollographql.com/)
+- [GraphQL](https://graphql.org/)
+- [Apollo client](https://www.apollographql.com/)
+
+## Showcase
+
+### Landing page
 
 ![Netflix Screenshot](/app/public/images/showcase.gif)
