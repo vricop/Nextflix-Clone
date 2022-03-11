@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
 import { Accordion } from './Accordion'
+import { Cta } from './common/Cta'
 import { EmailBox } from './common/EmailBox'
 import { HomeContainer } from './common/HomeContainer'
 import { HomeSectionTitle } from './common/HomeSectionTitle'
-import { Cta } from './HeroHeader/HeroHeader.styled'
 
 const Title = styled(HomeSectionTitle)`
   text-align: center;
@@ -58,9 +58,7 @@ export function Faq() {
         ))}
       </FaqAccordion>
       <CTAWrapper>
-        <Cta>
-          Ready to watch? Enter your email to create or restart your membership.
-        </Cta>
+        <Cta />
         <EmailBox />
       </CTAWrapper>
     </FaqContainer>

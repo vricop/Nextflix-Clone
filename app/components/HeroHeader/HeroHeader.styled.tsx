@@ -142,11 +142,3 @@ export const TagLine = styled.h2`
     font-size: ${({ theme }) => theme.text._2xl};
   }
 `
-
-export const Cta = styled.p`
-  font-size: ${({ theme }) => theme.text.lg};
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text.xl};
-  }
-`

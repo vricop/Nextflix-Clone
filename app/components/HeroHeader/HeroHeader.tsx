@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
+import { Cta } from '../common/Cta'
 import { EmailBox } from '../common/EmailBox'
 import { LanguageSelector } from '../common/LanguageSelector'
 import { Logo } from '../common/Logo'
 import {
   ButtonGroup,
   Content,
-  Cta,
   Header,
   SignInButton,
   TagLine,
@@ -30,7 +30,7 @@ export function HeroHeader() {
         <Text>
           <Title>{t('home:title')}</Title>
           <TagLine>{t('home:tagline')}</TagLine>
-          <Cta>{t('home:cta')}</Cta>
+          <Cta />
         </Text>
         <EmailBox />
       </Content>
