@@ -33,4 +33,4 @@ stage at this time**.
 
 ### Landing page
 
-![Netflix Screenshot](/app/public/images/showcase.gif)
+![Netflix Screenshot](/public/images/showcase.gif)
