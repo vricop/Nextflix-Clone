@@ -1,4 +1,7 @@
+import { ReactNode } from 'react'
 import styled from 'styled-components'
+import { HomeContainer } from '@components/HomeContainer'
+import { HomeSectionTitle } from '@components/HomeSectionTitle'
 
 export const Container = styled.div`
   align-items: center;
@@ -44,3 +47,27 @@ export const Media = styled.div`
   display: grid;
   place-items: center;
 `
+
+export function StoryCard({
+  flipped,
+  children,
+  title,
+  tagline,
+}: {
+  flipped?: boolean
+  children: ReactNode
+  title: string
+  tagline: string
+}) {
+  return (
+    <HomeContainer>
+      <Container>
+        <Text {...{ flipped }}>
+          <HomeSectionTitle>{title}</HomeSectionTitle>
+          <SubTitle>{tagline}</SubTitle>
+        </Text>
+        <Media>{children}</Media>
+      </Container>
+    </HomeContainer>
+  )
+}

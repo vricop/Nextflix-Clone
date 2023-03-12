@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
-import { HomeContainer } from './HomeContainer'
-import { LanguageSelector } from './LanguageSelector'
+import { HomeContainer } from '@components/HomeContainer'
+import { LanguageSelector } from '@components/LanguageSelector'
 
 const FooterContainer = styled(HomeContainer)`
   border-bottom: none;

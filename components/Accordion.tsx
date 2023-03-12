@@ -89,6 +89,7 @@ function collapseDetails(openDetails: HTMLDetailsElement) {
 
 let timer1: ReturnType<typeof setTimeout>
 let timer2: ReturnType<typeof setTimeout>
+
 function handleClick(event: MouseEvent<HTMLDetailsElement>) {
   event.preventDefault()
   const { currentTarget: details } = event
@@ -110,7 +111,7 @@ function handleClick(event: MouseEvent<HTMLDetailsElement>) {
   }, 400)
 }
 
-const AccordionItem = ({
+export const Item = ({
   summary,
   details,
 }: {
@@ -126,4 +127,4 @@ const AccordionItem = ({
   </Details>
 )
 
-Accordion.Item = AccordionItem
+Item.displayName = 'Accordion__Item'

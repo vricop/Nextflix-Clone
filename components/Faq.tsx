@@ -1,17 +1,17 @@
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
-import { Accordion } from './Accordion'
-import { Cta } from './common/Cta'
-import { EmailBox } from './common/EmailBox'
-import { HomeContainer } from './common/HomeContainer'
-import { HomeSectionTitle } from './common/HomeSectionTitle'
+import { Accordion, Item } from './Accordion'
+import { Cta } from '@components/Cta'
+import { EmailBox } from '@components/EmailBox'
+import { HomeContainer } from '@components/HomeContainer'
+import { HomeSectionTitle } from '@components/HomeSectionTitle'
 
 const Title = styled(HomeSectionTitle)`
   text-align: center;
 `
 
-const FaqContainer = styled(HomeContainer)`
+const Container = styled(HomeContainer)`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
@@ -39,7 +39,9 @@ const FaqAccordion = styled(Accordion)`
   }
 `
 
-const CTAWrapper = styled.div`
+FaqAccordion.displayName = 'Faq__Accordion'
+
+const CtaWrapper = styled.div`
   text-align: center;
   display: grid;
   justify-items: center;
@@ -50,17 +52,17 @@ export function Faq() {
   const { t } = useTranslation('home')
 
   return (
-    <FaqContainer role="">
+    <Container role="">
       <Title>{t('faqTitle')}</Title>
       <FaqAccordion>
         {t('faq').map(details => (
-          <FaqAccordion.Item key={uuid()} {...details} />
+          <Item key={uuid()} {...details} />
         ))}
       </FaqAccordion>
-      <CTAWrapper>
+      <CtaWrapper>
         <Cta />
         <EmailBox />
-      </CTAWrapper>
-    </FaqContainer>
+      </CtaWrapper>
+    </Container>
   )
 }

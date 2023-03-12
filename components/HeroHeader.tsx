@@ -1,8 +1,13 @@
+import { useTranslation } from 'next-i18next'
 import Link, { LinkProps } from 'next/link'
-import { PropsWithChildren, ReactNode } from 'react'
+import type { PropsWithChildren, ReactNode } from 'react'
 import styled from 'styled-components'
+import { EmailBox } from '@components/EmailBox'
+import { LanguageSelector } from '@components/LanguageSelector'
+import { Logo } from '@components/Logo'
+import { Cta } from '@components/Cta'
 
-export const Header = styled.header`
+const Header = styled.header`
   display: grid;
   grid-template-rows: auto 1fr;
   row-gap: ${({ theme }) => theme.size._12};
@@ -24,7 +29,7 @@ export const Header = styled.header`
     `${theme.size._2} solid ${theme.color.gray_600}`};
 `
 
-export const TopBar = styled.div`
+const TopBar = styled.div`
   display: grid;
   grid-auto-flow: column;
   column-gap: ${({ theme }) => theme.size._4};
@@ -55,7 +60,7 @@ export const TopBar = styled.div`
   }
 `
 
-export const ButtonGroup = styled.div`
+const ButtonGroup = styled.div`
   display: grid;
   grid-auto-flow: column;
   column-gap: ${({ theme }) => theme.size._3};
@@ -79,7 +84,7 @@ const StyledLink = ({
   </Link>
 )
 
-export const SignInButton = styled(StyledLink)`
+const SignInButton = styled(StyledLink)`
   background-color: ${({ theme }) => theme.color.brand};
   border-radius: ${({ theme }) => theme.size._0_5em};
   color: ${({ theme }) => theme.color.white};
@@ -94,7 +99,7 @@ export const SignInButton = styled(StyledLink)`
   }
 `
 
-export const Content = styled.div`
+const Content = styled.div`
   display: grid;
   grid-auto-flow: row;
   padding-inline: 5%;
@@ -108,7 +113,7 @@ export const Content = styled.div`
   }
 `
 
-export const Text = styled.div`
+const Text = styled.div`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
@@ -119,7 +124,7 @@ export const Text = styled.div`
   }
 `
 
-export const Title = styled.h1`
+const Title = styled.h1`
   font-size: ${({ theme }) => theme.text._3xl};
   line-height: ${({ theme }) => theme.leading.tight};
   max-width: 40rem;
@@ -133,7 +138,7 @@ export const Title = styled.h1`
   }
 `
 
-export const TagLine = styled.h2`
+const TagLine = styled.h2`
   font-size: ${({ theme }) => theme.text.lg};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   max-width: 40rem;
@@ -142,3 +147,27 @@ export const TagLine = styled.h2`
     font-size: ${({ theme }) => theme.text._2xl};
   }
 `
+
+export function HeroHeader() {
+  const { t } = useTranslation(['common', 'home'])
+
+  return (
+    <Header>
+      <TopBar>
+        <Logo />
+        <ButtonGroup>
+          <LanguageSelector />
+          <SignInButton href="/login">{t('common:signInButton')}</SignInButton>
+        </ButtonGroup>
+      </TopBar>
+      <Content>
+        <Text>
+          <Title>{t('home:title')}</Title>
+          <TagLine>{t('home:tagline')}</TagLine>
+          <Cta />
+        </Text>
+        <EmailBox />
+      </Content>
+    </Header>
+  )
+}

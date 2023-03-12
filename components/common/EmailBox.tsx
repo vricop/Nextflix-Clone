@@ -34,7 +34,7 @@ export const Form = styled.form`
   }
 `
 
-export const EmailLabel = styled.label`
+export const Label = styled.label`
   grid-area: input;
   position: absolute;
   top: 50%;
@@ -44,7 +44,7 @@ export const EmailLabel = styled.label`
   pointer-events: none;
 `
 
-export const EmailField = styled.input<{ error?: boolean }>`
+export const Field = styled.input<{ error?: boolean }>`
   border-radius: ${({ theme }) => theme.size._0_5};
   grid-area: input;
   padding: var(--offset) ${({ theme }) => theme.size._3} 0;
@@ -92,6 +92,7 @@ const Button = ({ children, ...rest }: { children: ReactNode }) => (
     <NavArrowRight />
   </button>
 )
+
 export const GetStartedButton = styled(Button)`
   align-items: center;
   background-color: ${({ theme }) => theme.color.brand_alt_light};
@@ -157,7 +158,7 @@ export function EmailBox() {
 
   return (
     <Form method="get">
-      <EmailField
+      <Field
         error={email !== '' && errorMessage !== ''}
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         value={email}
@@ -170,7 +171,7 @@ export function EmailBox() {
         maxLength={50}
         minLength={5}
       />
-      <EmailLabel htmlFor="email">{t('emailAddressFieldLabel')}</EmailLabel>
+      <Label htmlFor="email">{t('emailAddressFieldLabel')}</Label>
       <GetStartedButton>
         {t('getStartedButton', { ns: 'home' })}
       </GetStartedButton>
