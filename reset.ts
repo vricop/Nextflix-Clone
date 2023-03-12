@@ -8,7 +8,7 @@ export const Reset = createGlobalStyle`
   margin: 0;
 }
 
-html, body {
+html, body, #root, #__next {
   height: 100%;
 }
 

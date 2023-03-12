@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { Cta } from '../common/Cta'
 import { EmailBox } from '../common/EmailBox'
 import { LanguageSelector } from '../common/LanguageSelector'
@@ -15,7 +15,7 @@ import {
 } from './HeroHeader.styled'
 
 export function HeroHeader() {
-  const { t } = useTranslation()
+  const { t } = useTranslation(['common', 'home'])
 
   return (
     <Header>
@@ -23,7 +23,7 @@ export function HeroHeader() {
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/signin">{t('signInButton')}</SignInButton>
+          <SignInButton href="/login">{t('common:signInButton')}</SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>

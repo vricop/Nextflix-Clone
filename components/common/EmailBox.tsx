@@ -1,6 +1,6 @@
 import { NavArrowRight } from 'iconoir-react'
 import { ChangeEvent, ReactNode, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 
 export const Form = styled.form`

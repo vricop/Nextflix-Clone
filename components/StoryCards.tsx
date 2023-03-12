@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { v4 as uuid } from 'uuid'
 import { DevicePile } from './DevicePile'
 import { Mobile } from './Mobile'

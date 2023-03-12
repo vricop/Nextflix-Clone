@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
 import { Accordion } from './Accordion'
