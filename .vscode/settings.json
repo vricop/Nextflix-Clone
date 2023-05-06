@@ -5,5 +5,8 @@
   },
   "prettier.singleQuote": true,
   "prettier.semi": false,
-  "prettier.arrowParens": "avoid"
+  "prettier.arrowParens": "avoid",
+  "i18n-ally.localesPaths": [
+    "public/locales"
+  ]
 }

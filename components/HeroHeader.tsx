@@ -1,11 +1,11 @@
-import { useTranslation } from 'next-i18next'
-import Link, { LinkProps } from 'next/link'
-import type { PropsWithChildren, ReactNode } from 'react'
-import styled from 'styled-components'
-import { EmailBox } from '@components/EmailBox'
-import { LanguageSelector } from '@components/LanguageSelector'
-import { Logo } from '@components/Logo'
-import { Cta } from '@components/Cta'
+import { useTranslation } from "next-i18next";
+import Link, { LinkProps } from "next/link";
+import type { PropsWithChildren, ReactNode } from "react";
+import styled from "styled-components";
+import { EmailBox } from "@components/EmailBox";
+import { LanguageSelector } from "@components/LanguageSelector";
+import { Logo } from "@components/Logo";
+import { Cta } from "@components/Cta";
 
 const Header = styled.header`
   display: grid;
@@ -20,14 +20,14 @@ const Header = styled.header`
     ),
     linear-gradient(to top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
     radial-gradient(50% 100%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
-    url('/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    url("/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg");
   background-size: cover;
   background-position: center;
   color: ${({ theme }) => theme.color.white};
   height: 750px;
   border-bottom: ${({ theme }) =>
     `${theme.size._2} solid ${theme.color.gray_600}`};
-`
+`;
 
 const TopBar = styled.div`
   display: grid;
@@ -58,7 +58,7 @@ const TopBar = styled.div`
       height: ${({ theme }) => theme.size._11};
     }
   }
-`
+`;
 
 const ButtonGroup = styled.div`
   display: grid;
@@ -69,20 +69,20 @@ const ButtonGroup = styled.div`
   @media (min-width: 34.375rem) {
     column-gap: ${({ theme }) => theme.size._8};
   }
-`
+`;
 
 const StyledLink = ({
   children,
   className,
   ...rest
 }: {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
 } & PropsWithChildren<LinkProps>) => (
-  <Link {...rest}>
-    <a {...{ className }}>{children}</a>
+  <Link className={className} {...rest}>
+    {children}
   </Link>
-)
+);
 
 const SignInButton = styled(StyledLink)`
   background-color: ${({ theme }) => theme.color.brand};
@@ -97,7 +97,7 @@ const SignInButton = styled(StyledLink)`
   @media (min-width: 34.375rem) {
     font-size: ${({ theme }) => theme.text.sm};
   }
-`
+`;
 
 const Content = styled.div`
   display: grid;
@@ -111,7 +111,7 @@ const Content = styled.div`
   @media (min-width: 34.375rem) {
     padding-inline: ${({ theme }) => theme.size._12};
   }
-`
+`;
 
 const Text = styled.div`
   display: grid;
@@ -122,7 +122,7 @@ const Text = styled.div`
   @media (min-width: 34.375rem) {
     row-gap: ${({ theme }) => theme.size._5};
   }
-`
+`;
 
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.text._3xl};
@@ -136,7 +136,7 @@ const Title = styled.h1`
   @media (min-width: 90.625rem) {
     font-size: ${({ theme }) => theme.text._6xl};
   }
-`
+`;
 
 const TagLine = styled.h2`
   font-size: ${({ theme }) => theme.text.lg};
@@ -146,10 +146,10 @@ const TagLine = styled.h2`
   @media (min-width: 34.375rem) {
     font-size: ${({ theme }) => theme.text._2xl};
   }
-`
+`;
 
 export function HeroHeader() {
-  const { t } = useTranslation(['common', 'home'])
+  const { t } = useTranslation(["common", "home"]);
 
   return (
     <Header>
@@ -157,17 +157,17 @@ export function HeroHeader() {
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/login">{t('common:signInButton')}</SignInButton>
+          <SignInButton href="/login">{t("common:signInButton")}</SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>
         <Text>
-          <Title>{t('home:title')}</Title>
-          <TagLine>{t('home:tagline')}</TagLine>
+          <Title>{t("home:title")}</Title>
+          <TagLine>{t("home:tagline")}</TagLine>
           <Cta />
         </Text>
         <EmailBox />
       </Content>
     </Header>
-  )
+  );
 }

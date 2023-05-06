@@ -1,7 +1,7 @@
-import { Logo } from '@/components/common/Logo'
-import { Check } from 'iconoir-react'
-import { NextPage } from 'next'
-import Link from 'next/link'
+import { Logo } from "@components/common/Logo";
+import { Check } from "iconoir-react";
+import { NextPage } from "next";
+import Link from "next/link";
 import {
   ChangeEventHandler,
   FormEvent,
@@ -10,8 +10,8 @@ import {
   InputHTMLAttributes,
   MouseEventHandler,
   useState,
-} from 'react'
-import styled from 'styled-components'
+} from "react";
+import styled from "styled-components";
 
 // export async function getStaticProps({ locale }: { locale: string }) {
 //   return {
@@ -21,19 +21,17 @@ import styled from 'styled-components'
 //   }
 // }
 
-const LogoAnchor = styled.a`
+const LogoAnchor = styled(Link)`
   position: absolute;
   top: ${({ theme }) => theme.size._6};
   left: ${({ theme }) => theme.size._9};
-`
+`;
 
 const LogoLink = () => (
-  <Link href="/" passHref>
-    <LogoAnchor aria-label="Go home link">
-      <Logo />
-    </LogoAnchor>
-  </Link>
-)
+  <LogoAnchor href="/" aria-label="Go home link">
+    <Logo />
+  </LogoAnchor>
+);
 
 const Container = styled.div`
   height: 100%;
@@ -47,7 +45,7 @@ const Container = styled.div`
   & > * {
     grid-area: 1/1;
   }
-`
+`;
 
 const FormWrapper = styled.div`
   display: grid;
@@ -58,18 +56,18 @@ const FormWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.75);
   padding: ${({ theme }) => theme.size._12};
   border-radius: ${({ theme }) => theme.size._1_5em};
-`
+`;
 
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.text._4xl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.color.white};
-`
+`;
 
 const Form = styled.form`
   display: grid;
   row-gap: ${({ theme }) => theme.size._5};
-`
+`;
 
 const Label = styled.label`
   display: grid;
@@ -83,7 +81,7 @@ const Label = styled.label`
     background-color: transparent;
     grid-area: 1/1;
   }
-`
+`;
 
 const LabelText = styled.span`
   display: inline-block;
@@ -92,7 +90,7 @@ const LabelText = styled.span`
   transition: 200ms ease-in-out;
   color: ${({ theme }) => theme.color.gray_400};
   transform: ${({ theme }) => `translateX(${theme.size._4})`};
-`
+`;
 
 const Input = styled.input`
   padding-inline: ${({ theme }) => theme.size._4};
@@ -105,14 +103,14 @@ const Input = styled.input`
     font-size: ${({ theme }) => theme.text.xs};
     transform: ${({ theme }) => `translate(${theme.size._4}, -75%)`};
   }
-`
+`;
 const InputPasswordWrapper = styled.div`
   display: grid;
 
   & > * {
     grid-area: 1/1;
   }
-`
+`;
 
 const TogglePassWordVisibiliy = styled.button`
   justify-self: end;
@@ -129,11 +127,11 @@ const TogglePassWordVisibiliy = styled.button`
   color: ${({ theme }) => theme.color.gray_400};
   padding-left: 0;
   padding-right: ${({ theme }) => theme.size._4};
-`
+`;
 
 const Footer = styled.footer`
   align-self: end;
-`
+`;
 
 const SigninButton = styled.button`
   appearance: none;
@@ -144,29 +142,29 @@ const SigninButton = styled.button`
   background-color: ${({ theme }) => theme.color.brand};
   border-radius: ${({ theme }) => theme.size._1em};
   cursor: pointer;
-`
+`;
 
-type InputFieldDefaultProps = InputHTMLAttributes<HTMLInputElement>
+type InputFieldDefaultProps = InputHTMLAttributes<HTMLInputElement>;
 
 type InputFieldProps = InputFieldDefaultProps & {
-  label: string
-}
+  label: string;
+};
 
 type PasswordFieldProps = InputFieldDefaultProps & {
-  isVisible?: boolean
-  onClick?: MouseEventHandler<HTMLButtonElement>
-}
+  isVisible?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+};
 
 const CustomCheckbox = styled.div`
   color: ${({ theme }) => theme.color.white};
 
-  [type='checkbox'] {
+  [type="checkbox"] {
     appearance: none;
   }
 
   label {
     display: grid;
-    grid-template: 'checkbox text' auto / auto 1fr;
+    grid-template: "checkbox text" auto / auto 1fr;
     column-gap: ${({ theme }) => theme.size._4};
     align-items: center;
   }
@@ -183,7 +181,7 @@ const CustomCheckbox = styled.div`
     background-color: ${({ theme }) => theme.color.gray_400};
     grid-area: text;
   }
-`
+`;
 
 const InputCheckbox = ({ label, ...props }: InputFieldProps) => (
   <CustomCheckbox>
@@ -193,7 +191,7 @@ const InputCheckbox = ({ label, ...props }: InputFieldProps) => (
       <span>{label}</span>
     </label>
   </CustomCheckbox>
-)
+);
 
 const InputField = forwardRef(
   (
@@ -205,9 +203,9 @@ const InputField = forwardRef(
       <LabelText>{label}</LabelText>
     </Label>
   )
-)
+);
 
-InputField.displayName = 'InputField'
+InputField.displayName = "InputField";
 
 const PasswordField = forwardRef(
   (
@@ -217,42 +215,42 @@ const PasswordField = forwardRef(
     <InputPasswordWrapper>
       <InputField
         ref={ref}
-        type={isVisible ? 'password' : 'text'}
+        type={isVisible ? "password" : "text"}
         label="Password"
         {...props}
       />
       <TogglePassWordVisibiliy type="button" onClick={onClick}>
-        {isVisible ? 'Show' : 'Hide'}
+        {isVisible ? "Show" : "Hide"}
       </TogglePassWordVisibiliy>
     </InputPasswordWrapper>
   )
-)
+);
 
-PasswordField.displayName = 'PasswordField'
+PasswordField.displayName = "PasswordField";
 
 const Login: NextPage = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(true);
   const [fields, setFields] = useState({
-    email: '',
-    password: '',
-  })
+    email: "",
+    password: "",
+  });
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+    event.preventDefault();
   }
 
   function togglePasswordVisibility() {
-    setIsVisible(previousState => !previousState)
+    setIsVisible((previousState) => !previousState);
   }
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = event => {
-    const { name, value } = event.currentTarget
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const { name, value } = event.currentTarget;
 
     setFields({
       ...fields,
       [name]: value,
-    })
-  }
+    });
+  };
 
   return (
     <Container>
@@ -262,7 +260,7 @@ const Login: NextPage = () => {
         <Title>Sign in</Title>
         <Form onSubmit={handleSubmit}>
           <InputField
-            className={fields.email && 'has-text'}
+            className={fields.email && "has-text"}
             onChange={handleChange}
             required
             value={fields.email}
@@ -271,7 +269,7 @@ const Login: NextPage = () => {
             type="email"
           />
           <PasswordField
-            className={fields.password && 'has-text'}
+            className={fields.password && "has-text"}
             onChange={handleChange}
             isVisible={isVisible}
             required
@@ -288,7 +286,7 @@ const Login: NextPage = () => {
       </FormWrapper>
       <Footer>footer element</Footer>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
