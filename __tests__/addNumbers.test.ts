@@ -1,4 +1,4 @@
-import { addNumbers } from '@/utils/addNumbers'
+import { addNumbers } from '@utils/addNumbers'
 
 describe('Add numbers', () => {
   it('adds any number of numbers', () => {

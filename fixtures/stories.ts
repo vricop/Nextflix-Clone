@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid'
-import { DevicePile } from '@/components/DevicePile'
-import { Mobile } from '@/components/Mobile'
-import { StoryImage } from '@/components/StoryImage'
-import { Tv } from '@/components/Tv'
+import { DevicePile } from '@components/DevicePile'
+import { Mobile } from '@components/Mobile'
+import { StoryImage } from '@components/StoryImage'
+import { Tv } from '@components/Tv'
 
 export const stories = [
   {

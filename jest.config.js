@@ -14,11 +14,11 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '^@/api/(.*)$': '<rootDir>/api/$1',
-    '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/pages/(.*)$': '<rootDir>/pages/$1',
-    '^@/utils/(.*)$': '<rootDir>/utils/$1',
-    '^@/fixtures/(.*)$': '<rootDir>/fixtures/$1',
+    '^@api/(.*)$': '<rootDir>/api/$1',
+    '^@components/(.*)$': '<rootDir>/components/$1',
+    '^@pages/(.*)$': '<rootDir>/pages/$1',
+    '^@utils/(.*)$': '<rootDir>/utils/$1',
+    '^@fixtures/(.*)$': '<rootDir>/fixtures/$1',
   },
 }
 
