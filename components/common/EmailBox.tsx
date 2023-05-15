@@ -2,6 +2,7 @@ import { NavArrowRight } from 'iconoir-react'
 import { ChangeEvent, ReactNode, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
+import { ButtonDefaults } from '@components/ButtonDefaults'
 
 export const Form = styled.form`
   --height: 3rem;
@@ -86,14 +87,14 @@ export const Field = styled.input<{ error?: boolean }>`
   `};
 `
 
-const Button = ({ children, ...rest }: { children: ReactNode }) => (
-  <button type="button" {...rest}>
-    {children}
-    <NavArrowRight />
-  </button>
-)
-
-export const GetStartedButton = styled(Button)`
+export const GetStartedButton = styled(ButtonDefaults).attrs((props) => ({
+  children: (
+    <>
+      {props.children}
+      <NavArrowRight />
+    </>
+  ),
+}))`
   align-items: center;
   background-color: ${({ theme }) => theme.color.brand_alt_light};
   border-radius: ${({ theme }) => theme.size._0_5};
