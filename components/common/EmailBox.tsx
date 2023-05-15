@@ -1,8 +1,8 @@
 import { NavArrowRight } from 'iconoir-react'
-import { ChangeEvent, ReactNode, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { ButtonDefaults } from '@components/ButtonDefaults'
+import { ChangeEvent, ReactNode, useState } from 'react'
 
 export const Form = styled.form`
   --height: 3rem;
@@ -87,7 +87,9 @@ export const Field = styled.input<{ error?: boolean }>`
   `};
 `
 
-export const GetStartedButton = styled(ButtonDefaults).attrs((props) => ({
+export const GetStartedButton = styled(ButtonDefaults).attrs<{
+  children: ReactNode
+}>((props) => ({
   children: (
     <>
       {props.children}
