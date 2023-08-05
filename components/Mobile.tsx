@@ -13,20 +13,20 @@ const DownloadItemCard = styled.div`
   align-items: center;
   align-self: end;
   background-color: ${({ theme }) => theme.color.black};
-  border-radius: ${({ theme }) => theme.size._3};
-  border: ${({ theme }) => `${theme.size._0_5} solid ${theme.color.gray_700}`};
-  column-gap: ${({ theme }) => theme.size._4};
+  border-radius: ${({ theme }) => theme.size[3]};
+  border: ${({ theme }) => `${theme.size[0.5]} solid ${theme.color.gray_700}`};
+  column-gap: ${({ theme }) => theme.size[4]};
   display: grid;
   grid-area: 1/1;
   grid-template-columns: auto 1fr auto;
-  padding: ${({ theme }) => `${theme.size._2} ${theme.size._3}`};
+  padding: ${({ theme }) => `${theme.size[2]} ${theme.size[3]}`};
   transform: translateY(-22%);
   width: 60%;
 `
 
 const Poster = styled.img`
   width: auto;
-  height: ${({ theme }) => theme.size._20};
+  height: ${({ theme }) => theme.size[20]};
   aspect-ratio: 150/210;
 `
 
@@ -42,7 +42,7 @@ const Description = styled.p`
 `
 
 const Gif = styled.img`
-  height: ${({ theme }) => theme.size._12};
+  height: ${({ theme }) => theme.size[12]};
 `
 
 export function Mobile() {

@@ -23,8 +23,8 @@ import styled from "styled-components";
 
 const LogoAnchor = styled(Link)`
   position: absolute;
-  top: ${({ theme }) => theme.size._6};
-  left: ${({ theme }) => theme.size._9};
+  top: ${({ theme }) => theme.size[6]};
+  left: ${({ theme }) => theme.size[9]};
 `;
 
 const LogoLink = () => (
@@ -49,30 +49,30 @@ const Container = styled.div`
 
 const FormWrapper = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => theme.size._8};
+  row-gap: ${({ theme }) => theme.size[8]};
   width: 100%;
   max-width: 23.75rem;
   place-self: center;
   background-color: rgba(0, 0, 0, 0.75);
-  padding: ${({ theme }) => theme.size._12};
-  border-radius: ${({ theme }) => theme.size._1_5em};
+  padding: ${({ theme }) => theme.size[12]};
+  border-radius: ${({ theme }) => theme.size['1.5em']};
 `;
 
 const Title = styled.h1`
-  font-size: ${({ theme }) => theme.text._4xl};
+  font-size: ${({ theme }) => theme.text['4xl']};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.color.white};
 `;
 
 const Form = styled.form`
   display: grid;
-  row-gap: ${({ theme }) => theme.size._5};
+  row-gap: ${({ theme }) => theme.size[5]};
 `;
 
 const Label = styled.label`
   display: grid;
   background-color: ${({ theme }) => theme.color.gray_700};
-  border-radius: ${({ theme }) => theme.size._1em};
+  border-radius: ${({ theme }) => theme.size['1em']};
   overflow: hidden;
   align-items: center;
   border-bottom: ${({ theme }) => `2px solid ${theme.color.orange}`};
@@ -89,19 +89,19 @@ const LabelText = styled.span`
   z-index: 1;
   transition: 200ms ease-in-out;
   color: ${({ theme }) => theme.color.gray_400};
-  transform: ${({ theme }) => `translateX(${theme.size._4})`};
+  transform: ${({ theme }) => `translateX(${theme.size[4]})`};
 `;
 
 const Input = styled.input`
-  padding-inline: ${({ theme }) => theme.size._4};
-  padding-top: ${({ theme }) => theme.size._4};
-  line-height: ${({ theme }) => theme.leading._8};
+  padding-inline: ${({ theme }) => theme.size[4]};
+  padding-top: ${({ theme }) => theme.size[4]};
+  line-height: ${({ theme }) => theme.leading[8]};
   border: none;
   color: ${({ theme }) => theme.color.white};
 
   &.has-text + ${LabelText}, &:focus + ${LabelText} {
     font-size: ${({ theme }) => theme.text.xs};
-    transform: ${({ theme }) => `translate(${theme.size._4}, -75%)`};
+    transform: ${({ theme }) => `translate(${theme.size[4]}, -75%)`};
   }
 `;
 const InputPasswordWrapper = styled.div`
@@ -126,7 +126,7 @@ const TogglePassWordVisibiliy = styled.button`
   cursor: pointer;
   color: ${({ theme }) => theme.color.gray_400};
   padding-left: 0;
-  padding-right: ${({ theme }) => theme.size._4};
+  padding-right: ${({ theme }) => theme.size[4]};
 `;
 
 const Footer = styled.footer`
@@ -137,10 +137,10 @@ const SigninButton = styled.button`
   appearance: none;
   border: none;
   color: ${({ theme }) => theme.color.white};
-  line-height: ${({ theme }) => theme.leading._12};
+  line-height: ${({ theme }) => theme.leading[12]};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   background-color: ${({ theme }) => theme.color.brand};
-  border-radius: ${({ theme }) => theme.size._1em};
+  border-radius: ${({ theme }) => theme.size['1em']};
   cursor: pointer;
 `;
 
@@ -165,7 +165,7 @@ const CustomCheckbox = styled.div`
   label {
     display: grid;
     grid-template: "checkbox text" auto / auto 1fr;
-    column-gap: ${({ theme }) => theme.size._4};
+    column-gap: ${({ theme }) => theme.size[4]};
     align-items: center;
   }
 
@@ -176,8 +176,8 @@ const CustomCheckbox = styled.div`
 
   span {
     display: inline-block;
-    width: ${({ theme }) => theme.size._4};
-    height: ${({ theme }) => theme.size._4};
+    width: ${({ theme }) => theme.size[4]};
+    height: ${({ theme }) => theme.size[4]};
     background-color: ${({ theme }) => theme.color.gray_400};
     grid-area: text;
   }

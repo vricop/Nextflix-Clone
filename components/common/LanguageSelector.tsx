@@ -8,7 +8,7 @@ const LanguageSelectorWrapper = styled.div`
   align-items: center;
   position: relative;
   border: ${({ theme }) => `${theme.size.px} solid currentColor`};
-  border-radius: ${({ theme }) => theme.size._0_5};
+  border-radius: ${({ theme }) => theme.size[0.5]};
   font-size: ${({ theme }) => theme.text.xs};
 
   @media (min-width: 34.375rem) {
@@ -23,18 +23,18 @@ const LanguageSelectorWrapper = styled.div`
   }
 
   svg:first-child {
-    left: ${({ theme }) => theme.size._2};
+    left: ${({ theme }) => theme.size[2]};
   }
 
   svg:last-child {
-    right: ${({ theme }) => theme.size._2};
+    right: ${({ theme }) => theme.size[2]};
   }
 `
 
 const Select = styled.select`
   display: block;
   width: 100%;
-  padding: ${({ theme }) => `${theme.size._2em} ${theme.size._7em}`};
+  padding: ${({ theme }) => `${theme.size['2em']} ${theme.size['7em']}`};
   border: none;
   background-color: rgba(0, 0, 0, 0.4);
   color: inherit;

@@ -5,7 +5,7 @@ import { HomeSectionTitle } from '@components/HomeSectionTitle'
 
 export const Container = styled.div`
   align-items: center;
-  column-gap: ${({ theme }) => theme.size._12};
+  column-gap: ${({ theme }) => theme.size[12]};
   display: grid;
   margin-inline: auto;
   max-width: 68.75rem;
@@ -20,21 +20,21 @@ export const SubTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 
   @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text._2xl};
+    font-size: ${({ theme }) => theme.text['2xl']};
   }
 `
 
 export const Text = styled.hgroup<{ flipped?: boolean }>`
   display: grid;
   grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size._4};
+  row-gap: ${({ theme }) => theme.size[4]};
 
   @media (min-width: 34.375rem) {
-    row-gap: ${({ theme }) => theme.size._5};
+    row-gap: ${({ theme }) => theme.size[5]};
   }
 
   @media (min-width: 59.375rem) {
-    row-gap: ${({ theme }) => theme.size._5};
+    row-gap: ${({ theme }) => theme.size[5]};
     order: ${({ flipped }) => flipped && '2'};
   }
 

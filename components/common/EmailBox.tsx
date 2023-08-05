@@ -12,7 +12,7 @@ export const Form = styled.form`
     'error' auto
     'button' auto / auto;
   display: grid;
-  row-gap: ${({ theme }) => theme.size._3};
+  row-gap: ${({ theme }) => theme.size[3]};
   justify-items: center;
   position: relative;
 
@@ -31,7 +31,7 @@ export const Form = styled.form`
     grid-template:
       'input button' var(--height)
       'error  error' auto / min-content max-content;
-    row-gap: ${({ theme }) => theme.size._1};
+    row-gap: ${({ theme }) => theme.size[1]};
   }
 `
 
@@ -39,16 +39,16 @@ export const Label = styled.label`
   grid-area: input;
   position: absolute;
   top: 50%;
-  left: ${({ theme }) => theme.size._3};
+  left: ${({ theme }) => theme.size[3]};
   transform: translateY(-50%);
   color: ${({ theme }) => theme.color.gray_400};
   pointer-events: none;
 `
 
 export const Field = styled.input<{ error?: boolean }>`
-  border-radius: ${({ theme }) => theme.size._0_5};
+  border-radius: ${({ theme }) => theme.size[0.5]};
   grid-area: input;
-  padding: var(--offset) ${({ theme }) => theme.size._3} 0;
+  padding: var(--offset) ${({ theme }) => theme.size[3]} 0;
   width: 100%;
   height: var(--height);
   border: none;
@@ -70,7 +70,7 @@ export const Field = styled.input<{ error?: boolean }>`
 
   &.has-text + label,
   &:focus + label {
-    top: ${({ theme }) => theme.size._1};
+    top: ${({ theme }) => theme.size[1]};
     transform: translateY(0);
     font-size: ${({ theme }) => theme.text.sm};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
@@ -83,7 +83,7 @@ export const Field = styled.input<{ error?: boolean }>`
   border-bottom: ${({ error, theme }) =>
     error &&
     `
-    ${theme.size._0_5} solid ${theme.color.orange}
+    ${theme.size[0.5]} solid ${theme.color.orange}
   `};
 `
 
@@ -99,17 +99,17 @@ export const GetStartedButton = styled(ButtonDefaults).attrs<{
 }))`
   align-items: center;
   background-color: ${({ theme }) => theme.color.brand_alt_light};
-  border-radius: ${({ theme }) => theme.size._0_5};
+  border-radius: ${({ theme }) => theme.size[0.5]};
   border: none;
   color: ${({ theme }) => theme.color.white};
-  column-gap: ${({ theme }) => theme.size._1};
+  column-gap: ${({ theme }) => theme.size[1]};
   display: grid;
   grid-area: button;
   grid-auto-columns: min-content min-content;
   grid-auto-flow: column;
   justify-content: center;
-  line-height: ${({ theme }) => theme.leading._10};
-  padding-inline: ${({ theme }) => theme.size._3};
+  line-height: ${({ theme }) => theme.leading[10]};
+  padding-inline: ${({ theme }) => theme.size[3]};
   white-space: nowrap;
   width: auto;
   transition: 200ms ease-in-out;
@@ -118,15 +118,15 @@ export const GetStartedButton = styled(ButtonDefaults).attrs<{
     border-top-left-radius: 0;
     leading: var(--height);
     border-bottom-left-radius: 0;
-    font-size: ${({ theme }) => theme.text._2xl};
-    padding-inline: ${({ theme }) => theme.size._8};
+    font-size: ${({ theme }) => theme.text['2xl']};
+    padding-inline: ${({ theme }) => theme.size[8]};
   }
 
   @media (min-width: 90.625rem) {
-    font-size: ${({ theme }) => theme.text._3xl};
+    font-size: ${({ theme }) => theme.text['3xl']};
 
     & > svg {
-      font-size: ${({ theme }) => theme.text._2xl};
+      font-size: ${({ theme }) => theme.text['2xl']};
     }
   }
 

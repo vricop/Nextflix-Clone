@@ -7,7 +7,7 @@ const Container = styled.div`
   margin-inline: auto;
   display: grid;
   grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size._2};
+  row-gap: ${({ theme }) => theme.size[2]};
   font-size: ${({ theme }) => theme.text.lg};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    font-size: ${({ theme }) => theme.text._2xl};
+    font-size: ${({ theme }) => theme.text['2xl']};
   }
 `
 
@@ -24,18 +24,18 @@ const Content = styled.div`
   transition: 400ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
   overflow: hidden;
   max-height: 0vh;
-  padding-inline: ${({ theme }) => theme.size._7};
+  padding-inline: ${({ theme }) => theme.size[7]};
   margin-top: ${({ theme }) => theme.size.px};
 `
 
 const Details = styled.details`
   display: grid;
   grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size._2};
+  row-gap: ${({ theme }) => theme.size[2]};
 
   &[open]:not(.js) > summary + ${Content}, &.open > summary + ${Content} {
-    max-height: ${({ theme }) => `calc(100vh - ${theme.size._4} * 2)`};
-    padding-block: ${({ theme }) => theme.size._7};
+    max-height: ${({ theme }) => `calc(100vh - ${theme.size[4]} * 2)`};
+    padding-block: ${({ theme }) => theme.size[7]};
   }
 
   &[open] > summary > svg {
@@ -45,12 +45,12 @@ const Details = styled.details`
 
 const Summary = styled.summary`
   background-color: ${({ theme }) => theme.color.gray_800};
-  padding: ${({ theme }) => `${theme.size._3_5}  ${theme.size._7}`};
+  padding: ${({ theme }) => `${theme.size[3.5]}  ${theme.size[7]}`};
   display: grid;
   align-items: center;
   grid-auto-flow: column;
   justify-content: space-between;
-  column-gap: ${({ theme }) => theme.size._4};
+  column-gap: ${({ theme }) => theme.size[4]};
   cursor: pointer;
 
   & > svg {
@@ -59,10 +59,10 @@ const Summary = styled.summary`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    padding-block: ${({ theme }) => theme.size._5};
+    padding-block: ${({ theme }) => theme.size[5]};
 
     & > svg {
-      font-size: ${({ theme }) => theme.text._2xl};
+      font-size: ${({ theme }) => theme.text['2xl']};
     }
   }
 `

@@ -15,14 +15,14 @@ const Container = styled(HomeContainer)`
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
-  row-gap: ${({ theme }) => theme.size._6};
+  row-gap: ${({ theme }) => theme.size[6]};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    row-gap: ${({ theme }) => theme.size._8};
+    row-gap: ${({ theme }) => theme.size[8]};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    row-gap: ${({ theme }) => theme.size._13};
+    row-gap: ${({ theme }) => theme.size[13]};
   }
 `
 
@@ -45,7 +45,7 @@ const CtaWrapper = styled.div`
   text-align: center;
   display: grid;
   justify-items: center;
-  row-gap: ${({ theme }) => theme.size._5};
+  row-gap: ${({ theme }) => theme.size[5]};
 `
 
 export function Faq() {

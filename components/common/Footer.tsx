@@ -14,7 +14,7 @@ const Content = styled.div`
   margin-inline: auto;
   display: grid;
   justify-items: start;
-  row-gap: ${({ theme }) => theme.size._8};
+  row-gap: ${({ theme }) => theme.size[8]};
 `
 
 const PhoneNumber = styled.a`
@@ -34,8 +34,8 @@ const List = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
   list-style: none;
   padding: 0;
-  column-gap: ${({ theme }) => theme.size._3};
-  row-gap: ${({ theme }) => theme.size._4};
+  column-gap: ${({ theme }) => theme.size[3]};
+  row-gap: ${({ theme }) => theme.size[4]};
 `
 
 const ListLink = styled.a`
