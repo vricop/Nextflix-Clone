@@ -45,7 +45,7 @@ export const Label = styled.label`
   pointer-events: none;
 `
 
-export const Field = styled.input<{ error?: boolean }>`
+export const Field = styled.input<{ $error?: boolean }>`
   border-radius: ${({ theme }) => theme.size[0.5]};
   grid-area: input;
   padding: var(--offset) ${({ theme }) => theme.size[3]} 0;
@@ -80,7 +80,7 @@ export const Field = styled.input<{ error?: boolean }>`
     }
   }
 
-  border-bottom: ${({ error, theme }) =>
+  border-bottom: ${({ $error: error, theme }) =>
     error &&
     `
     ${theme.size[0.5]} solid ${theme.color.orange}
@@ -162,7 +162,7 @@ export function EmailBox() {
   return (
     <Form method="get">
       <Field
-        error={email !== '' && errorMessage !== ''}
+        $error={email !== '' && errorMessage !== ''}
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         value={email}
         className={email && 'has-text'}

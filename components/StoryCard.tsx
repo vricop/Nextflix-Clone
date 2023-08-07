@@ -24,7 +24,7 @@ export const SubTitle = styled.h3`
   }
 `
 
-export const Text = styled.hgroup<{ flipped?: boolean }>`
+export const Text = styled.hgroup<{ $flipped?: boolean }>`
   display: grid;
   grid-auto-flow: row;
   row-gap: ${({ theme }) => theme.size[4]};
@@ -35,7 +35,7 @@ export const Text = styled.hgroup<{ flipped?: boolean }>`
 
   @media (min-width: 59.375rem) {
     row-gap: ${({ theme }) => theme.size[5]};
-    order: ${({ flipped }) => flipped && '2'};
+    order: ${({ $flipped }) => $flipped && '2'};
   }
 
   @media (max-width: 59.375rem) {
@@ -49,12 +49,12 @@ export const Media = styled.div`
 `
 
 export function StoryCard({
-  flipped,
+  $flipped,
   children,
   title,
   tagline,
 }: {
-  flipped?: boolean
+  $flipped?: boolean
   children: ReactNode
   title: string
   tagline: string
@@ -62,7 +62,7 @@ export function StoryCard({
   return (
     <HomeContainer>
       <Container>
-        <Text {...{ flipped }}>
+        <Text {...{ $flipped }}>
           <HomeSectionTitle>{title}</HomeSectionTitle>
           <SubTitle>{tagline}</SubTitle>
         </Text>
