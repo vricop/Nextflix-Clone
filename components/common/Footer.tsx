@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
 import { HomeContainer } from '@components/HomeContainer'
@@ -51,26 +50,26 @@ const FooterCountry = styled.p`
 `
 
 export function Footer() {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <FooterContainer as="footer">
       <Content>
         <p>
-          {t('footer:title')}{' '}
-          <PhoneNumber href={`tel:${t('footer:phoneNumber')}`}>
-            {t('footer:phoneNumberLink')}
-          </PhoneNumber>
+          {/* {t('footer:title')}{' '} */}
+          {/* <PhoneNumber href={`tel:${t('footer:phoneNumber')}`}> */}
+          {/*   {t('footer:phoneNumberLink')} */}
+          {/* </PhoneNumber> */}
         </p>
         <List>
-          {t('footer:links').map((text, index) => (
-            <li key={uuid()}>
-              <ListLink href={`#${index}`}>{text}</ListLink>
-            </li>
-          ))}
+          {/* {t('footer:links').map((text, index) => ( */}
+          {/*   <li key={uuid()}> */}
+          {/*     <ListLink href={`#${index}`}>{text}</ListLink> */}
+          {/*   </li> */}
+          {/* ))} */}
         </List>
         <LanguageSelector />
-        <FooterCountry>Netflix {t('country')}</FooterCountry>
+        <FooterCountry>Netflix {/* {t('country')} */}</FooterCountry>
       </Content>
     </FooterContainer>
   )

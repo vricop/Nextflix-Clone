@@ -1,3 +1,4 @@
+'use client'
 import { Logo } from "@components/common/Logo";
 import { Check } from "iconoir-react";
 import { NextPage } from "next";
@@ -12,14 +13,6 @@ import {
   useState,
 } from "react";
 import styled from "styled-components";
-
-// export async function getStaticProps({ locale }: { locale: string }) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ['home', 'common', 'footer'])),
-//     },
-//   }
-// }
 
 const LogoAnchor = styled(Link)`
   position: absolute;
@@ -38,7 +31,7 @@ const Container = styled.div`
   display: grid;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg);
-  background-color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color?.black};
   background-size: cover;
   background-repeat: no-repeat;
 

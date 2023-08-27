@@ -1,5 +1,4 @@
 import { ReactElement } from 'react'
-import { useTranslation } from 'next-i18next'
 import { v4 as uuid } from 'uuid'
 import { DevicePile } from './DevicePile'
 import { Mobile } from './Mobile'
@@ -15,20 +14,18 @@ const media: { [index: number]: ReactElement } = {
 }
 
 export default function StoryCards() {
-  const { t } = useTranslation('home')
-  const storyCards = t('storyCards')
-
   return (
     <>
-      {storyCards.map((storyCard, index) => (
-        <StoryCard
-          key={uuid()}
-          flipped={index % 2 !== 0}
-          title={storyCard.title}
-          tagline={storyCard.tagline}>
-          {media[index]}
-        </StoryCard>
-      ))}
+      {/* {storyCards.map((storyCard, index: number) => ( */}
+      {/*   <StoryCard */}
+      {/*     key={uuid()} */}
+      {/*     $flipped={index % 2 !== 0} */}
+      {/*     title={storyCard.title} */}
+      {/*     tagline={storyCard.tagline} */}
+      {/*   > */}
+      {/*     {media[index]} */}
+      {/*   </StoryCard> */}
+      {/* ))} */}
     </>
   )
 }

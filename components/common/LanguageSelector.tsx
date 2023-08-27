@@ -1,5 +1,5 @@
 import { Language, NavArrowDown } from 'iconoir-react'
-import { useRouter } from 'next/router'
+import { useParams, useRouter } from 'next/navigation'
 import { ChangeEvent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
@@ -45,34 +45,34 @@ const Select = styled.select`
 export function LanguageSelector() {
   const [language, setLanguage] = useState('en')
   const router = useRouter()
-  const { pathname } = router
+  const params = useParams()
 
   const changeUrlLocale = (event: ChangeEvent<HTMLSelectElement>) => {
-    router.replace(pathname, pathname, {
-      locale: event.target.value,
+    router.replace(params.lang as string, {
       scroll: false,
     })
     document.cookie = `NEXT_LOCALE=${event.target.value}; expires=${new Date(
-      '9999-01-01'
+      '9999-01-01',
     ).toUTCString()} samesite=strict; secure=true`
   }
 
   useEffect(() => {
-    if (!router?.locale) return
-    setLanguage(router?.locale)
-  }, [router.locale])
+    if ('lang' in params && typeof params.lang === 'string') {
+      setLanguage(params.lang)
+    }
+  }, [])
 
   return (
     <LanguageSelectorWrapper>
       <Language width="1em" />
       <Select onChange={changeUrlLocale} value={language}>
-        <option value="en" lang="en">
+        <option value="en">
           English
         </option>
-        <option value="es" lang="es">
+        <option value="es">
           Español
         </option>
-        <option value="it" lang="it">
+        <option value="it">
           Italiano
         </option>
       </Select>

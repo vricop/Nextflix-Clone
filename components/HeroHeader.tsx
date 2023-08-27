@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import Link, { LinkProps } from 'next/link'
 import type { PropsWithChildren, ReactNode } from 'react'
 import styled from 'styled-components'
@@ -149,7 +148,7 @@ const TagLine = styled.h2`
 `
 
 export function HeroHeader() {
-  const { t } = useTranslation(['common', 'home'])
+  // const { t } = useTranslation(['common', 'home'])
 
   return (
     <Header>
@@ -157,13 +156,13 @@ export function HeroHeader() {
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/login">{t('common:signInButton')}</SignInButton>
+          <SignInButton href="/login">{/* t('common:signInButton') */}</SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>
         <Text>
-          <Title>{t('home:title')}</Title>
-          <TagLine>{t('home:tagline')}</TagLine>
+          <Title>{/* t('home:title') */}</Title>
+          <TagLine>{/* t('home:tagline') */}</TagLine>
           <Cta />
         </Text>
         <EmailBox />

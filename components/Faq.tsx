@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
 import { Accordion, Item } from './Accordion'
@@ -48,16 +47,14 @@ const CtaWrapper = styled.div`
   row-gap: ${({ theme }) => theme.size[5]};
 `
 
-export function Faq() {
-  const { t } = useTranslation('home')
-
+export async function Faq() {
   return (
     <Container role="">
-      <Title>{t('faqTitle')}</Title>
+      {/* <Title>{t('home:faqTitle')}</Title> */}
       <FaqAccordion>
-        {t('faq').map(details => (
-          <Item key={uuid()} {...details} />
-        ))}
+        {/* {t('home:faq').map((details) => ( */}
+        {/*   <Item key={uuid()} {...details} /> */}
+        {/* ))} */}
       </FaqAccordion>
       <CtaWrapper>
         <Cta />

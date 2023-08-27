@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 
 export const Text = styled.p`
@@ -10,7 +9,5 @@ export const Text = styled.p`
 `
 
 export function Cta({ ...props }) {
-  const { t } = useTranslation()
-
-  return <Text {...props}>{t('home:cta')}</Text>
+  return <Text {...props}>{/* t('home:cta') */}</Text>
 }
