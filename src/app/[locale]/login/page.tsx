@@ -16,8 +16,8 @@ import styled from "styled-components";
 
 const LogoAnchor = styled(Link)`
   position: absolute;
-  top: ${({ theme }) => theme.size[6]};
-  left: ${({ theme }) => theme.size[9]};
+  top: ${({ theme }) => theme.size['6']};
+  left: ${({ theme }) => theme.size['9']};
 `;
 
 const LogoLink = () => (
@@ -31,7 +31,7 @@ const Container = styled.div`
   display: grid;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg);
-  background-color: ${({ theme }) => theme.color?.black};
+  background-color: ${({ theme }) => theme.color.black};
   background-size: cover;
   background-repeat: no-repeat;
 

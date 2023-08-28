@@ -2,6 +2,7 @@ import { NavArrowRight } from 'iconoir-react'
 import styled from 'styled-components'
 import { ButtonDefaults } from '@components/ButtonDefaults'
 import { ChangeEvent, ReactNode, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export const Form = styled.form`
   --height: 3rem;
@@ -151,7 +152,7 @@ export const Error = styled.span`
 export function EmailBox() {
   const [email, setEmail] = useState('')
   const [errorMessage, setErrorMessage] = useState<null | string>(null)
-  // const { t } = useTranslation()
+  const t = useTranslations('home')
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setErrorMessage(event.target.validationMessage)
@@ -173,10 +174,8 @@ export function EmailBox() {
         maxLength={50}
         minLength={5}
       />
-      <Label htmlFor="email">{/* t('emailAddressFieldLabel') */}</Label>
-      <GetStartedButton>
-        {/* {t('getStartedButton', { ns: 'home' })} */}
-      </GetStartedButton>
+      <Label htmlFor="email">{t('emailAddressFieldLabel')}</Label>
+      <GetStartedButton>{t('getStartedButton')}</GetStartedButton>
       {errorMessage && <Error>{errorMessage}</Error>}
     </Form>
   )

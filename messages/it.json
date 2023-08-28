@@ -1,0 +1,80 @@
+{
+  "home": {
+    "signInButton": "Accedi",
+    "emailAddressFieldLabel": "Indirizzo email",
+    "title": "Film, serie TV e tanto altro. Senza limiti.",
+    "tagline": "Guarda ciò che vuoi ovunque. Disdici quando vuoi.",
+    "cta": "Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.",
+    "getStartedButton": "Inizia",
+    "faqTitle": "Domande frequenti",
+    "storyCards": {
+      "1": {
+        "title": "Goditi Netflix sulla tua TV.",
+        "tagline": "Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi."
+      },
+      "2": {
+        "title": "Scarica le tue serie da guardare offline.",
+        "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
+      },
+      "3": {
+        "title": "Guarda Netflix ovunque.",
+        "tagline": "Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più."
+      },
+      "4": {
+        "title": "Crea profili per i bambini.",
+        "tagline": "I bambini scoprono nuove avventure in compagnia dei loro personaggi preferiti in uno spazio tutto loro già incluso nel tuo abbonamento."
+      }
+    },
+    "faq": {
+      "1": {
+        "summary": "Cos'è Netflix?",
+        "details": "Netflix è un servizio di streaming che offre una varietà di serie TV, film, documentari pluripremiati e tanto altro su una vasta gamma di dispositivi connessi a Internet.<br/><br/>Guarda quello che vuoi, in qualsiasi momento e senza interruzioni pubblicitarie. Il tutto a una quota mensile ridotta. C'è sempre qualcosa di nuovo da scoprire: aggiungiamo nuovi film e serie TV ogni settimana!"
+      },
+      "2": {
+        "summary": "Quanto costa Netflix?",
+        "details": "Guarda Netflix su smartphone, tablet, Smart TV, laptop o dispositivi per lo streaming, il tutto per un importo mensile fisso. Piani da 7,99&nbsp;€ a 17,99&nbsp;€ al mese. Nessun costo aggiuntivo, nessun contratto"
+      },
+      "3": {
+        "summary": "Dove posso guardare Netflix?",
+        "details": "Guarda Netflix dove vuoi, quando vuoi. Accedi al tuo account per guardare subito Netflix dal tuo computer su netflix.com oppure da qualsiasi dispositivo connesso a Internet che supporta l'app Netflix, come smart TV, smartphone, tablet, lettori multimediali per streaming e console per videogiochi.<br /><br />Con l'app per iOS, Android e Windows 10 puoi anche scaricare i tuoi programmi preferiti. Usa la funzionalità di download per guardare i contenuti mentre sei in viaggio e senza connessione a Internet. Porta Netflix sempre con te"
+      },
+      "4": {
+        "summary": "Come posso disdire?",
+        "details": "Netflix è flessibile. Nessun contratto fastidioso e nessun impegno. Puoi facilmente disdire il tuo contratto online con due clic. Nessuna penale: attiva o disdici il tuo account in qualsiasi momento"
+      },
+      "5": {
+        "summary": "Cosa posso guardare su Netflix?",
+        "details": "Netflix ha un nutrito catalogo di lungometraggi, documentari, serie TV, anime, originali Netflix pluripremiati e tanto altro. Guarda tutto quello che vuoi, in qualsiasi momento"
+      },
+      "6": {
+        "summary": "Netflix è adatto ai bambini?",
+        "details": "L'area Netflix Bambini, già inclusa nell'abbonamento, offre ai genitori un maggiore controllo sui contenuti e ai più piccoli uno spazio dedicato dove guardare serie TV e film per tutta la famiglia.<br /><br />I profili Bambini hanno un filtro famiglia con PIN che ti permette di limitare l'accesso ai contenuti in base alla fascia d'età e bloccare la visione di titoli specifici"
+      }
+    }
+  },
+  "footer": {
+    "title": "Questions? Call",
+    "phoneNumber": "800 130 364",
+    "phoneNumberLink": "800-130-364",
+    "links": {
+      "1": "Domande frequenti",
+      "2": "Centro assistenza",
+      "3": "Account",
+      "4": "Media Center",
+      "5": "Rapporti con gli investitori",
+      "6": "Opportunità di lavoro",
+      "7": "Riscatta carte regalo",
+      "8": "Acquista carte regalo",
+      "9": "Come guardare Netflix",
+      "10": "Condizioni di utilizzo",
+      "11": "Privacy",
+      "12": "Preferenze per i cookie",
+      "13": "Informazioni sull'azienda",
+      "14": "Contattaci",
+      "15": "Test di velocità",
+      "16": "Note legali",
+      "17": "Solo su Netflix"
+    },
+    "country": "Italia"
+  }
+}

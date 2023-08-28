@@ -5,6 +5,7 @@ import { EmailBox } from '@components/EmailBox'
 import { LanguageSelector } from '@components/LanguageSelector'
 import { Logo } from '@components/Logo'
 import { Cta } from '@components/Cta'
+import { useTranslations } from 'next-intl'
 
 const Header = styled.header`
   display: grid;
@@ -148,7 +149,7 @@ const TagLine = styled.h2`
 `
 
 export function HeroHeader() {
-  // const { t } = useTranslation(['common', 'home'])
+  const t = useTranslations('home')
 
   return (
     <Header>
@@ -156,13 +157,13 @@ export function HeroHeader() {
         <Logo />
         <ButtonGroup>
           <LanguageSelector />
-          <SignInButton href="/login">{/* t('common:signInButton') */}</SignInButton>
+          <SignInButton href="/login">{t('signInButton')}</SignInButton>
         </ButtonGroup>
       </TopBar>
       <Content>
         <Text>
-          <Title>{/* t('home:title') */}</Title>
-          <TagLine>{/* t('home:tagline') */}</TagLine>
+          <Title>{t('title')}</Title>
+          <TagLine>{t('tagline')}</TagLine>
           <Cta />
         </Text>
         <EmailBox />

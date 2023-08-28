@@ -5,6 +5,7 @@ import { Cta } from '@components/Cta'
 import { EmailBox } from '@components/EmailBox'
 import { HomeContainer } from '@components/HomeContainer'
 import { HomeSectionTitle } from '@components/HomeSectionTitle'
+import { useTranslations } from 'next-intl'
 
 const Title = styled(HomeSectionTitle)`
   text-align: center;
@@ -47,14 +48,21 @@ const CtaWrapper = styled.div`
   row-gap: ${({ theme }) => theme.size[5]};
 `
 
-export async function Faq() {
+export function Faq() {
+  const t = useTranslations('home')
+  const keys = [1, 2, 3, 4, 5, 6] as const
+
   return (
     <Container role="">
-      {/* <Title>{t('home:faqTitle')}</Title> */}
+      <Title>{t('faqTitle')}</Title>
       <FaqAccordion>
-        {/* {t('home:faq').map((details) => ( */}
-        {/*   <Item key={uuid()} {...details} /> */}
-        {/* ))} */}
+        {keys.map((item) => (
+          <Item
+            key={uuid()}
+            summary={t(`faq.${item}.summary`)}
+            details={t(`faq.${item}.details`)}
+          />
+        ))}
       </FaqAccordion>
       <CtaWrapper>
         <Cta />

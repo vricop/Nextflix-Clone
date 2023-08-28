@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { v4 as uuid } from 'uuid'
 import { HomeContainer } from '@components/HomeContainer'
 import { LanguageSelector } from '@components/LanguageSelector'
+import { useTranslations } from 'next-intl'
 
 const FooterContainer = styled(HomeContainer)`
   border-bottom: none;
@@ -50,26 +51,31 @@ const FooterCountry = styled.p`
 `
 
 export function Footer() {
-  // const { t } = useTranslation()
+  const t = useTranslations('footer')
+  const keys = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+  ] as const
 
   return (
     <FooterContainer as="footer">
       <Content>
         <p>
-          {/* {t('footer:title')}{' '} */}
-          {/* <PhoneNumber href={`tel:${t('footer:phoneNumber')}`}> */}
-          {/*   {t('footer:phoneNumberLink')} */}
-          {/* </PhoneNumber> */}
+          {t('title')}{' '}
+          <PhoneNumber href={`tel:${t('phoneNumber')}`}>
+            {t('phoneNumberLink')}
+          </PhoneNumber>
         </p>
         <List>
-          {/* {t('footer:links').map((text, index) => ( */}
-          {/*   <li key={uuid()}> */}
-          {/*     <ListLink href={`#${index}`}>{text}</ListLink> */}
-          {/*   </li> */}
-          {/* ))} */}
+          {keys.map((item, i) => {
+            return (
+              <li key={uuid()}>
+                <ListLink href={`#${i}`}>{t(`links.${item}`)}</ListLink>
+              </li>
+            )
+          })}
         </List>
         <LanguageSelector />
-        <FooterCountry>Netflix {/* {t('country')} */}</FooterCountry>
+        <FooterCountry>Netflix {t('country')}</FooterCountry>
       </Content>
     </FooterContainer>
   )

@@ -11,10 +11,9 @@ a work in progress and it's not finished yet**.
 - [Next.js](nextjs.org/)
 - [Typescript](typescriptlang.org/)
 - [Styled Components](styled-components.com/)
-- [React hooks](https://reactjs.org/docs/hooks-reference.html#gatsby-focus-wrapper)
 - [Jest](https://jestjs.io/)
 - [React Testing Library]()
-- [`next-i18next` (internationalization)](https://www.npmjs.com/package/next-i18next)
+- [`i18n` (internationalization)](https://www.npmjs.com/package/next-i18next)
 
 ### Back-end (not implemented yet)
 

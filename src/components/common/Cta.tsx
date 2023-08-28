@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import styled from 'styled-components'
 
 export const Text = styled.p`
@@ -9,5 +10,6 @@ export const Text = styled.p`
 `
 
 export function Cta({ ...props }) {
-  return <Text {...props}>{/* t('home:cta') */}</Text>
+  const t = useTranslations('home')
+  return <Text {...props}>{t('cta')}</Text>
 }
