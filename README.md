@@ -1,7 +1,16 @@
 # Netflix Clone
 
-This is a side project for building a Netflix clone just for fun. **It's still
-a work in progress and it's not finished yet**.
+This is a side project about a Netflix clone built in Next.js.
+
+Purposes of this project:
+
+- Have fun and experiment with new interesting technology
+- Play with the new app dir in Next.js v13
+- Play with i18n
+- I'd love to implement some nice CSS animations that Netflix uses
+
+**Disclaimer**: This project isn't finished. I add update/add new stuff whenever
+I've got plenty of time to do so, which is almost never the case 🤣
 
 ## Stack
 
@@ -12,16 +21,16 @@ a work in progress and it's not finished yet**.
 - [Typescript](typescriptlang.org/)
 - [Styled Components](styled-components.com/)
 - [Jest](https://jestjs.io/)
-- [React Testing Library]()
-- [`i18n` (internationalization)](https://www.npmjs.com/package/next-i18next)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Next intl](https://next-intl-docs.vercel.app/)
 
 ### Back-end (not implemented yet)
 
-- [Keystone.js](https://keystonejs.com/)
-- [GraphQL](https://graphql.org/)
-- [Apollo client](https://www.apollographql.com/)
+Nothing yet...
 
 ### APIs Used:
+
+Nothing yet...I'd like to populate the movies/film list with this api:
 
 - [The Movies Database](https://www.themoviedb.org/documentation/api)
 
