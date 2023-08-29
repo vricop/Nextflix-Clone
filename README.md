@@ -4,12 +4,12 @@ This is a side project about a Netflix clone built in Next.js.
 
 Purposes of this project:
 
-- Have fun and experiment with new interesting technology
+- Have fun and experiment with new or interesting technology
 - Play with the new app dir in Next.js v13
 - Play with i18n
 - I'd love to implement some nice CSS animations that Netflix uses
 
-**Disclaimer**: This project isn't finished. I add update/add new stuff whenever
+**Disclaimer**: This project isn't finished. I update/add new stuff whenever
 I've got plenty of time to do so, which is almost never the case 🤣
 
 ## Stack
