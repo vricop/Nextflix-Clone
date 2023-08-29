@@ -35,7 +35,8 @@ const LanguageSelectorWrapper = styled.div`
 const Select = styled.select`
   display: block;
   width: 100%;
-  padding: ${({ theme }) => `${theme.size['2em']} ${theme.size['7em']}`};
+  padding: ${({ theme }) =>
+    `${theme.size['2em']} ${theme.size['8em']} ${theme.size['2em']} ${theme.size['7em']}`};
   border: none;
   background-color: rgba(0, 0, 0, 0.4);
   color: inherit;
