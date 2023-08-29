@@ -1,6 +1,6 @@
 import { Language, NavArrowDown } from 'iconoir-react'
 import { useLocale } from 'next-intl'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, usePathname, useRouter } from 'next/navigation'
 import { ChangeEvent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
@@ -47,12 +47,12 @@ export function LanguageSelector() {
   const [language, setLanguage] = useState('en')
   const router = useRouter()
   const locale = useLocale()
+  const pathname = usePathname()
 
   const changeUrlLocale = (event: ChangeEvent<HTMLSelectElement>) => {
-    // TODO: Refactor this
-    router.replace(locale, {
-      scroll: false,
-    })
+    const langPathname = pathname.replace(locale, event.target.value)
+    router.push(langPathname, { scroll: false })
+
     document.cookie = `NEXT_LOCALE=${event.target.value}; expires=${new Date(
       '9999-01-01',
     ).toUTCString()} samesite=strict; secure=true`
