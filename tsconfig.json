@@ -19,7 +19,8 @@
       "@components/*": ["./src/components/*", "./src/components/common/*"],
       "@app/*": ["./src/app/*"],
       "@utils/*": ["./src/utils/*"],
-      "@fixtures/*": ["fixtures/*"]
+      "@fixtures/*": ["fixtures/*"],
+      "@public/*": ["public/*"]
     },
     "plugins": [
       {
