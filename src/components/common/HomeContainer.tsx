@@ -1,13 +1,14 @@
-import styled from 'styled-components'
+import classNames from 'classnames'
+import { ComponentProps } from 'react'
 
-export const HomeContainer = styled.div`
-  background-color: black;
-  padding: ${({ theme }) => theme.size[12]} 5%;
-  color: ${({ theme }) => theme.color.white};
-  border-bottom: ${({ theme }) =>
-    `${theme.size[2]} solid ${theme.color.gray_600}`};
-
-  @media (min-width: 34.375rem) {
-    padding: ${({ theme }) => `${theme.size[18]} ${theme.size[11]}`};
-  }
-`
+export function HomeContainer({ className, ...props }: ComponentProps<'div'>) {
+  return (
+    <div
+      className={classNames(
+        'bg-black py-12 sm:py-18 px-[5%] sm:px-11 text-white border-b-8 border-gray-600',
+        className,
+      )}
+      {...props}
+    />
+  )
+}

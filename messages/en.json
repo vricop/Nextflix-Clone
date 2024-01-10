@@ -76,5 +76,9 @@
       "17": "Only on Netflix"
     },
     "country": "United States"
+  },
+  "login": {
+    "signInButton": "Sign in",
+    "needHelp": "Need helps?"
   }
 }

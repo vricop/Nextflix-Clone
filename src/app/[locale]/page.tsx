@@ -1,4 +1,3 @@
-'use client'
 import { Footer } from '@components/common/Footer'
 import { Faq } from '@components/Faq'
 import { HeroHeader } from '@components/HeroHeader'

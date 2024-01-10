@@ -76,5 +76,9 @@
       "17": "Solo en Netflix"
     },
     "country": "España"
+  },
+  "login": {
+    "signInButton": "Acceder",
+    "needHelp": "¿Necesitas ayuda?"
   }
 }

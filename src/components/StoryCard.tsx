@@ -1,73 +1,36 @@
-import { ReactNode } from 'react'
-import styled from 'styled-components'
+import { ComponentProps } from 'react'
 import { HomeContainer } from '@components/HomeContainer'
 import { HomeSectionTitle } from '@components/HomeSectionTitle'
+import classNames from 'classnames'
 
-export const Container = styled.div`
-  align-items: center;
-  column-gap: ${({ theme }) => theme.size[12]};
-  display: grid;
-  margin-inline: auto;
-  max-width: 68.75rem;
-
-  @media (min-width: 59.375rem) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
-
-export const SubTitle = styled.h3`
-  font-size: ${({ theme }) => theme.text.lg};
-  font-weight: ${({ theme }) => theme.fontWeight.normal};
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text['2xl']};
-  }
-`
-
-export const Text = styled.hgroup<{ $flipped?: boolean }>`
-  display: grid;
-  grid-auto-flow: row;
-  row-gap: ${({ theme }) => theme.size[4]};
-
-  @media (min-width: 34.375rem) {
-    row-gap: ${({ theme }) => theme.size[5]};
-  }
-
-  @media (min-width: 59.375rem) {
-    row-gap: ${({ theme }) => theme.size[5]};
-    order: ${({ $flipped }) => $flipped && '2'};
-  }
-
-  @media (max-width: 59.375rem) {
-    text-align: center;
-  }
-`
-
-export const Media = styled.div`
-  display: grid;
-  place-items: center;
-`
+export interface StoryCardProps extends ComponentProps<'div'> {
+  flipped?: boolean
+  title: string
+  tagline: string
+}
 
 export function StoryCard({
-  $flipped,
+  flipped,
   children,
   title,
   tagline,
-}: {
-  $flipped?: boolean
-  children: ReactNode
-  title: string
-  tagline: string
-}) {
+}: StoryCardProps) {
   return (
     <HomeContainer>
-      <Container>
-        <Text {...{ $flipped }}>
+      <div className="grid items-center grid-cols-12 mx-auto max-w-6xl md:grid-cols-2">
+        <hgroup
+          className={classNames(
+            'grid grid--flow-row gap-y-4 sm:gap-y-5 md:gap-y-5 md:text-center',
+            {
+              'md:order-2': flipped,
+            },
+          )}
+        >
           <HomeSectionTitle>{title}</HomeSectionTitle>
-          <SubTitle>{tagline}</SubTitle>
-        </Text>
-        <Media>{children}</Media>
-      </Container>
+          <h3 className="text-lg sm:text-2xl font-normal">{tagline}</h3>
+        </hgroup>
+        <div className="grid place-items-center">{children}</div>
+      </div>
     </HomeContainer>
   )
 }

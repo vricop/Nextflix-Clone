@@ -1,54 +1,8 @@
-import styled from 'styled-components'
+'use client'
 import { v4 as uuid } from 'uuid'
 import { HomeContainer } from '@components/HomeContainer'
 import { LanguageSelector } from '@components/LanguageSelector'
 import { useTranslations } from 'next-intl'
-
-const FooterContainer = styled(HomeContainer)`
-  border-bottom: none;
-  color: ${({ theme }) => theme.color.gray_500};
-`
-
-const Content = styled.div`
-  max-width: 68.75rem;
-  margin-inline: auto;
-  display: grid;
-  justify-items: start;
-  row-gap: ${({ theme }) => theme.size[8]};
-`
-
-const PhoneNumber = styled.a`
-  color: inherit;
-  text-decoration: none;
-  transition: 200ms ease-in-out;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const List = styled.ul`
-  width: 100%;
-  font-size: ${({ theme }) => theme.text.sm};
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
-  list-style: none;
-  padding: 0;
-  column-gap: ${({ theme }) => theme.size[3]};
-  row-gap: ${({ theme }) => theme.size[4]};
-`
-
-const ListLink = styled.a`
-  color: inherit;
-  transition: color 200ms ease-in-out;
-  &:not(:hover) {
-    text-decoration: none;
-  }
-`
-
-const FooterCountry = styled.p`
-  font-size: ${({ theme }) => theme.text.sm};
-`
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -57,26 +11,34 @@ export function Footer() {
   ] as const
 
   return (
-    <FooterContainer as="footer">
-      <Content>
+    <HomeContainer className="border-b-0 text-gray-500">
+      <div className="max-w-6xl mx-auto grid justify-start sm:justify-normal gap-y-8">
         <p>
           {t('title')}{' '}
-          <PhoneNumber href={`tel:${t('phoneNumber')}`}>
+          <a
+            className="no-underline hover:underline"
+            href={`tel:${t('phoneNumber')}`}
+          >
             {t('phoneNumberLink')}
-          </PhoneNumber>
+          </a>
         </p>
-        <List>
+        <ul className="w-full text-sm grid grid-cols-[repeat(auto-fit,minmax(min(14rem,100%),1fr))] list-none p-0 gap-x-3 gap-y-4">
           {keys.map((item, i) => {
             return (
               <li key={uuid()}>
-                <ListLink href={`#${i}`}>{t(`links.${item}`)}</ListLink>
+                <a
+                  className="transition-colors duration-200 ease-in-out no-underline hover:underline"
+                  href={`#${i}`}
+                >
+                  {t(`links.${item}`)}
+                </a>
               </li>
             )
           })}
-        </List>
-        <LanguageSelector />
-        <FooterCountry>Netflix {t('country')}</FooterCountry>
-      </Content>
-    </FooterContainer>
+        </ul>
+        <LanguageSelector className="justify-self-start" />
+        <p className="text-sm">Netflix {t('country')}</p>
+      </div>
+    </HomeContainer>
   )
 }

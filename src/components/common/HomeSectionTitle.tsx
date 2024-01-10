@@ -1,10 +1,17 @@
-import styled from 'styled-components'
+import classNames from 'classnames'
+import { ComponentProps } from 'react'
 
-export const HomeSectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.text['3xl']};
-  line-height: ${({ theme }) => theme.leading.tighter};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: ${({ theme }) => theme.text['4xl']};
-  }
-`
+export function HomeSectionTitle({
+  className,
+  ...props
+}: ComponentProps<'h2'>) {
+  return (
+    <h2
+      className={classNames(
+        'text-3xl leading-tight sm:text-size-4xl',
+        className,
+      )}
+      {...props}
+    />
+  )
+}

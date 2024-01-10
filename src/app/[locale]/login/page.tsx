@@ -1,285 +1,186 @@
 'use client'
-import { Logo } from "@components/common/Logo";
-import { Check } from "iconoir-react";
-import { NextPage } from "next";
-import Link from "next/link";
+import { Logo } from '@components/common/Logo'
+import classNames from 'classnames'
+import { Check } from 'iconoir-react'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 import {
   ChangeEventHandler,
+  ComponentPropsWithRef,
   FormEvent,
-  ForwardedRef,
   forwardRef,
-  InputHTMLAttributes,
   MouseEventHandler,
+  ReactNode,
   useState,
-} from "react";
-import styled from "styled-components";
+} from 'react'
 
-const LogoAnchor = styled(Link)`
-  position: absolute;
-  top: ${({ theme }) => theme.size['6']};
-  left: ${({ theme }) => theme.size['9']};
-`;
-
-const LogoLink = () => (
-  <LogoAnchor href="/" aria-label="Go home link">
-    <Logo />
-  </LogoAnchor>
-);
-
-const Container = styled.div`
-  height: 100%;
-  display: grid;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg);
-  background-color: ${({ theme }) => theme.color.black};
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  & > * {
-    grid-area: 1/1;
-  }
-`;
-
-const FormWrapper = styled.div`
-  display: grid;
-  row-gap: ${({ theme }) => theme.size[8]};
-  width: 100%;
-  max-width: 23.75rem;
-  place-self: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: ${({ theme }) => theme.size[12]};
-  border-radius: ${({ theme }) => theme.size['1.5em']};
-`;
-
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.text['4xl']};
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-  color: ${({ theme }) => theme.color.white};
-`;
-
-const Form = styled.form`
-  display: grid;
-  row-gap: ${({ theme }) => theme.size[5]};
-`;
-
-const Label = styled.label`
-  display: grid;
-  background-color: ${({ theme }) => theme.color.gray_700};
-  border-radius: ${({ theme }) => theme.size['1em']};
-  overflow: hidden;
-  align-items: center;
-  border-bottom: ${({ theme }) => `2px solid ${theme.color.orange}`};
-
-  & > * {
-    background-color: transparent;
-    grid-area: 1/1;
-  }
-`;
-
-const LabelText = styled.span`
-  display: inline-block;
-  pointer-events: none;
-  z-index: 1;
-  transition: 200ms ease-in-out;
-  color: ${({ theme }) => theme.color.gray_400};
-  transform: ${({ theme }) => `translateX(${theme.size[4]})`};
-`;
-
-const Input = styled.input`
-  padding-inline: ${({ theme }) => theme.size[4]};
-  padding-top: ${({ theme }) => theme.size[4]};
-  line-height: ${({ theme }) => theme.leading[8]};
-  border: none;
-  color: ${({ theme }) => theme.color.white};
-
-  &.has-text + ${LabelText}, &:focus + ${LabelText} {
-    font-size: ${({ theme }) => theme.text.xs};
-    transform: ${({ theme }) => `translate(${theme.size[4]}, -75%)`};
-  }
-`;
-const InputPasswordWrapper = styled.div`
-  display: grid;
-
-  & > * {
-    grid-area: 1/1;
-  }
-`;
-
-const TogglePassWordVisibiliy = styled.button`
-  justify-self: end;
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  appearance: none;
-  border: none;
-  color: ${({ theme }) => theme.color.white};
-  outline: none;
-  text-transform: uppercase;
-  font-size: ${({ theme }) => theme.text.sm};
-  cursor: pointer;
-  color: ${({ theme }) => theme.color.gray_400};
-  padding-left: 0;
-  padding-right: ${({ theme }) => theme.size[4]};
-`;
-
-const Footer = styled.footer`
-  align-self: end;
-`;
-
-const SigninButton = styled.button`
-  appearance: none;
-  border: none;
-  color: ${({ theme }) => theme.color.white};
-  line-height: ${({ theme }) => theme.leading[12]};
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-  background-color: ${({ theme }) => theme.color.brand};
-  border-radius: ${({ theme }) => theme.size['1em']};
-  cursor: pointer;
-`;
-
-type InputFieldDefaultProps = InputHTMLAttributes<HTMLInputElement>;
+type InputFieldDefaultProps = Omit<ComponentPropsWithRef<'input'>, 'className'>
 
 type InputFieldProps = InputFieldDefaultProps & {
-  label: string;
-};
-
-type PasswordFieldProps = InputFieldDefaultProps & {
-  isVisible?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-};
-
-const CustomCheckbox = styled.div`
-  color: ${({ theme }) => theme.color.white};
-
-  [type="checkbox"] {
-    appearance: none;
+  label: string
+  error?: ReactNode
+  className?: {
+    wrapper?: string
+    input?: string
   }
+}
 
-  label {
-    display: grid;
-    grid-template: "checkbox text" auto / auto 1fr;
-    column-gap: ${({ theme }) => theme.size[4]};
-    align-items: center;
-  }
+type PasswordFieldProps = InputFieldProps & {
+  isVisible?: boolean
+  onClick?: MouseEventHandler<HTMLButtonElement>
+}
 
-  input,
-  svg {
-    grid-area: checkbox;
-  }
-
-  span {
-    display: inline-block;
-    width: ${({ theme }) => theme.size[4]};
-    height: ${({ theme }) => theme.size[4]};
-    background-color: ${({ theme }) => theme.color.gray_400};
-    grid-area: text;
-  }
-`;
-
-const InputCheckbox = ({ label, ...props }: InputFieldProps) => (
-  <CustomCheckbox>
-    <label>
-      <input type="checkbox" {...props} />
-      <Check />
-      <span>{label}</span>
-    </label>
-  </CustomCheckbox>
-);
-
-const InputField = forwardRef(
-  (
-    { label, ...props }: InputFieldProps,
-    ref: ForwardedRef<HTMLInputElement>
-  ) => (
-    <Label>
-      <Input ref={ref} {...props} />
-      <LabelText>{label}</LabelText>
-    </Label>
+function Checkbox({ label, error, className, ...props }: InputFieldProps) {
+  return (
+    <div className={classNames(className?.wrapper)}>
+      <label className="grid [grid-template:'checkbox_label'_auto_/_auto_1fr] gap-[1ch] items-center text-xs">
+        <input
+          className={classNames(
+            'peer appearance-none w-4 h-4 leading-12 border-none bg-gray-400  [grid-area:checkbox]',
+            className?.input,
+          )}
+          type="checkbox"
+          {...props}
+        />
+        <Check className="[grid-area:checkbox] w-4 h-4 text-black hidden peer-checked:block" />
+        <span className="inline-block [grid-area:label]">{label}</span>
+      </label>
+    </div>
   )
-);
+}
 
-InputField.displayName = "InputField";
+const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
+  function PasswordField(
+    {
+      isVisible = false,
+      error,
+      className,
+      onClick,
+      ...props
+    }: PasswordFieldProps,
+    ref,
+  ) {
+    return (
+      <div
+        className={classNames(
+          "grid [grid-template:'input'_auto_/_auto]",
+          className?.wrapper,
+        )}
+      >
+        <InputField
+          className={{
+            wrapper: classNames('[grid-area:input]', className?.input),
+          }}
+          ref={ref}
+          type={isVisible ? 'password' : 'text'}
+          {...props}
+        />
+        <button
+          className="[grid-area:input] leading-[50px] justify-self-end relative z-index-10 bg-transparent appearance-none border-none text-gray-400 outline-none uppercase text-sm cursor-pointer pl-0 pr-4"
+          type="button"
+          onClick={onClick}
+        >
+          {isVisible ? 'Show' : 'Hide'}
+        </button>
+      </div>
+    )
+  },
+)
 
-const PasswordField = forwardRef(
-  (
-    { isVisible = false, onClick, ...props }: PasswordFieldProps,
-    ref: ForwardedRef<HTMLInputElement>
-  ) => (
-    <InputPasswordWrapper>
-      <InputField
-        ref={ref}
-        type={isVisible ? "password" : "text"}
-        label="Password"
-        {...props}
-      />
-      <TogglePassWordVisibiliy type="button" onClick={onClick}>
-        {isVisible ? "Show" : "Hide"}
-      </TogglePassWordVisibiliy>
-    </InputPasswordWrapper>
-  )
-);
+const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  function InputField({ label, className, error, ...props }, ref) {
+    return (
+      <div className={className?.wrapper}>
+        <label className="grid items-center">
+          <input
+            className={classNames(
+              '[grid-area:1/1] appearance-none rounded-md h-[50px] px-6 pt-5 focus:pb-0 placeholder-shown:pb-5 text-white bg-neutral-700 focus:bg-neutral-600 focus:outline-none border-b-2 border-b-orange-500 placeholder-transparent peer transition-all duration-200 ease-in-out',
+              className?.input,
+            )}
+            ref={ref}
+            {...props}
+          />
+          <span className="[grid-area:1/1] block peer-placeholder-shown:text-base peer-focus:text-xs text-xs font-light text-gray-400 px-6 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-3/4 -translate-y-3/4 translate-x-0 pointer-events-none z-10 transition-all duration-200 ease-in-out">
+            {label}
+          </span>
+        </label>
+        {error && <span className="text-orange-500 text-xs">{error}</span>}
+      </div>
+    )
+  },
+)
 
-PasswordField.displayName = "PasswordField";
-
-const Login: NextPage = () => {
-  const [isVisible, setIsVisible] = useState(true);
+export default function Login() {
+  const t = useTranslations('login')
+  const [isVisible, setIsVisible] = useState(true)
   const [fields, setFields] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+  })
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   function togglePasswordVisibility() {
-    setIsVisible((previousState) => !previousState);
+    setIsVisible((previousState) => !previousState)
   }
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    const { name, value } = event.currentTarget;
+    const { name, value } = event.currentTarget
 
     setFields({
       ...fields,
       [name]: value,
-    });
-  };
+    })
+  }
 
   return (
-    <Container>
-      <LogoLink />
-
-      <FormWrapper>
-        <Title>Sign in</Title>
-        <Form onSubmit={handleSubmit}>
+    <div className="w-full h-screen grid bg-login-overlay bg-black bg-cover bg-no-repeat">
+      <Link
+        className="absolute top-6 left-9 [grid-area:1/1] text-netflix"
+        href="/"
+        aria-label="Go home link"
+      >
+        <Logo />
+      </Link>
+      <div className="grid gap-y-8 w-full max-w-sm place-self-center bg-black/75 p-[4rem] rounded-md [grid-area:1/1]">
+        <h1 className="text-4xl font-bold text-white">Sign in</h1>
+        <form className="grid gap-y-5" onSubmit={handleSubmit}>
           <InputField
-            className={fields.email && "has-text"}
             onChange={handleChange}
             required
             value={fields.email}
             name="email"
             label="Email or phone number"
+            placeholder="Email or phone number"
             type="email"
+            error={!fields.email && 'Error'}
           />
           <PasswordField
-            className={fields.password && "has-text"}
             onChange={handleChange}
             isVisible={isVisible}
             required
             onClick={togglePasswordVisibility}
             name="password"
+            label="Password"
+            placeholder="Password"
             value={fields.password}
+            error={!fields.password && 'Error'}
           />
-          <SigninButton type="submit">Sign in</SigninButton>
-          <footer>
-            <InputCheckbox label="Remember me" />
-            <p>Need help?</p>
+          <button
+            className="border-none text-white h-[50px] font-bold bg-netflix rounded-md cursor-pointer"
+            type="submit"
+          >
+            {t('signInButton')}
+          </button>
+          <footer className="grid grid-flow-col items-center justify-between text-neutral-400 text-xs">
+            <Checkbox label="Remember me" />
+            <p>{t('needHelp')}</p>
           </footer>
-        </Form>
-      </FormWrapper>
-      <Footer>footer element</Footer>
-    </Container>
-  );
-};
-
-export default Login;
+        </form>
+      </div>
+      <footer className="self-end [grid-area:1/1]">footer element</footer>
+    </div>
+  )
+}

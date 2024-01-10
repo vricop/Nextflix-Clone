@@ -1,67 +1,26 @@
-import styled from 'styled-components'
-
-const Container = styled.div`
-  display: grid;
-  place-items: center;
-`
-
-const Phone = styled.img`
-  grid-area: 1/1;
-`
-
-const DownloadItemCard = styled.div`
-  align-items: center;
-  align-self: end;
-  background-color: ${({ theme }) => theme.color.black};
-  border-radius: ${({ theme }) => theme.size[3]};
-  border: ${({ theme }) => `${theme.size[0.5]} solid ${theme.color.gray_700}`};
-  column-gap: ${({ theme }) => theme.size[4]};
-  display: grid;
-  grid-area: 1/1;
-  grid-template-columns: auto 1fr auto;
-  padding: ${({ theme }) => `${theme.size[2]} ${theme.size[3]}`};
-  transform: translateY(-22%);
-  width: 60%;
-`
-
-const Poster = styled.img`
-  width: auto;
-  height: ${({ theme }) => theme.size[20]};
-  aspect-ratio: 150/210;
-`
-
-const Title = styled.h3`
-  font-size: ${({ theme }) => theme.text.base};
-  line-height: ${({ theme }) => theme.leading.tight};
-`
-
-const Description = styled.p`
-  font-size: ${({ theme }) => theme.text.sm};
-  color: ${({ theme }) => theme.color.blue};
-  line-height: ${({ theme }) => theme.leading.tight};
-`
-
-const Gif = styled.img`
-  height: ${({ theme }) => theme.size[12]};
-`
-
+// TODO: Replace hard-coded text with translations
 export function Mobile() {
   return (
-    <Container>
-      <Phone src="/images/mobile-0819.jpg" alt="Mobile - Stranger Things" />
-      <DownloadItemCard>
-        <Poster
+    <div className="grid place-items-center">
+      <img
+        className="[grid-area:1/1]"
+        src="/images/mobile-0819.jpg"
+        alt="Mobile - Stranger Things"
+      />
+      <div className="items-center self-end bg-black rounded-xl gap-x-4 grid [grid-area:1/1] grid-cols-[auto_1fr_auto] py-2 px-3 -translate-y-[22%] w-[60%]">
+        <img
+          className="w-auto h-20 aspect-[150/210]"
           width={150}
           height={210}
           src="/images/boxshot.png"
           alt="Stranger Things Poster"
         />
         <div>
-          <Title>Stranger Things</Title>
-          <Description>Downloading...</Description>
+          <h3 className="text-base leading-tight">Stranger Things</h3>
+          <p className="text-sm text-blue-100 leading-tight">Downloading...</p>
         </div>
-        <Gif src="/images/download-icon.gif" alt="" />
-      </DownloadItemCard>
-    </Container>
+        <img className="h-12" src="/images/download-icon.gif" alt="" />
+      </div>
+    </div>
   )
 }

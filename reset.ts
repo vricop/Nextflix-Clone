@@ -1,3 +1,4 @@
+import { customProperties } from 'custom-properties'
 import { createGlobalStyle, css } from 'styled-components'
 
 const styles = css`
@@ -6,6 +7,7 @@ const styles = css`
   *::after {
     box-sizing: border-box;
   }
+
   * {
     margin: 0;
   }
@@ -57,21 +59,38 @@ const styles = css`
 
   @font-face {
     font-family: 'Netflix Sans';
-    src:
-      url('/fonts/NetflixSans_W_Rg.woff2') format('woff2'),
-      url('/fonts/NetflixSans_W_Rg.woff') format('woff');
+    src: url('/fonts/NetflixSans_W_Rg.woff2') format('woff2');
     font-weight: 400;
     font-display: optional;
   }
 
   @font-face {
     font-family: 'Netflix Sans';
-    src:
-      url('/fonts/NetflixSans_W_Md.woff2') format('woff2'),
-      url('/fonts/NetflixSans_W_Md.woff') format('woff');
+    src: url('/fonts/NetflixSans_W_Md.woff2') format('woff2');
+    font-weight: 500;
+    font-display: optional;
+  }
+
+  @font-face {
+    font-family: 'Netflix Sans';
+    src: url('/fonts/NetflixSans_W_Blk.woff2') format('woff2');
     font-weight: 700;
     font-display: optional;
   }
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'],
+  select,
+  summary {
+    &:focus {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  }
+
+  ${customProperties}
 `
 
 export const Reset = createGlobalStyle`${styles}`

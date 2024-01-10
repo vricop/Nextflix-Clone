@@ -1,10 +1,7 @@
-'use client'
 import { NextIntlClientProvider } from 'next-intl'
-import StyledComponentsRegistry from '../../lib/registry'
 import { notFound } from 'next/navigation'
-import { theme } from 'src/theme'
-import { ThemeProvider } from 'styled-components'
-import { Reset } from 'reset'
+import '../globals.css'
+import { Metadata } from 'next'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -15,6 +12,11 @@ interface RootLayoutProps {
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'it' }, { local: 'es' }]
+}
+
+export const metadata: Metadata = {
+  title: 'Netflix Clone',
+  description: 'Sideproject',
 }
 
 export default async function RootLayout({
@@ -33,12 +35,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <head />
       <body>
-        <ThemeProvider theme={theme}>
-          <Reset />
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )

@@ -1,3 +1,4 @@
+'use client'
 import { ReactElement } from 'react'
 import { v4 as uuid } from 'uuid'
 import { DevicePile } from './DevicePile'
@@ -21,7 +22,7 @@ export default function StoryCards() {
   return keys.map((i) => (
     <StoryCard
       key={uuid()}
-      $flipped={i % 2 !== 0}
+      flipped={i % 2 !== 0}
       title={t(`storyCards.${i}.title`)}
       tagline={t(`storyCards.${i}.tagline`)}
     >

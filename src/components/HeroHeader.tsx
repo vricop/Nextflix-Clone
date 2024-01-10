@@ -1,173 +1,39 @@
-import Link, { LinkProps } from 'next/link'
-import type { PropsWithChildren, ReactNode } from 'react'
-import styled from 'styled-components'
+'use client'
+import Link from 'next/link'
 import { EmailBox } from '@components/EmailBox'
 import { LanguageSelector } from '@components/LanguageSelector'
 import { Logo } from '@components/Logo'
-import { Cta } from '@components/Cta'
 import { useTranslations } from 'next-intl'
-
-const Header = styled.header`
-  display: grid;
-  grid-template-rows: auto 1fr;
-  row-gap: ${({ theme }) => theme.size[12]};
-  background-color: rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.8) 0,
-      rgba(0, 0, 0, 0) 60%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
-    linear-gradient(to top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
-    radial-gradient(50% 100%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
-    url('/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg');
-  background-size: cover;
-  background-position: center;
-  color: ${({ theme }) => theme.color.white};
-  height: 750px;
-  border-bottom: ${({ theme }) =>
-    `${theme.size[2]} solid ${theme.color.gray_600}`};
-`
-
-const TopBar = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  column-gap: ${({ theme }) => theme.size[4]};
-  align-items: center;
-  justify-content: space-between;
-  padding: ${({ theme }) => theme.size[6]} 5% 0;
-
-  @media (min-width: 34.375rem) {
-    padding-inline: ${({ theme }) => theme.size[6]};
-  }
-
-  /* Netflix logo */
-  & > svg {
-    width: auto;
-    height: ${({ theme }) => theme.size[6]};
-
-    @media (min-width: 34.375rem) {
-      height: ${({ theme }) => theme.size[8]};
-    }
-
-    @media (min-width: 59.375rem) {
-      height: ${({ theme }) => theme.size[9]};
-    }
-
-    @media (min-width: 90.625rem) {
-      height: ${({ theme }) => theme.size[11]};
-    }
-  }
-`
-
-const ButtonGroup = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  column-gap: ${({ theme }) => theme.size[3]};
-  align-items: center;
-
-  @media (min-width: 34.375rem) {
-    column-gap: ${({ theme }) => theme.size[8]};
-  }
-`
-
-const StyledLink = ({
-  children,
-  className,
-  ...rest
-}: {
-  children: ReactNode
-  className?: string
-} & PropsWithChildren<LinkProps>) => (
-  <Link className={className} {...rest}>
-    {children}
-  </Link>
-)
-
-const SignInButton = styled(StyledLink)`
-  background-color: ${({ theme }) => theme.color.brand};
-  border-radius: ${({ theme }) => theme.size['0.5em']};
-  color: ${({ theme }) => theme.color.white};
-  padding: ${({ theme }) => `${theme.size['2em']} ${theme.size['4em']}`};
-  line-height: ${({ theme }) => theme.leading.snug};
-  text-decoration: none;
-  border: ${({ theme }) => theme.size.px} solid transparent;
-  font-size: ${({ theme }) => theme.text.xs};
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text.sm};
-  }
-`
-
-const Content = styled.div`
-  display: grid;
-  grid-auto-flow: row;
-  padding-inline: 5%;
-  justify-items: center;
-  align-content: center;
-  row-gap: ${({ theme }) => theme.size[6]};
-  text-align: center;
-
-  @media (min-width: 34.375rem) {
-    padding-inline: ${({ theme }) => theme.size[12]};
-  }
-`
-
-const Text = styled.div`
-  display: grid;
-  grid-auto-flow: row;
-  justify-items: center;
-  row-gap: ${({ theme }) => theme.size[2]};
-
-  @media (min-width: 34.375rem) {
-    row-gap: ${({ theme }) => theme.size[5]};
-  }
-`
-
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.text['2xl']};
-  line-height: ${({ theme }) => theme.leading.tight};
-  max-width: 40rem;
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text['5xl']};
-  }
-
-  @media (min-width: 90.625rem) {
-    font-size: ${({ theme }) => theme.text['6xl']};
-  }
-`
-
-const TagLine = styled.h2`
-  font-size: ${({ theme }) => theme.text.lg};
-  font-weight: ${({ theme }) => theme.fontWeight.normal};
-  max-width: 40rem;
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text['2xl']};
-  }
-`
 
 export function HeroHeader() {
   const t = useTranslations('home')
 
   return (
-    <Header>
-      <TopBar>
-        <Logo />
-        <ButtonGroup>
+    <header className="grid grid-rows-[auto_1fr] gap-x-12 bg-black/5 hero-header bg-cover bg-center text-white h-[750px] border border-b-gray-600">
+      <div className="grid grid-flow-col gap-x-4 items-center justify-between pt-6 px-[5%] sm:px-6 pb-0">
+        <Logo className="w-auto h-6 sm:h-8 md:h-9 lg:h-11" />
+        <div className="grid grid-flow-col gap-x-3 items-center sm:gap-x-8">
           <LanguageSelector />
-          <SignInButton href="/login">{t('signInButton')}</SignInButton>
-        </ButtonGroup>
-      </TopBar>
-      <Content>
-        <Text>
-          <Title>{t('title')}</Title>
-          <TagLine>{t('tagline')}</TagLine>
-          <Cta />
-        </Text>
+          <Link
+            href="/login"
+            className="bg-netflix rounded-[.125em] text-white py-[.5em] px-[1em] leading-snug no-underline border border-transparent text-xs sm:text-sm"
+          >
+            {t('signInButton')}
+          </Link>
+        </div>
+      </div>
+      <div className="grid grid-flow-row px-[5%] justify-items-center content-center gap-y-6 text-center sm:px-12">
+        <div className="grid grid-flow-row justify-items-center gap-y-2 sm:gap-y-5">
+          <h1 className="text-2xl leading-tight max-w-[40rem] sm:text-5xl xl:text-6xl">
+            {t('title')}
+          </h1>
+          <h2 className="text-lg sm:text-2xl text-normal max-w-2xl">
+            {t('tagline')}
+          </h2>
+          <p className="text-lg sm:text-xl">{t('cta')}</p>
+        </div>
         <EmailBox />
-      </Content>
-    </Header>
+      </div>
+    </header>
   )
 }

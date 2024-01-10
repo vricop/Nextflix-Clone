@@ -1,50 +1,14 @@
-import { Language, NavArrowDown } from 'iconoir-react'
+import CaretDown from '@public/icons/caret-down.svg'
+import Globe from '@public/icons/globe.svg'
+import classNames from 'classnames'
 import { useLocale } from 'next-intl'
-import { useParams, usePathname, useRouter } from 'next/navigation'
-import { ChangeEvent, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import { usePathname, useRouter } from 'next/navigation'
+import { ChangeEvent, ComponentProps, useEffect, useState } from 'react'
 
-const LanguageSelectorWrapper = styled.div`
-  display: inlnie-flex;
-  align-items: center;
-  position: relative;
-  border: ${({ theme }) => `${theme.size.px} solid currentColor`};
-  border-radius: ${({ theme }) => theme.size[0.5]};
-  font-size: ${({ theme }) => theme.text.xs};
-
-  @media (min-width: 34.375rem) {
-    font-size: ${({ theme }) => theme.text.sm};
-  }
-
-  svg {
-    pointer-events: none;
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
-  }
-
-  svg:first-child {
-    left: ${({ theme }) => theme.size[2]};
-  }
-
-  svg:last-child {
-    right: ${({ theme }) => theme.size[2]};
-  }
-`
-
-const Select = styled.select`
-  display: block;
-  width: 100%;
-  padding: ${({ theme }) =>
-    `${theme.size['2em']} ${theme.size['8em']} ${theme.size['2em']} ${theme.size['7em']}`};
-  border: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: inherit;
-  line-height: ${({ theme }) => theme.leading.snug};
-  appearance: none;
-`
-
-export function LanguageSelector() {
+export function LanguageSelector({
+  className,
+  ...props
+}: ComponentProps<'div'>) {
   const [language, setLanguage] = useState('en')
   const router = useRouter()
   const locale = useLocale()
@@ -64,14 +28,24 @@ export function LanguageSelector() {
   }, [locale])
 
   return (
-    <LanguageSelectorWrapper>
-      <Language width="1em" />
-      <Select onChange={changeUrlLocale} value={language}>
+    <div
+      className={classNames(
+        'inline-flex items-center relative bg-[rgba(22,22,22,0.7)] sm:text-sm',
+        className,
+      )}
+      {...props}
+    >
+      <Globe className="pointer-events-none top-1/2 left-2 absolute transform -translate-y-1/2" />
+      <select
+        onChange={changeUrlLocale}
+        value={language}
+        className="block w-full px-[calc(36/14*1em)] border-[calc(1/14*1em)] border-[rgba(128,128,128,0.7)] rounded-sm bg-transparent text-inherit text-sm font-medium text-center leading-[calc(30/14*1em)] appearance-none"
+      >
         <option value="en">English</option>
         <option value="es">Español</option>
         <option value="it">Italiano</option>
-      </Select>
-      <NavArrowDown />
-    </LanguageSelectorWrapper>
+      </select>
+      <CaretDown className="pointer-events-none top-1/2 right-2 absolute transform -translate-y-1/2" />
+    </div>
   )
 }
