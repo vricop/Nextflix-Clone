@@ -1,6 +1,7 @@
-# Netflix Clone
+# Netflix Clone (WIP)
 
 This is a side project about a Netflix clone built in Next.js.
+A WIP side project in my free time, if any...
 
 Purposes of this project:
 
@@ -19,7 +20,7 @@ I've got plenty of time to do so, which is almost never the case 🤣
 - [React](https://reactjs.org/)
 - [Next.js](nextjs.org/)
 - [Typescript](typescriptlang.org/)
-- [Styled Components](styled-components.com/)
+- [Tailwindcss](https://tailwindcss.com/)
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Next intl](https://next-intl-docs.vercel.app/)
