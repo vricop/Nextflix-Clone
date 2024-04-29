@@ -36,7 +36,7 @@ export function HeroHeader() {
       </div>
       <div className="grid grid-flow-row px-[5%] justify-items-center content-center gap-y-6 text-center sm:px-12">
         <div className="grid grid-flow-row justify-items-center gap-y-2 sm:gap-y-5">
-          <h1 className="text-2xl leading-tight max-w-[40rem] sm:text-5xl xl:text-6xl">
+          <h1 className="text-2xl leading-tight max-w-[40rem] sm:text-5xl xl:text-6xl font-bold">
             {t('title')}
           </h1>
           <h2 className="text-lg sm:text-2xl text-normal max-w-2xl">

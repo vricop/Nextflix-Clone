@@ -5,14 +5,35 @@
 @layer components {
   .hero-header {
     /* container-type: inline-size; */
-    background-image: linear-gradient(
-        to top,
+    background-image: linear-gradient(to top,
         rgba(0, 0, 0, 0.8) 0,
         rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0.8) 100%
-      ),
+        rgba(0, 0, 0, 0.8) 100%),
       linear-gradient(to top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
       radial-gradient(50% 100%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%),
       url('/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Netflix Sans';
+    src: url('/fonts/NetflixSans_W_Rg.woff2') format('woff2');
+    font-weight: 400;
+    font-display: optional;
+  }
+
+  @font-face {
+    font-family: 'Netflix Sans';
+    src: url('/fonts/NetflixSans_W_Md.woff2') format('woff2');
+    font-weight: 500;
+    font-display: optional;
+  }
+
+  @font-face {
+    font-family: 'Netflix Sans';
+    src: url('/fonts/NetflixSans_W_Blk.woff2') format('woff2');
+    font-weight: 700;
+    font-display: optional;
   }
 }
