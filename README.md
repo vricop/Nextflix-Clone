@@ -1,7 +1,8 @@
 # Netflix Clone (WIP)
 
 This is a side project about a Netflix clone built in Next.js.
-A WIP side project in my free time, if any...
+
+WIP: This project is incomplete and under development.
 
 Purposes of this project:
 
@@ -22,7 +23,7 @@ I've got plenty of time to do so, which is almost never the case 🤣
 - [Typescript](typescriptlang.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (Not implemented yet)
 - [Next intl](https://next-intl-docs.vercel.app/)
 
 ### Back-end (not implemented yet)
@@ -36,6 +37,8 @@ Nothing yet...I'd like to populate the movies/film list with this api:
 - [The Movies Database](https://www.themoviedb.org/documentation/api)
 
 ## Showcase
+
+You can see it live here: [https://netflix-side-project.vercel.app/es](https://netflix-side-project.vercel.app/es)
 
 ### Landing page
 
