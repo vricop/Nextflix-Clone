@@ -22,7 +22,9 @@ export function Faq() {
       <Accordion className="w-[768px]">
         {keys.map((item) => (
           <AccordionItem key={uuid()} title={t(`faq.${item}.summary`)}>
-            {t(`faq.${item}.details`)}
+            {t.rich(`faq.${item}.details`, {
+              br: () => <br />
+            })}
           </AccordionItem>
         ))}
       </Accordion>

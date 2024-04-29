@@ -1,10 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 // TODO: Replace hard-coded text with translations
 export function Mobile() {
   return (
     <div className="grid place-items-center">
       <Image
+        width={640}
+        height={480}
         className="[grid-area:1/1]"
         src="/images/mobile-0819.jpg"
         alt="Mobile - Stranger Things"
@@ -21,7 +23,13 @@ export function Mobile() {
           <h3 className="text-base leading-tight">Stranger Things</h3>
           <p className="text-sm text-blue-100 leading-tight">Downloading...</p>
         </div>
-        <Image className="h-12" src="/images/download-icon.gif" alt="" />
+        <Image
+          width={100}
+          height={100}
+          className="h-12"
+          src="/images/download-icon.gif"
+          alt=""
+        />
       </div>
     </div>
   )
