@@ -26,7 +26,7 @@ export function Mobile() {
         <Image
           width={100}
           height={100}
-          className="h-12"
+          className="w-12 h-12"
           src="/images/download-icon.gif"
           alt=""
         />
