@@ -16,7 +16,19 @@ export function HeroHeader() {
           <LanguageSelector />
           <Link
             href="/login"
-            className="bg-netflix rounded-[.125em] text-white py-[.5em] px-[1em] leading-snug no-underline border border-transparent text-xs sm:text-sm"
+            className="
+              bg-netflix
+              rounded-[.125em]
+              text-white
+              py-[.5em]
+              px-[1em]
+              leading-snug
+              no-underline
+              border
+              border-transparent
+              text-xs
+              sm:text-sm
+            "
           >
             {t('signInButton')}
           </Link>

@@ -19,7 +19,7 @@ export function Faq() {
       <HomeSectionTitle className="text-center">
         {t('faqTitle')}
       </HomeSectionTitle>
-      <Accordion className="w-full sm:w-11/12 md:w-9/12 md:max-w-815">
+      <Accordion className="w-[768px]">
         {keys.map((item) => (
           <AccordionItem key={uuid()} title={t(`faq.${item}.summary`)}>
             {t(`faq.${item}.details`)}

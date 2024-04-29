@@ -1,12 +1,10 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   },
   "prettier.singleQuote": true,
   "prettier.semi": false,
   "prettier.arrowParens": "avoid",
-  "i18n-ally.localesPaths": [
-    "public/locales"
-  ]
+  "i18n-ally.localesPaths": ["public/locales"]
 }
