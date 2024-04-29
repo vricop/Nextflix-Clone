@@ -16,6 +16,11 @@
 }
 
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   @font-face {
     font-family: 'Netflix Sans';
     src: url('/fonts/NetflixSans_W_Rg.woff2') format('woff2');
