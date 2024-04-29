@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 export function Tv() {
   return (
     <>
-      <img className="z-[1] [grid-area:1/1]" src="/images/tv.png" alt="TV" />
+      <Image className="z-[1] [grid-area:1/1]" src="/images/tv.png" alt="TV" />
       <video
         className="w-full h-full max-w-[73%] max-h-[54%] relative -top-[1.8%] -l-[0.3%] [grid-area:1/1]"
         autoPlay

@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export function DevicePile() {
   return (
     <div className="grid place-items-center">
-      <img
+      <Image
         className="[grid-area:1/1] z-[1]"
         src="/images/device-pile.png"
         alt=""

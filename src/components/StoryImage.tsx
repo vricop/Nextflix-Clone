@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 export function StoryImage() {
   return (
-    <img
+    <Image
       className="h-auto"
       width={640}
       height={480}
