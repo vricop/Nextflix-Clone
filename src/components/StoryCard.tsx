@@ -17,7 +17,7 @@ export function StoryCard({
 }: StoryCardProps) {
   return (
     <HomeContainer>
-      <div className="grid items-center grid-cols-12 mx-auto max-w-6xl md:grid-cols-2">
+      <div className="grid items-center mx-auto max-w-6xl md:grid-cols-2">
         <hgroup
           className={classNames(
             'grid grid--flow-row gap-y-4 sm:gap-y-5 md:gap-y-5 md:text-center',
