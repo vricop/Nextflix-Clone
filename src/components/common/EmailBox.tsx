@@ -20,7 +20,7 @@ export function EmailBox() {
     >
       <input
         className={classnames(
-          'rounded-sm md:rounded-tr-none md:rounded-br-none [grid-area:input] px-3 pb-0 h-[3.75rem] md:h-[initial] leading-[theme(spacing.14)] placeholder-transparent text-gray-400 peer',
+          'rounded-[4px] border-neutral-400 border [grid-area:input] px-3 pb-0 h-[3.75rem] md:h-[initial] leading-[theme(spacing.14)] placeholder-transparent text-neutral-50 peer bg-black/50',
           { 'border-b-4 border-orange-600': !!email && !!errorMessage },
         )}
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -41,7 +41,7 @@ export function EmailBox() {
         {t('emailAddressFieldLabel')}
       </label>
 
-      <button className="items-center bg-netflix-alt-light rounded-[2px] border-none text-white gap-x-1 grid [grid-area:button] [grid-auto-columns:min-content_min-content] grid-flow-col justify-center leading-10 px-3 whitespace-nowrap w-auto transition-all duration-200 ease-in-out md:rounded-tl-none md:rounded-bl-none md:leading-[3.75rem] md:text-2xl md:px-8 xl:text-3xl :hover:cursor-pointer :hoverbg-netflix">
+      <button className="items-center bg-netflix-alt-light rounded-[2px] border-none font-bold text-white gap-x-1 grid [grid-area:button] [grid-auto-columns:min-content_min-content] grid-flow-col justify-center leading-10 px-3 whitespace-nowrap w-auto transition-all duration-200 ease-in-out md:leading-[3.75rem] md:text-2xl md:px-8 :hover:cursor-pointer :hoverbg-netflix">
         {t('getStartedButton')}
         <NavArrowRight className="xl:text-2xl" />
       </button>

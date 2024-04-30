@@ -9,34 +9,22 @@ export function HeroHeader() {
   const t = useTranslations('home')
 
   return (
-    <header className="grid grid-rows-[auto_1fr] gap-x-12 bg-black/5 hero-header bg-cover bg-center text-white h-[750px] border border-b-gray-600">
-      <div className="grid grid-flow-col gap-x-4 items-center justify-between pt-6 px-[5%] sm:px-6 pb-0">
-        <Logo className="w-auto h-6 sm:h-8 md:h-9 lg:h-11" />
-        <div className="grid grid-flow-col gap-x-3 items-center sm:gap-x-8">
+    <div className="hero-header bg-cover grid grid-rows-[auto_1fr] gap-y-10 sm:gap-y-[4.125rem] min-h-[30rem] md:min-h-[32rem] lg:min-h-[39.25rem] text-white @container">
+      <header className="w-full mx-auto @7xl:max-w-[calc(83.33333333333334%-6rem)] grid grid-flow-col justify-between items-center py-6 px-8 @container">
+        <Logo className="w-[5.5625rem] h-6 2xl:w-[9.25rem] 2xl:h-10 text-netflix" />
+        <div className="grid grid-flow-col gap-x-2 @3xl:gap-x-6 content-stretch items-center text-base font-medium">
           <LanguageSelector />
           <Link
             href="/login"
-            className="
-              bg-netflix
-              rounded-[.125em]
-              text-white
-              py-[.5em]
-              px-[1em]
-              leading-snug
-              no-underline
-              border
-              border-transparent
-              text-xs
-              sm:text-sm
-            "
+            className="bg-netflix rounded text-white no-underline border border-transparent text-inherit leading-[calc(2rem-2px)] px-4"
           >
             {t('signInButton')}
           </Link>
         </div>
-      </div>
+      </header>
       <div className="grid grid-flow-row px-[5%] justify-items-center content-center gap-y-6 text-center sm:px-12">
         <div className="grid grid-flow-row justify-items-center gap-y-2 sm:gap-y-5">
-          <h1 className="text-2xl leading-tight max-w-[40rem] sm:text-5xl xl:text-6xl font-bold">
+          <h1 className="text-4xl lg:text-6xl leading-tight font-black">
             {t('title')}
           </h1>
           <h2 className="text-lg sm:text-2xl text-normal max-w-2xl">
@@ -46,6 +34,7 @@ export function HeroHeader() {
         </div>
         <EmailBox />
       </div>
-    </header>
+      <div className="bg-[rgb(0_0_0_/_40%)] bg-[linear-gradient(to_top,_rgba(0,_0,_0,_0.8)_0,_rgba(0,_0,_0,_0)_60%,_rgba(0,_0,_0,_0.8)_100%)]" />
+    </div>
   )
 }
