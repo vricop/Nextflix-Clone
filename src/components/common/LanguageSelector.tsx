@@ -32,7 +32,7 @@ export function LanguageSelector({
   return (
     <div
       className={classNames(
-        'grid items-center w-16 md:w-full',
+        'grid items-center w-16 md:w-full text-white bg-neutral-900/60',
         className,
       )}
       {...props}
@@ -42,7 +42,7 @@ export function LanguageSelector({
       <select
         onChange={changeUrlLocale}
         value={language}
-        className="[grid-area:1/1] w-full pl-9 pr-7 border border-neutral-500 rounded bg-transparent text-inherit text-center leading-[calc(2rem-2px)] appearance-none"
+        className="[grid-area:1/1] w-full pl-9 pr-7 border border-neutral-500 rounded bg-transparent text-inherit text-center leading-[calc(2rem-2px)] appearance-none focus:outline outline-offset-2 outline-2 outline-white"
       >
         {langs.map((lang) => (
           <option value={lang} label={t(`langs.${lang}`)} key={lang} />

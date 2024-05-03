@@ -34,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head />
-      <body className="font-sans">
+      <body className="font-sans bg-black">
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

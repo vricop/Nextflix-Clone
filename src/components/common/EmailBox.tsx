@@ -1,11 +1,13 @@
 import isValidEmail from '@utils/isValidEmail'
 import classnames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { ChangeEvent, FocusEvent, useState } from 'react'
+import { ChangeEvent, ComponentProps, FocusEvent, useState } from 'react'
 import CircleXSmall from '@icons/circle-x-small.svg'
 import ChevronRight from '@icons/chevron-right-standard.svg'
 
-export function EmailBox() {
+type EmailBoxProps = Pick<ComponentProps<'form'>, 'className'>
+
+export function EmailBox({ className }: EmailBoxProps) {
   const [email, setEmail] = useState('')
   const [error, setError] = useState<boolean>(false)
   const t = useTranslations()
@@ -15,13 +17,18 @@ export function EmailBox() {
   }
 
   function handleError(event: FocusEvent<HTMLInputElement>) {
+    // Only check inf input changed
+    if (email.trim() === '') return
     setError(isValidEmail(event.target.value.trim()))
   }
 
   return (
     <form
       method="get"
-      className="grid gap-x-2 gap-y-4 sm:grid-cols-[2fr_1fr]"
+      className={classnames(
+        'grid gap-x-2 gap-y-4 sm:grid-cols-[2fr_1fr]',
+        className,
+      )}
     >
       <div className="grid gap-y-1.5 items-start">
         <label className="grid items-center group text-base" htmlFor="email">
@@ -55,7 +62,7 @@ export function EmailBox() {
         )}
       </div>
 
-      <button className="items-center self-start mx-auto bg-netflix-alt-light rounded border-none text-white font-medium gap-x-1 flex justify-center py-2 px-4 h-12 sm:h-14 leading-[theme(spacing.12)] sm:leading-[theme(spacing.14)] whitespace-nowrap w-auto transition-all duration-200 ease-in-out text-lg sm:text-2xl sm:w-full md:px-8 :hover:cursor-pointer :hoverbg-netflix">
+      <button className="items-center self-start mx-auto bg-netflix-alt-light rounded border-none text-white font-medium gap-x-1 flex justify-center py-2 px-4 h-12 sm:h-14 leading-[theme(spacing.12)] sm:leading-[theme(spacing.14)] whitespace-nowrap w-auto transition-all duration-200 ease-in-out text-lg sm:text-2xl sm:w-full md:px-8 :hover:cursor-pointer :hoverbg-netflix focus:outline outline-offset-2 outline-2 outline-white">
         {t('home.getStartedButton')}
         <ChevronRight className="xl:text-2xl" />
       </button>
