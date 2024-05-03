@@ -1,55 +1,64 @@
+import isValidEmail from '@utils/isValidEmail'
 import classnames from 'classnames'
-import { NavArrowRight } from 'iconoir-react'
 import { useTranslations } from 'next-intl'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FocusEvent, useState } from 'react'
+import CircleXSmall from '@icons/circle-x-small.svg'
+import ChevronRight from '@icons/chevron-right-standard.svg'
 
 export function EmailBox() {
   const [email, setEmail] = useState('')
-  const [errorMessage, setErrorMessage] = useState<null | string>(null)
-  const t = useTranslations('home')
+  const [error, setError] = useState<boolean>(false)
+  const t = useTranslations()
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setErrorMessage(event.target.validationMessage)
-    setEmail(event.target.value)
+    setEmail(event.currentTarget.value.trim())
+  }
+
+  function handleError(event: FocusEvent<HTMLInputElement>) {
+    setError(isValidEmail(event.target.value.trim()))
   }
 
   return (
     <form
       method="get"
-      className="[grid-template-areas:'input'_'error'_'button'] auto-cols-auto auto-rows-auto md:[grid-template-areas:'input_button'_'error_error'] md:grid-cols-[2fr_1fr] grid gap-x-3 justify-center relative md:w-full md:max-w-lg sm:[--height:3.75rem] md:[--height:4.375rem] md:justify-start md:gap-y-1"
+      className="grid gap-x-2 gap-y-4 sm:grid-cols-[2fr_1fr]"
     >
-      <input
-        className={classnames(
-          'rounded-[4px] border-neutral-400 border [grid-area:input] px-3 pb-0 h-[3.75rem] md:h-[initial] leading-[theme(spacing.14)] placeholder-transparent text-neutral-50 peer bg-black/50',
-          { 'border-b-4 border-orange-600': !!email && !!errorMessage },
-        )}
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-        value={email}
-        onChange={handleChange}
-        name="email"
-        id="email"
-        type="email"
-        placeholder={t('emailAddressFieldLabel')}
-        autoComplete="off"
-        maxLength={50}
-        minLength={5}
-      />
-      <label
-        className="[grid-area:input] absolute peer-placeholder-shown:top-1/2 left-3 peer-placeholder-shown:-translate-y-1/2 translate-y-0 text-gray-400 pointer-events-none transition-all duration-200 ease-in-out top-1 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal font-bold sm:text-xs text-xs"
-        htmlFor="email"
-      >
-        {t('emailAddressFieldLabel')}
-      </label>
+      <div className="grid gap-y-1.5 items-start">
+        <label className="grid items-center group text-base" htmlFor="email">
+          <input
+            className={classnames(
+              '[grid-area:1/1] px-4 sm:px-2 pt-5 sm:pt-6 pb-1 leading-[theme(spacing.12)] h-12 sm:leading-[theme(spacing.14)] sm:h-14 rounded border-neutral-500 border focus:outline outline-offset-2 outline-2 outline-white min-w-[theme(spacing.60)] placeholder-transparent text-white bg-neutral-900/70 peer',
+              { 'border-red-600': !!email && error },
+            )}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            value={email}
+            onChange={handleChange}
+            onBlur={handleError}
+            name="email"
+            id="email"
+            type="email"
+            placeholder={t('home.emailAddressFieldLabel')}
+            autoComplete="off"
+            maxLength={50}
+            minLength={5}
+          />
+          <span className="[grid-area:1/1] ml-3 mr-auto text-neutral-300 transition-all duration-200 ease-in-out mb-6 peer-focus:mb-6 peer-placeholder-shown:mb-0 text-xs peer-placeholder-shown:text-base peer-focus:text-xs">
+            {t('home.emailAddressFieldLabel')}
+          </span>
+        </label>
 
-      <button className="items-center bg-netflix-alt-light rounded-[2px] border-none font-bold text-white gap-x-1 grid [grid-area:button] [grid-auto-columns:min-content_min-content] grid-flow-col justify-center leading-10 px-3 whitespace-nowrap w-auto transition-all duration-200 ease-in-out md:leading-[3.75rem] md:text-2xl md:px-8 :hover:cursor-pointer :hoverbg-netflix">
-        {t('getStartedButton')}
-        <NavArrowRight className="xl:text-2xl" />
+        {error && (
+          <span className="leading-snug gap-x-1 flex justify-start items-center text-xs text-red-500">
+            <CircleXSmall />
+            {t('common.errors.invalidEmail')}
+          </span>
+        )}
+      </div>
+
+      <button className="items-center self-start mx-auto bg-netflix-alt-light rounded border-none text-white font-medium gap-x-1 flex justify-center py-2 px-4 h-12 sm:h-14 leading-[theme(spacing.12)] sm:leading-[theme(spacing.14)] whitespace-nowrap w-auto transition-all duration-200 ease-in-out text-lg sm:text-2xl sm:w-full md:px-8 :hover:cursor-pointer :hoverbg-netflix">
+        {t('home.getStartedButton')}
+        <ChevronRight className="xl:text-2xl" />
       </button>
-      {errorMessage && (
-        <span className="text-orange-50 [grid-area:error] justify-self-start text-left leading-snug md:absolute md:justify-self-[initial]">
-          {errorMessage}
-        </span>
-      )}
     </form>
   )
 }

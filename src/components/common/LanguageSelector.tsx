@@ -1,7 +1,7 @@
 import CaretDown from '@public/icons/caret-down.svg'
 import I18n from '@public/icons/i18n.svg'
 import classNames from 'classnames'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { ChangeEvent, ComponentProps, useEffect, useState } from 'react'
 
@@ -9,10 +9,12 @@ export function LanguageSelector({
   className,
   ...props
 }: ComponentProps<'div'>) {
+  const t = useTranslations('common')
   const [language, setLanguage] = useState('en')
   const router = useRouter()
   const locale = useLocale()
   const pathname = usePathname()
+  const langs = ['en', 'es', 'it'] as const
 
   const changeUrlLocale = (event: ChangeEvent<HTMLSelectElement>) => {
     const langPathname = pathname.replace(locale, event.target.value)
@@ -30,22 +32,22 @@ export function LanguageSelector({
   return (
     <div
       className={classNames(
-        'inline-flex items-center relative bg-[rgba(22,22,22,0.7)]',
+        'grid items-center w-16 md:w-full',
         className,
       )}
       {...props}
     >
-      <I18n className="pointer-events-none top-1/2 left-2 absolute transform -translate-y-1/2" />
+      <I18n className="pointer-events-none [grid-area:1/1] ml-3 mr-auto" />
+      <CaretDown className="pointer-events-none [grid-area:1/1] mr-3 ml-auto" />
       <select
         onChange={changeUrlLocale}
         value={language}
-        className="block w-full px-9 border border-neutral-500 rounded bg-transparent text-inherit text-center leading-[calc(2rem-2px)] appearance-none"
+        className="[grid-area:1/1] w-full pl-9 pr-7 border border-neutral-500 rounded bg-transparent text-inherit text-center leading-[calc(2rem-2px)] appearance-none"
       >
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="it">Italiano</option>
+        {langs.map((lang) => (
+          <option value={lang} label={t(`langs.${lang}`)} key={lang} />
+        ))}
       </select>
-      <CaretDown className="pointer-events-none top-1/2 right-2 absolute transform -translate-y-1/2" />
     </div>
   )
 }

@@ -1,4 +1,14 @@
 {
+  "common": {
+    "langs": {
+      "en": "Inglese",
+      "es": "Spagnolo",
+      "it": "Italiano"
+    },
+    "errors": {
+      "invalidEmail": "Si prega di inserire un indirizzo email valido."
+    }
+  },
   "home": {
     "signInButton": "Accedi",
     "emailAddressFieldLabel": "Indirizzo email",
