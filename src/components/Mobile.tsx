@@ -13,9 +13,8 @@ export function Mobile() {
       />
       <div className="items-center self-end bg-black rounded-xl gap-x-4 grid [grid-area:1/1] grid-cols-[auto_1fr_auto] py-2 px-3 -translate-y-[22%] w-[60%]">
         <Image
-          className="w-auto h-20 aspect-[150/210]"
-          width={150}
-          height={210}
+          width={57}
+          height={80}
           src="/images/boxshot.png"
           alt="Stranger Things Poster"
         />
@@ -24,9 +23,8 @@ export function Mobile() {
           <p className="text-sm text-blue-100 leading-tight">Downloading...</p>
         </div>
         <Image
-          width={100}
-          height={100}
-          className="w-12 h-12"
+          width={48}
+          height={60}
           src="/images/download-icon.gif"
           alt=""
         />

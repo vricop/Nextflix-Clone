@@ -17,6 +17,11 @@
     "cta": "Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.",
     "getStartedButton": "Inizia",
     "faqTitle": "Domande frequenti",
+    "banner": {
+      "title": "Tutto ciò che ami di Netflix a soli 5,49 €.",
+      "description": "Ottieni il piano Standard con annunci.",
+      "link": "Saperne di più"
+    },
     "storyCards": {
       "1": {
         "title": "Goditi Netflix sulla tua TV.",

@@ -22,7 +22,7 @@ export default function StoryCards() {
   return keys.map((i) => (
     <StoryCard
       key={uuid()}
-      flipped={i % 2 !== 0}
+      flipped={i % 2 === 0}
       title={t(`storyCards.${i}.title`)}
       tagline={t(`storyCards.${i}.tagline`)}
     >

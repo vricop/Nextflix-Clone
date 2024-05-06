@@ -17,6 +17,11 @@
     "cta": "¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.",
     "getStartedButton": "Empezar",
     "faqTitle": "Preguntas frecuentes",
+    "banner": {
+      "title": "Todo lo que te encanta de Netflix por solo 5,49 €.",
+      "description": "Consigue el plan Estándar con anuncios.",
+      "link": "Más información"
+    },
     "storyCards": {
       "1": {
         "title": "Disfruta en tu TV.",

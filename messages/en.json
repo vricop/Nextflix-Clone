@@ -17,6 +17,11 @@
     "cta": "Ready to watch? Enter your email to create or restart your membership.",
     "getStartedButton": "Get Started",
     "faqTitle": "Frequently Asked Questions",
+    "banner": {
+      "title": "The Netflix you love for just EUR 5.49.",
+      "description": "Get the Standard with ads plan.",
+      "link": "Learn More"
+    },
     "storyCards": {
       "1": {
         "title": "Enjoy on your TV.",

@@ -26,7 +26,7 @@ export function EmailBox({ className }: EmailBoxProps) {
     <form
       method="get"
       className={classnames(
-        'grid gap-x-2 gap-y-4 sm:grid-cols-[2fr_1fr]',
+        'w-full grid gap-x-2 gap-y-4 sm:grid-cols-[2fr_1fr]',
         className,
       )}
     >
