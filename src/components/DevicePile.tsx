@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export function DevicePile() {
   return (
-    <div className="grid place-items-center">
+    <div className="relative">
       <Image
         width={640}
         height={480}
-        className="[grid-area:1/1] z-[1]"
+        className="relative"
         src="/images/device-pile.png"
         alt=""
       />
       <video
-        className="[grid-area:1/1] w-full h-full max-w-[63%] max-h-[47%] transform translate-x-0 -translate-y-[34%]"
+        className="absolute -z-10 top-[10.8%] left-[18.8%] max-w-[61.4%] max-h-[46.1%]"
         autoPlay
         playsInline
         muted

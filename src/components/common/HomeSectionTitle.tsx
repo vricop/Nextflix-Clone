@@ -8,7 +8,7 @@ export function HomeSectionTitle({
   return (
     <h2
       className={classNames(
-        'text-5xl leading-tight sm:text-size-4xl font-bold',
+        'text-[2rem] lg:text-5xl font-bold  leading-tight',
         className,
       )}
       {...props}

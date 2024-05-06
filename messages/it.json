@@ -24,20 +24,20 @@
     },
     "storyCards": {
       "1": {
-        "title": "Goditi Netflix sulla tua TV.",
+        "title": "Goditi Netflix sulla tua TV",
         "tagline": "Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi."
       },
-      "2": {
-        "title": "Scarica le tue serie da guardare offline.",
-        "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
-      },
       "3": {
-        "title": "Guarda Netflix ovunque.",
+        "title": "Guarda Netflix ovunque",
         "tagline": "Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più."
       },
       "4": {
-        "title": "Crea profili per i bambini.",
+        "title": "Crea profili per i bambini",
         "tagline": "I bambini scoprono nuove avventure in compagnia dei loro personaggi preferiti in uno spazio tutto loro già incluso nel tuo abbonamento."
+      },
+      "2": {
+        "title": "Scarica le tue serie da guardare offline",
+        "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
       }
     },
     "faq": {

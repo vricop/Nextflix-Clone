@@ -24,20 +24,20 @@
     },
     "storyCards": {
       "1": {
-        "title": "Disfruta en tu TV.",
+        "title": "Disfruta en tu TV",
         "tagline": "Smart TV, Playstation, Xbox, Chromecast, Apple TV, reproductores Blu-ray y muchos más."
       },
-      "2": {
-        "title": "Descárgate tus series favoritas para verlas sin conexión.",
-        "tagline": "Guarda tus títulos favoritos fácilmente para que siempre tengas algo para ver."
-      },
       "3": {
-        "title": "Disfruta en todas partes.",
+        "title": "Disfruta en todas partes",
         "tagline": "Reproduce en streaming todas las películas y series en tu móvil, tableta, ordenador y TV sin pagar más."
       },
       "4": {
-        "title": "Crea perfiles infantiles.",
+        "title": "Crea perfiles infantiles",
         "tagline": "Deja que los niños vivan aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos, gratis con tu suscripción."
+      },
+      "2": {
+        "title": "Descárgate tus series favoritas para verlas sin conexión",
+        "tagline": "Guarda tus títulos favoritos fácilmente para que siempre tengas algo para ver."
       }
     },
     "faq": {
