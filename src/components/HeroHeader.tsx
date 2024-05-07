@@ -9,7 +9,7 @@ export function HeroHeader() {
   const t = useTranslations('home')
 
   return (
-    <div className="grid overflow-hidden">
+    <header className="grid overflow-hidden">
       <div className="[grid-area:1/1] max-h-[30rem] sm:max-h-[32rem] lg:max-h-[43.75rem]">
         <img
           className="w-auto sm:w-full h-full object-cover origin-center scale-125 -translate-y-[10%]"
@@ -47,6 +47,6 @@ export function HeroHeader() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }

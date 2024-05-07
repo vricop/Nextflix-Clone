@@ -23,19 +23,19 @@
       "link": "Saperne di più"
     },
     "storyCards": {
-      "1": {
+      "0": {
         "title": "Goditi Netflix sulla tua TV",
         "tagline": "Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi."
       },
-      "3": {
+      "1": {
         "title": "Guarda Netflix ovunque",
         "tagline": "Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più."
       },
-      "4": {
+      "2": {
         "title": "Crea profili per i bambini",
         "tagline": "I bambini scoprono nuove avventure in compagnia dei loro personaggi preferiti in uno spazio tutto loro già incluso nel tuo abbonamento."
       },
-      "2": {
+      "3": {
         "title": "Scarica le tue serie da guardare offline",
         "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
       }
@@ -68,9 +68,8 @@
     }
   },
   "footer": {
-    "title": "Questions? Call",
+    "title": "Domande? Chiama a",
     "phoneNumber": "800 130 364",
-    "phoneNumberLink": "800-130-364",
     "links": {
       "1": "Domande frequenti",
       "2": "Centro assistenza",
@@ -88,7 +87,9 @@
       "14": "Contattaci",
       "15": "Test di velocità",
       "16": "Note legali",
-      "17": "Solo su Netflix"
+      "17": "Garanzia legale",
+      "18": "Solo su Netflix",
+      "19": "Scelte pubblicitarie"
     },
     "country": "Italia"
   },

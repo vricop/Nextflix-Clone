@@ -70,7 +70,6 @@
   "footer": {
     "title": "Questions? Call",
     "phoneNumber": "1-844-505-2993",
-    "phoneNumberLink": "1-844-505-2993",
     "links": {
       "1": "FAQ",
       "2": "Help Center",
@@ -87,8 +86,10 @@
       "13": "Corporate Information",
       "14": "Contact Us",
       "15": "Speed Test",
-      "16": "Legal Notices",
-      "17": "Only on Netflix"
+      "16": "Legal Guarantee",
+      "17": "Legal Notices",
+      "18": "Only on Netflix",
+      "19": "Ad Choices"
     },
     "country": "United States"
   },

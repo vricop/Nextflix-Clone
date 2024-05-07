@@ -1,11 +1,24 @@
 import classNames from 'classnames'
 import { ComponentProps } from 'react'
 
-export function HomeContainer({ className, ...props }: ComponentProps<'div'>) {
+interface HomeContainerProps extends ComponentProps<'div'> {
+  hasBorder?: boolean
+  as?: 'div' | 'section' | 'article' | 'footer'
+}
+
+export function HomeContainer({
+  as = 'div',
+  className,
+  hasBorder = true,
+  ...props
+}: HomeContainerProps) {
+  const Tag = as
+
   return (
-    <div
+    <Tag
       className={classNames(
-        'py-14 sm:py-[4.5rem] text-white border-b-8 border-gray-600',
+        'py-14 sm:py-[4.5rem] text-white',
+        { ['border-b-8 border-neutral-800']: hasBorder },
         className,
       )}
       {...props}

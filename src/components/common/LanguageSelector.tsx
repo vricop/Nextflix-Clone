@@ -32,7 +32,7 @@ export function LanguageSelector({
   return (
     <div
       className={classNames(
-        'grid items-center w-16 md:w-full text-white bg-neutral-900/60',
+        'grid items-center w-16 md:w-auto text-white bg-neutral-900/60',
         className,
       )}
       {...props}

@@ -13,6 +13,7 @@ export function Faq() {
 
   return (
     <HomeContainer
+      as="section"
       className="grid grid-flow-row justify-center gap-y-6 sm:gap-y-8 lg:gap-y-[3.25rem]"
       role=""
     >
@@ -30,7 +31,7 @@ export function Faq() {
       </Accordion>
       <div className="text-center grid justify-items-center gap-y-5">
         <Cta />
-        <EmailBox />
+        <EmailBox className="max-w-[36.625rem]" />
       </div>
     </HomeContainer>
   )

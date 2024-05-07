@@ -16,7 +16,7 @@ export function StoryCard({
   tagline,
 }: StoryCardProps) {
   return (
-    <HomeContainer>
+    <HomeContainer as="section">
       <div className="grid items-center lg:gap-x-3 mx-auto max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-4rem)] xl:max-w-[calc(83.333%-6rem)] md:grid-cols-2">
         <div
           className={classNames(
