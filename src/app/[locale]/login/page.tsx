@@ -2,7 +2,6 @@
 import { Logo } from '@components/common/Logo'
 import classNames from 'classnames'
 import { Check } from 'iconoir-react'
-import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import {
   ChangeEventHandler,
@@ -111,7 +110,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
 )
 
 export default function Login() {
-  const t = useTranslations('login')
   const [isVisible, setIsVisible] = useState(true)
   const [fields, setFields] = useState({
     email: '',
@@ -172,11 +170,13 @@ export default function Login() {
             className="border-none text-white h-[50px] font-bold bg-netflix rounded-md cursor-pointer"
             type="submit"
           >
-            {t('signInButton')}
+            {/* {t('signInButton')} */}
+            Sign in
           </button>
           <footer className="grid grid-flow-col items-center justify-between text-neutral-400 text-xs">
             <Checkbox label="Remember me" />
-            <p>{t('needHelp')}</p>
+            {/* <p>{t('needHelp')}</p> */}
+            Need helps?
           </footer>
         </form>
       </div>

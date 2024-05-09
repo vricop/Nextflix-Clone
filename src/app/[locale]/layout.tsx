@@ -2,6 +2,7 @@ import { Locale, locales } from 'src/config'
 import '../globals.css'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 interface RootLayoutProps {
   children: ReactNode
@@ -19,12 +20,11 @@ export const metadata: Metadata = {
   description: 'Sideproject',
 }
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: RootLayoutProps) {
+export default function RootLayout({ children, params }: RootLayoutProps) {
+  unstable_setRequestLocale(params.locale)
+
   return (
-    <html lang={locale}>
+    <html lang={params.locale}>
       <head />
       <body className="font-sans bg-black relative">{children}</body>
     </html>

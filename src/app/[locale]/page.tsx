@@ -4,6 +4,7 @@ import { Faq } from '@components/Faq'
 import { HeroHeader } from '@components/HeroHeader'
 import ValuePropositions from '@components/ValuePropositions'
 import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { Locale } from 'src/config'
 
 interface Home {
@@ -14,6 +15,7 @@ interface Home {
 
 export default function Home({ params }: Home) {
   const t = useTranslations('home.banner')
+  unstable_setRequestLocale(params.locale)
 
   return (
     <>
