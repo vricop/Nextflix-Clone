@@ -11,7 +11,7 @@
   },
   "home": {
     "signInButton": "Accedi",
-    "emailAddressFieldLabel": "Indirizzo email",
+    "emailPlaceholder": "Indirizzo email",
     "title": "Film, serie TV e tanto altro. Senza limiti.",
     "tagline": "Guarda ciò che vuoi ovunque. Disdici quando vuoi.",
     "cta": "Vuoi guardare Netflix? Inserisci l'indirizzo email per abbonarti o riattivare il tuo abbonamento.",
@@ -20,22 +20,23 @@
     "banner": {
       "title": "Tutto ciò che ami di Netflix a soli 5,49 €.",
       "description": "Ottieni il piano Standard con annunci.",
-      "link": "Saperne di più"
+      "linkText": "Saperne di più",
+      "url": "#"
     },
     "storyCards": {
-      "0": {
+      "tv": {
         "title": "Goditi Netflix sulla tua TV",
         "tagline": "Guarda Netflix su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi."
       },
-      "1": {
+      "devices": {
         "title": "Guarda Netflix ovunque",
         "tagline": "Cellulare, tablet, laptop e TV: scegli tu cosa usare per guardare in streaming film e serie TV senza limiti e senza spendere di più."
       },
-      "2": {
+      "profiles": {
         "title": "Crea profili per i bambini",
         "tagline": "I bambini scoprono nuove avventure in compagnia dei loro personaggi preferiti in uno spazio tutto loro già incluso nel tuo abbonamento."
       },
-      "3": {
+      "offline": {
         "title": "Scarica le tue serie da guardare offline",
         "tagline": "Salva facilmente i tuoi preferiti così avrai sempre qualcosa da guardare."
       }
@@ -71,25 +72,25 @@
     "title": "Domande? Chiama a",
     "phoneNumber": "800 130 364",
     "links": {
-      "1": "Domande frequenti",
-      "2": "Centro assistenza",
-      "3": "Account",
-      "4": "Media Center",
-      "5": "Rapporti con gli investitori",
-      "6": "Opportunità di lavoro",
-      "7": "Riscatta carte regalo",
-      "8": "Acquista carte regalo",
-      "9": "Come guardare Netflix",
-      "10": "Condizioni di utilizzo",
-      "11": "Privacy",
-      "12": "Preferenze per i cookie",
-      "13": "Informazioni sull'azienda",
-      "14": "Contattaci",
-      "15": "Test di velocità",
-      "16": "Note legali",
-      "17": "Garanzia legale",
-      "18": "Solo su Netflix",
-      "19": "Scelte pubblicitarie"
+      "0": "Domande frequenti",
+      "1": "Centro assistenza",
+      "2": "Account",
+      "3": "Media Center",
+      "4": "Rapporti con gli investitori",
+      "5": "Opportunità di lavoro",
+      "6": "Riscatta carte regalo",
+      "7": "Acquista carte regalo",
+      "8": "Come guardare Netflix",
+      "9": "Condizioni di utilizzo",
+      "10": "Privacy",
+      "11": "Preferenze per i cookie",
+      "12": "Informazioni sull'azienda",
+      "13": "Contattaci",
+      "14": "Test di velocità",
+      "15": "Note legali",
+      "16": "Garanzia legale",
+      "17": "Solo su Netflix",
+      "18": "Scelte pubblicitarie"
     },
     "country": "Italia"
   },

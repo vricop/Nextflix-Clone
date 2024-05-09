@@ -1,3 +1,8 @@
+import { DevicePile } from './DevicePile'
+import { Mobile } from './Mobile'
+import { Profiles } from './Profiles'
+import { Tv } from './Tv'
+import { useTranslations } from 'next-intl'
 import { ComponentProps } from 'react'
 import { HomeContainer } from '@components/HomeContainer'
 import { HomeSectionTitle } from '@components/HomeSectionTitle'
@@ -32,5 +37,40 @@ export function StoryCard({
         {children}
       </div>
     </HomeContainer>
+  )
+}
+
+export default function ValuePropositions() {
+  const t = useTranslations('home')
+
+  return (
+    <>
+      <StoryCard
+        title={t('storyCards.tv.title')}
+        tagline={t('storyCards.tv.tagline')}
+      >
+        <Tv />
+      </StoryCard>
+      <StoryCard
+        flipped
+        title={t('storyCards.devices.title')}
+        tagline={t('storyCards.devices.tagline')}
+      >
+        <DevicePile />
+      </StoryCard>
+      <StoryCard
+        title={t('storyCards.profiles.title')}
+        tagline={t('storyCards.profiles.tagline')}
+      >
+        <Profiles />
+      </StoryCard>
+      <StoryCard
+        flipped
+        title={t('storyCards.offline.title')}
+        tagline={t('storyCards.offline.tagline')}
+      >
+        <Mobile />
+      </StoryCard>
+    </>
   )
 }

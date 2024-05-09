@@ -11,7 +11,7 @@
   },
   "home": {
     "signInButton": "Iniciar sesión",
-    "emailAddressFieldLabel": "Correo electrónico",
+    "emailPlaceholder": "Correo electrónico",
     "title": "Todas las películas y series que desees, y mucho más.",
     "tagline": "Disfruta donde quieras. Cancela cuando quieras.",
     "cta": "¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.",
@@ -20,22 +20,23 @@
     "banner": {
       "title": "Todo lo que te encanta de Netflix por solo 5,49 €.",
       "description": "Consigue el plan Estándar con anuncios.",
-      "link": "Más información"
+      "linkText": "Más información",
+      "url": "#"
     },
     "storyCards": {
-      "0": {
+      "tv": {
         "title": "Disfruta en tu TV",
         "tagline": "Smart TV, Playstation, Xbox, Chromecast, Apple TV, reproductores Blu-ray y muchos más."
       },
-      "1": {
+      "devices": {
         "title": "Disfruta en todas partes",
         "tagline": "Reproduce en streaming todas las películas y series en tu móvil, tableta, ordenador y TV sin pagar más."
       },
-      "2": {
+      "profiles": {
         "title": "Crea perfiles infantiles",
         "tagline": "Deja que los niños vivan aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos, gratis con tu suscripción."
       },
-      "3": {
+      "offline": {
         "title": "Descárgate tus series favoritas para verlas sin conexión",
         "tagline": "Guarda tus títulos favoritos fácilmente para que siempre tengas algo para ver."
       }
@@ -71,25 +72,25 @@
     "title": "¿Preguntas? Llama al",
     "phoneNumber": "900 822 377",
     "links": {
-      "1": "Preguntas frecuentes",
-      "2": "Centro de ayuda",
-      "3": "Cuenta",
-      "4": "Zona de prensa",
-      "5": "Inversores",
-      "6": "Empleo",
-      "7": "Canjear tarjetas regalo",
-      "8": "Comprar tarjetas regalo",
-      "9": "Formas de ver",
-      "10": "Términos de uso",
-      "11": "Privacidad",
-      "12": "Preferencias de cookies",
-      "13": "Información corporativa",
-      "14": "Contáctanos",
-      "15": "Prueba de velocidad",
-      "16": "Avisos legales",
-      "17": "Garantía legal",
-      "18": "Solo en Netflix",
-      "19": "Opciones de anuncios"
+      "0": "Preguntas frecuentes",
+      "1": "Centro de ayuda",
+      "2": "Cuenta",
+      "3": "Zona de prensa",
+      "4": "Inversores",
+      "5": "Empleo",
+      "6": "Canjear tarjetas regalo",
+      "7": "Comprar tarjetas regalo",
+      "8": "Formas de ver",
+      "9": "Términos de uso",
+      "10": "Privacidad",
+      "11": "Preferencias de cookies",
+      "12": "Información corporativa",
+      "13": "Contáctanos",
+      "14": "Prueba de velocidad",
+      "15": "Avisos legales",
+      "16": "Garantía legal",
+      "17": "Solo en Netflix",
+      "18": "Opciones de anuncios"
     },
     "country": "España"
   },

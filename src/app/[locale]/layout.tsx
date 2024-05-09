@@ -1,17 +1,17 @@
-import { NextIntlClientProvider } from 'next-intl'
-import { notFound } from 'next/navigation'
+import { Locale, locales } from 'src/config'
 import '../globals.css'
 import { Metadata } from 'next'
+import { ReactNode } from 'react'
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: ReactNode
   params: {
-    locale: 'en' | 'es' | 'it'
+    locale: Locale
   }
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'it' }, { local: 'es' }]
+  return locales.map((locale) => ({ locale }))
 }
 
 export const metadata: Metadata = {
@@ -19,26 +19,14 @@ export const metadata: Metadata = {
   description: 'Sideproject',
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: { locale },
 }: RootLayoutProps) {
-  let messages
-
-  try {
-    messages = (await import(`../../../messages/${locale}.json`)).default
-  } catch (error) {
-    notFound()
-  }
-
   return (
     <html lang={locale}>
       <head />
-      <body className="font-sans bg-black relative">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
+      <body className="font-sans bg-black relative">{children}</body>
     </html>
   )
 }

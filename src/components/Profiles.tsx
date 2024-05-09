@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function StoryImage() {
+export function Profiles() {
   return (
     <Image
       className="h-auto"

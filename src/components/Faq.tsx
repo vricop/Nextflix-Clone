@@ -1,15 +1,15 @@
-'use client'
-import { v4 as uuid } from 'uuid'
 import { Accordion, AccordionItem } from './Accordion'
 import { Cta } from '@components/Cta'
 import { EmailBox } from '@components/EmailBox'
 import { HomeContainer } from '@components/HomeContainer'
 import { HomeSectionTitle } from '@components/HomeSectionTitle'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useMessages } from 'next-intl'
 
 export function Faq() {
+  const messages = useMessages()
   const t = useTranslations('home')
-  const keys = [1, 2, 3, 4, 5, 6] as const
+  const { home, common } = messages
+  const keys = Object.keys(home.faq) as (keyof typeof home.faq)[]
 
   return (
     <HomeContainer
@@ -18,20 +18,22 @@ export function Faq() {
       role=""
     >
       <HomeSectionTitle className="text-center">
-        {t('faqTitle')}
+        {messages.home.faqTitle}
       </HomeSectionTitle>
       <Accordion className="w-[83vw]">
-        {keys.map((item) => (
-          <AccordionItem key={uuid()} title={t(`faq.${item}.summary`)}>
-            {t.rich(`faq.${item}.details`, {
-              br: () => <br />
-            })}
+        {keys.map((item, i) => (
+          <AccordionItem key={i} title={messages.home.faq[item].summary}>
+            {t.rich(`faq.${item}.details`, { br: () => <br /> })}
           </AccordionItem>
         ))}
       </Accordion>
       <div className="text-center grid justify-items-center gap-y-5">
         <Cta />
-        <EmailBox className="max-w-[36.625rem]" />
+        <EmailBox
+          errorText={common.errors.invalidEmail}
+          labelText={home.emailPlaceholder}
+          buttonText={home.getStartedButton}
+        />
       </div>
     </HomeContainer>
   )

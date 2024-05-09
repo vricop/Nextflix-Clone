@@ -1,11 +1,16 @@
 'use client'
 import PopCorn from '@icons/popcorn.svg'
 import ChevronRight from '@icons/chevron-right-standard.svg'
-import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 
-export function Banner() {
-  const t = useTranslations('home')
+interface Banner {
+  title: string
+  description: string
+  linkText: string
+  url: string
+}
 
+export function Banner({ title, description, linkText, url }: Banner) {
   return (
     <div className="mt-4 sm:mt-0 lg:-mt-[72px] mx-6 sm:mx-[74px] relative @container">
       <div
@@ -16,12 +21,15 @@ export function Banner() {
       >
         <PopCorn className="-mt-20 sm:mt-[initial] sm:ml-[initial] scale-[0.8] sm:scale-100" />
         <div className="grid gap-y-2 justify-items-start">
-          <p className="text-xl font-medium">{t('banner.title')}</p>
-          <p className="text-base">{t('banner.description')}</p>
-          <a className="underline text-blue-500 font-medium flex first-baseline items-center gap-x-2">
-            {t('banner.link')}
+          <p className="text-xl font-medium">{title}</p>
+          <p className="text-base">{description}</p>
+          <Link
+            href={url}
+            className="underline text-blue-500 font-medium flex first-baseline items-center gap-x-2"
+          >
+            {linkText}
             <ChevronRight className="align-middle inline-block" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
