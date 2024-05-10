@@ -1,6 +1,5 @@
 import { HomeContainer } from '@components/HomeContainer'
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher'
-import { t } from 'i18next'
 import { useMessages } from 'next-intl'
 
 export function Footer() {
@@ -16,7 +15,7 @@ export function Footer() {
     >
       <div className="max-w-6xl mx-auto grid  gap-y-8 text-neutral-300 font-normal">
         <a className="underline" href={`tel:${footer.phoneNumber}`}>
-          {t('title')}
+          {footer.title}
         </a>
         <ul className="w-full text-sm grid grid-cols-2 lg:grid-cols-4 list-none p-0 gap-x-3 gap-y-4 underline">
           {keys.map((link, i) => {
