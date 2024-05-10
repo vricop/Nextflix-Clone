@@ -1,9 +1,10 @@
-import { Accordion, AccordionItem } from './Accordion'
+import { Accordion, AccordionSummary, AccordionDetails } from './Accordion'
 import { Cta } from '@components/Cta'
 import { EmailBox } from '@components/EmailBox'
 import { HomeContainer } from '@components/HomeContainer'
 import { HomeSectionTitle } from '@components/HomeSectionTitle'
 import { useTranslations, useMessages } from 'next-intl'
+import { Fragment } from 'react'
 
 export function Faq() {
   const messages = useMessages()
@@ -18,14 +19,19 @@ export function Faq() {
       role=""
     >
       <HomeSectionTitle className="text-center">
-        {messages.home.faqTitle}
+        {home.faqTitle}
       </HomeSectionTitle>
       <Accordion className="w-[83vw]">
-        {keys.map((item, i) => (
-          <AccordionItem key={i} title={messages.home.faq[item].summary}>
-            {t.rich(`faq.${item}.details`, { br: () => <br /> })}
-          </AccordionItem>
-        ))}
+        {keys.map((item, i) => {
+          return (
+            <Fragment key={i}>
+              <AccordionSummary>{home.faq[item].summary}</AccordionSummary>
+              <AccordionDetails>
+                {t.rich(`faq.${item}.details`, { br: () => <br /> })}
+              </AccordionDetails>
+            </Fragment>
+          )
+        })}
       </Accordion>
       <div className="text-center grid justify-items-center gap-y-5">
         <Cta />

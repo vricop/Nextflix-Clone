@@ -14,7 +14,7 @@ export interface StoryCardProps extends ComponentProps<'div'> {
   tagline: string
 }
 
-export function StoryCard({
+export function ValuePropositionCard({
   flipped,
   children,
   title,
@@ -45,32 +45,32 @@ export default function ValuePropositions() {
 
   return (
     <>
-      <StoryCard
+      <ValuePropositionCard
         title={t('storyCards.tv.title')}
         tagline={t('storyCards.tv.tagline')}
       >
         <Tv />
-      </StoryCard>
-      <StoryCard
+      </ValuePropositionCard>
+      <ValuePropositionCard
         flipped
         title={t('storyCards.devices.title')}
         tagline={t('storyCards.devices.tagline')}
       >
         <DevicePile />
-      </StoryCard>
-      <StoryCard
+      </ValuePropositionCard>
+      <ValuePropositionCard
         title={t('storyCards.profiles.title')}
         tagline={t('storyCards.profiles.tagline')}
       >
         <Profiles />
-      </StoryCard>
-      <StoryCard
+      </ValuePropositionCard>
+      <ValuePropositionCard
         flipped
         title={t('storyCards.offline.title')}
         tagline={t('storyCards.offline.tagline')}
       >
         <Mobile />
-      </StoryCard>
+      </ValuePropositionCard>
     </>
   )
 }

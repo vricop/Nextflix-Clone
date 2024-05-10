@@ -4,6 +4,7 @@ export function Tv() {
   return (
     <div className="relative">
       <Image
+        unoptimized
         width={640}
         height={480}
         src="/images/tv.png"
