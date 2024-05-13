@@ -13,15 +13,11 @@ export function Faq() {
   const keys = Object.keys(home.faq) as (keyof typeof home.faq)[]
 
   return (
-    <HomeContainer
-      as="section"
-      className="grid grid-flow-row justify-center gap-y-6 sm:gap-y-8 lg:gap-y-[3.25rem]"
-      role=""
-    >
+    <HomeContainer innerClassName="grid justify-center gap-y-6 sm:gap-y-8 lg:gap-y-[3.25rem]">
       <HomeSectionTitle className="text-center">
         {home.faqTitle}
       </HomeSectionTitle>
-      <Accordion className="w-[83vw]">
+      <Accordion>
         {keys.map((item, i) => {
           return (
             <Fragment key={i}>
