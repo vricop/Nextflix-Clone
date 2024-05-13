@@ -15,7 +15,7 @@
     );
   }
 
-  @container (width >=648px) {
+  @container (width >= 648px) {
     .banner {
       background-image: radial-gradient(
         51.39% 511.66% at 47.68% -217.91%,
@@ -31,26 +31,5 @@
     font-size: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-  }
-
-  @font-face {
-    font-family: 'Netflix Sans';
-    src: url('/fonts/NetflixSans_W_Rg.woff2') format('woff2');
-    font-weight: 400;
-    font-display: optional;
-  }
-
-  @font-face {
-    font-family: 'Netflix Sans';
-    src: url('/fonts/NetflixSans_W_Md.woff2') format('woff2');
-    font-weight: 500;
-    font-display: optional;
-  }
-
-  @font-face {
-    font-family: 'Netflix Sans';
-    src: url('/fonts/NetflixSans_W_Blk.woff2') format('woff2');
-    font-weight: 700;
-    font-display: optional;
   }
 }

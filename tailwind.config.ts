@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { Config } from 'tailwindcss'
+
+const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
@@ -13,11 +14,11 @@ module.exports = {
           'linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/images/ES-en-20220226-popsignuptwoweeks-perspective_alpha_website_small.jpg)',
       },
       fontFamily: {
-        "sans": ['"Netflix Sans", "Helvetica Neue", sans-serif']
-      }
+        sans: 'var(--font-netflix-sans)',
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/container-queries'),
-  ],
+  plugins: [require('@tailwindcss/container-queries')],
 }
+
+export default config

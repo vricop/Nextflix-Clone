@@ -14,8 +14,8 @@ interface Home {
 }
 
 export default function Home({ params }: Home) {
-  const t = useTranslations('home.banner')
   unstable_setRequestLocale(params.locale)
+  const t = useTranslations('home.banner')
 
   return (
     <>
