@@ -26,7 +26,7 @@ export default function Home({ params }: Home) {
         linkText={t('linkText')}
         url={t('url')}
       />
-      <ValuePropositions as="section" />
+      <ValuePropositions />
       <Faq />
       <Footer />
     </>
