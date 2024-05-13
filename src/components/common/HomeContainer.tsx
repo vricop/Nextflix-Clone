@@ -1,26 +1,31 @@
 import classNames from 'classnames'
-import { ComponentProps } from 'react'
+import { PolymorphicComponentProps } from 'global'
+import { ElementType } from 'react'
 
-interface HomeContainerProps extends ComponentProps<'div'> {
-  hasBorder?: boolean
-  as?: 'div' | 'section' | 'article' | 'footer'
-}
+type HomeContainerProps<C extends ElementType> = PolymorphicComponentProps<
+  C,
+  {
+    hasBorder?: boolean
+  }
+>
 
-export function HomeContainer({
-  as = 'div',
+export const HomeContainer = function HomeContainer<C extends ElementType>({
+  as,
   className,
   hasBorder = true,
+  fRef,
   ...props
-}: HomeContainerProps) {
-  const Tag = as
+}: HomeContainerProps<C>) {
+  const Component = as ?? 'div'
 
   return (
-    <Tag
+    <Component
       className={classNames(
         'py-14 sm:py-[4.5rem] text-white',
         { ['border-b-8 border-neutral-800']: hasBorder },
         className,
       )}
+      ref={fRef}
       {...props}
     />
   )
