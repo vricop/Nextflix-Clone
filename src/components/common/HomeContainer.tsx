@@ -24,7 +24,7 @@ export const HomeContainer = function HomeContainer<C extends ElementType>({
   return (
     <Component
       className={classNames(
-        'grid justify-center justify-items-center py-14 sm:py-[4.5rem] text-white',
+        'py-14 sm:py-[4.5rem] text-white',
         { ['border-b-8 border-neutral-800']: hasBorder },
         className,
       )}
@@ -33,7 +33,7 @@ export const HomeContainer = function HomeContainer<C extends ElementType>({
     >
       <div
         className={classNames(
-          'max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-4rem)] xl:max-w-[calc(83.333%-6rem)] min-[1920px]:max-w-[calc(66.666%-6rem)]',
+          'mx-auto w-full max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-4rem)] xl:max-w-[calc(83.333%-6rem)] min-[1920px]:max-w-[calc(55%-6rem)]',
           innerClassName,
         )}
       >
