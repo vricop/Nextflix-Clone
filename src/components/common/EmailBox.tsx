@@ -43,7 +43,7 @@ export function EmailBox({
         <label className="grid items-center group text-base" htmlFor="email">
           <input
             className={classnames(
-              '[grid-area:1/1] px-4 pt-5 sm:pt-6 pb-1 leading-[theme(spacing.12)] h-12 sm:leading-[theme(spacing.14)] sm:h-14 rounded border-neutral-500 border focus:outline outline-offset-2 outline-2 outline-white min-w-[theme(spacing.60)] placeholder-transparent text-white bg-neutral-900/70 peer',
+              '[grid-area:1/1] px-4 pt-5 sm:pt-6 pb-2 leading-[theme(spacing.12)] h-12 sm:leading-[theme(spacing.14)] sm:h-14 rounded border-neutral-500 border focus:outline outline-offset-2 outline-2 outline-white min-w-[theme(spacing.60)] placeholder-transparent text-white bg-neutral-900/70 peer',
               { 'border-red-600': !!email && hasError },
             )}
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"

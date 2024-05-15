@@ -85,7 +85,7 @@ export function AccordionDetails({
     <dd
       id="pendl-content-1"
       className={classNames(
-        'bg-neutral-800 transition-all duration-200 [transition-timing-function:cubic-bezier(0.5,0,0.1,1)] overflow-hidden max-h-0 px-7',
+        'bg-neutral-800 transition-all duration-[250] [transition-timing-function:cubic-bezier(0.5,0,0.1,1)] overflow-hidden max-h-0 px-7',
         {
           ['max-h-screen py-7 mt-px']: expanded,
         },
