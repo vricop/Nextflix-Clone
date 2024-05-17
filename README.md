@@ -7,7 +7,7 @@ WIP: This project is incomplete and under development.
 Purposes of this project:
 
 - Have fun and experiment with new or interesting technology
-- Play with the new app dir in Next.js v13
+- Play with the new app dir in Next.js v14
 - Play with i18n
 - I'd love to implement some nice CSS animations that Netflix uses
 
