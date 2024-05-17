@@ -97,12 +97,5 @@
   "login": {
     "signInButton": "Acceder",
     "needHelp": "¿Necesitas ayuda?"
-  },
-  "notFound": {
-    "title": "¿Te has perdido?",
-    "filmTitle": "de <strong>Lost In Space</strong>",
-    "description": "No encontramos esa página. Podrás explorar muchos títulos en la página de inicio.",
-    "link": "Inicio de Netflix",
-    "error": "Código de error <strong>NSES-404</strong>"
   }
 }
