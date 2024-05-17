@@ -1,4 +1,3 @@
-'use client'
 import PopCorn from '@icons/popcorn.svg'
 import ChevronRight from '@icons/chevron-right-standard.svg'
 import Link from 'next/link'

@@ -1,6 +1,5 @@
-'use client'
 import Logo from '@images/logo.svg'
-import { Link } from 'iconoir-react'
+import Link from 'next/link'
 
 export default function NotFoundPage() {
   return (
