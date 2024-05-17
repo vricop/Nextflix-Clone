@@ -14,6 +14,14 @@ Purposes of this project:
 **Disclaimer**: This project isn't finished. I update/add new stuff whenever
 I've got plenty of time to do so, which is almost never the case 🤣
 
+## Status
+
+### Pages:
+
+- Home: 90% (WIP)
+- Not foud: 100%
+- Login: 20% (WIP)
+
 ## Stack
 
 ### Front-end
@@ -25,6 +33,7 @@ I've got plenty of time to do so, which is almost never the case 🤣
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (Not implemented yet)
 - [Next intl](https://next-intl-docs.vercel.app/)
+- [SVGR](https://react-svgr.com/)
 
 ### Back-end (not implemented yet)
 
