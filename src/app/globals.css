@@ -7,24 +7,28 @@
     --red: #e50914;
     --black: #0e1b4f;
 
-    background-image: radial-gradient(
-      120.35% 220% at 49.86% -6.29%,
-      var(--red) 0%,
-      var(--black) 46.15%,
-      #0d1121 100%
-    );
+    background-image: radial-gradient(120.35% 220% at 49.86% -6.29%,
+        var(--red) 0%,
+        var(--black) 46.15%,
+        #0d1121 100%);
   }
 
-  @container (width >= 648px) {
+  @container (width >=648px) {
     .banner {
-      background-image: radial-gradient(
-        51.39% 511.66% at 47.68% -217.91%,
-        #ff9900 0%,
-        var(--red) 17.27%,
-        var(--black) 79.44%,
-        #000413 100%
-      );
+      background-image: radial-gradient(51.39% 511.66% at 47.68% -217.91%,
+          #ff9900 0%,
+          var(--red) 17.27%,
+          var(--black) 79.44%,
+          #000413 100%);
     }
+  }
+
+  .overlay {
+    border-image: fill 0 radial-gradient(ellipse at center,
+        rgba(0, 0, 0, 0.5) 0,
+        rgba(0, 0, 0, 0.2) 45%,
+        rgba(0, 0, 0, 0.1) 55%,
+        transparent 70%);
   }
 
   html {

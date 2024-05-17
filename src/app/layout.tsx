@@ -1,5 +1,5 @@
 import { Locale, locales } from 'src/config'
-import '../globals.css'
+import './globals.css'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { unstable_setRequestLocale } from 'next-intl/server'
@@ -7,19 +7,25 @@ import localFont from 'next/font/local'
 
 const netflixSans = localFont({
   src: [
+
     {
-      path: '../../../public/fonts/NetflixSans_W_Rg.woff2',
+      path: '../../public/fonts/NetflixSans_W_Rg.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/NetflixSans_W_Md.woff2',
+      path: '../../public/fonts/NetflixSans_W_Md.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/NetflixSans_W_Blk.woff2',
+      path: '../../public/fonts/NetflixSans_W_Blk.woff2',
       weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/NetflixSans_W_Th.woff2',
+      weight: '300',
       style: 'normal',
     },
   ],

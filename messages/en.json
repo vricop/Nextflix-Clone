@@ -97,5 +97,12 @@
   "login": {
     "signInButton": "Sign in",
     "needHelp": "Need helps?"
+  },
+  "notFound": {
+    "title": "Are you lost?",
+    "filmTitle": "from <strong>Lost In Space</strong>",
+    "description": "We couldn't find that page. You can explore many titles on the home page.",
+    "link": "Netflix Home",
+    "error": "Error code <strong>NSES-404</strong>"
   }
 }

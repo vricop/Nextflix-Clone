@@ -21,7 +21,8 @@
       "@utils/*": ["./src/utils/*"],
       "@fixtures/*": ["fixtures/*"],
       "@public/*": ["public/*"],
-      "@icons/*": ["public/icons/*"]
+      "@icons/*": ["public/icons/*"],
+      "@images/*": ["public/images/*"]
     },
     "plugins": [
       {
